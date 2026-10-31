@@ -279,8 +279,8 @@
   ]
  },
  "tv": {
-  "asof": "Oct 31, 2026 3:10 PM CT",
-  "gen": "2026-10-31T15:40:00-05:00",
+  "asof": "Oct 31, 2026 4:39 PM CT",
+  "gen": "2026-10-31T16:40:51.094169-05:00",
   "today": "2026-10-31",
   "cfg": {
    "h": {
@@ -482,7 +482,36 @@
    ]
   ],
   "remakes": 9,
-  "returns": null,
+  "returns": 2,
+  "redo": {
+   "d7": 2,
+   "d30": 2,
+   "open": 1,
+   "u30": 3,
+   "reasons": [
+    [
+     "NOT RECEIVED",
+     1
+    ],
+    [
+     "WRONG ITEM",
+     1
+    ]
+   ],
+   "products": [
+    [
+     "CVRT SET",
+     1
+    ],
+    [
+     "CVRT",
+     1
+    ]
+   ],
+   "ok": true,
+   "asof": "OCT 31",
+   "since": "OCT 25"
+  },
   "rush": [
    "80832"
   ],
@@ -535,5 +564,71 @@
   "MAX_AGE_DAYS": 90,
   "SCAN_COMPLETIONS": false,
   "PER_PERSON_STATS": false
+ },
+ "redo": {
+  "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
+  "ok": true,
+  "fetched_at": "2026-10-31T16:40:50.340001-05:00",
+  "last_attempt": "2026-10-31T16:40:50.340001-05:00",
+  "last_error": null,
+  "total_in_lookback": 2,
+  "lookback_days": 90,
+  "earliest": "2026-10-25T20:49:09.167Z",
+  "d7": {
+   "count": 2,
+   "units": 3,
+   "types": {
+    "claim": 2
+   },
+   "reasons": [
+    [
+     "NOT RECEIVED",
+     1
+    ],
+    [
+     "WRONG ITEM",
+     1
+    ]
+   ],
+   "products": [
+    [
+     "CVRT SET",
+     1
+    ],
+    [
+     "CVRT",
+     1
+    ]
+   ]
+  },
+  "d30": {
+   "count": 2,
+   "units": 3,
+   "types": {
+    "claim": 2
+   },
+   "reasons": [
+    [
+     "NOT RECEIVED",
+     1
+    ],
+    [
+     "WRONG ITEM",
+     1
+    ]
+   ],
+   "products": [
+    [
+     "CVRT SET",
+     1
+    ],
+    [
+     "CVRT",
+     1
+    ]
+   ]
+  },
+  "open_now": 1,
+  "note": "count = Redo returns + claims + exchanges created in the window; reasons counted once per return; products = returned build units by station rules (add-ons like Kydex Color excluded)."
  }
 }
