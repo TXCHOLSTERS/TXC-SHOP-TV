@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="TXC QC">
+<link rel="apple-touch-icon" href="icon-180.png">
+<title>TXC QC Scan</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#121212;color:#fff;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:bold;overflow:hidden;-webkit-user-select:none;user-select:none}
+#top{position:absolute;left:0;right:0;top:0;height:70px;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;padding:0 20px;background:#000;border-bottom:4px solid #AF9061}
+#top img{height:40px}
+#top .t{font-size:28px;margin-left:18px;color:#AF9061;letter-spacing:1px}
+#top .sp{-webkit-box-flex:1;-webkit-flex:1;flex:1}
+#top .c{font-size:26px;margin-left:24px}
+#top .n{font-size:26px;margin-left:24px;background:#1E8E3E;padding:6px 14px;border-radius:8px}
+#main{position:absolute;left:0;right:0;top:74px;bottom:96px;text-align:center;padding:20px}
+#main.idle{background:#121212}#main.ok{background:#1E8E3E}#main.dup{background:#C1121F}#main.bad{background:#C1121F}#main.warn{background:#D98E04}#main.test{background:#1565C0}
+#big{font-size:150px;line-height:1.05;margin-top:40px}
+#code{font-size:84px;line-height:1.1;margin-top:20px}
+#sub{font-size:40px;line-height:1.25;margin-top:24px;font-weight:normal}
+#bar{position:absolute;left:0;right:0;bottom:0;height:96px;background:#1f1f1f;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;padding:0 16px}
+#st{-webkit-box-flex:1;-webkit-flex:1;flex:1;font-size:24px;padding:0 10px;line-height:1.2}
+.okc{color:#5BD17A}.wc{color:#FFB627}.ec{color:#FF6B6B}
+button{font-size:24px;font-weight:bold;padding:16px 22px;border-radius:10px;border:0;background:#3a3a3a;color:#fff;margin-left:10px;-webkit-appearance:none}
+#scan{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;font-size:16px;border:0;padding:0}
+#start,#setup{position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.92);z-index:10;text-align:center;padding:40px}
+#start .b{display:inline-block;margin-top:180px;font-size:64px;background:#1E8E3E;padding:40px 60px;border-radius:24px}
+#start p{font-size:28px;margin-top:30px;color:#ccc;font-weight:normal}
+#setup{display:none;text-align:left;overflow:auto;-webkit-overflow-scrolling:touch}
+#setup h2{font-size:36px;margin-bottom:20px;color:#AF9061}
+#setup label{display:block;font-size:22px;margin:18px 0 6px}
+#setup input{width:100%;font-size:24px;padding:12px;border-radius:8px;border:0;-webkit-appearance:none}
+#setup .msg{font-size:22px;margin-top:16px;font-weight:normal;line-height:1.4}
+#setup button{margin:22px 10px 0 0}
+#main.ok #hist,#main.dup #hist,#main.bad #hist,#main.warn #hist,#main.test #hist{display:none}
+@media (max-width:900px){#big{font-size:105px}#code{font-size:64px}#sub{font-size:32px}#top .t{display:none}}
+#hist{font-size:20px;font-weight:normal;color:#bbb;margin-top:40px;line-height:1.5}
+</style></head>
+<body>
+<div id="top"><img src="data:image/png;base64,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" alt="TXC"><span class="t">QC SCAN</span><span class="sp"></span><span class="n" id="cnt">QC TODAY 0</span><span class="c" id="clock"></span></div>
+<div id="main" class="idle"><div id="big">SCAN A<br>BUILD SHEET</div><div id="code"></div><div id="sub">Hold the barcode under the scanner</div><div id="hist"></div></div>
+<div id="bar"><div id="st">Starting...</div><button id="undo">UNDO LAST</button><button id="gear">SETUP</button></div>
+<input id="scan" type="text" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
+<div id="start"><div class="b" id="startb">TAP HERE TO START</div><p>Then just scan. You do not need to touch the screen again.</p></div>
+<div id="setup">
+ <h2>QC scan station setup (Tyler / Billy)</h2>
+ <div class="msg">Saved on this iPad only. The key is never put on the website.</div>
+ <label>Station name (for the log)</label><input id="f_dev" value="QC-iPad">
+ <label>Scan log (GitHub owner/repo)</label><input id="f_repo" value="TXCHOLSTERS/txc-qc-scans">
+ <label>Upload key (GitHub token) - paste it here</label><input id="f_tok" type="password" placeholder="github_pat_...">
+ <button id="s_save">SAVE</button><button id="s_test">TEST CONNECTION</button><button id="s_csv">EMAIL/SAVE A COPY (CSV)</button><button id="s_close">CLOSE</button>
+ <div class="msg" id="s_msg"></div>
+ <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version qc1-20261031.</div>
+</div>
+<script>
+(function(){
+'use strict';
+var VER='qc1-20261031';
+var DEF={api:'https://api.github.com',repo:'TXCHOLSTERS/txc-qc-scans',branch:'main',dev:'QC-iPad',tok:''};
+var HEADER='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app';
+var RE_UNIT=/^(TXC\d{3,7})-(\d{1,3})$/, RE_ORDER=/^(TXC\d{3,7})$/;
+var KEEP_DAYS=45, LOAD_DAYS=14;
+function $(id){return document.getElementById(id);}
+function ls(k,d){try{var v=localStorage.getItem('txcqc.'+k);return v?JSON.parse(v):d;}catch(e){return d;}}
+function ss(k,v){try{localStorage.setItem('txcqc.'+k,JSON.stringify(v));return true;}catch(e){status('Storage full on this iPad - tell Tyler','ec');return false;}}
+var cfg=ls('cfg',{});for(var k in DEF){if(cfg[k]===undefined)cfg[k]=DEF[k];}
+if(window.TXCQC_TEST_CFG){for(var k2 in window.TXCQC_TEST_CFG)cfg[k2]=window.TXCQC_TEST_CFG[k2];}
+var seen=ls('seen',{});      // code -> first OK scan time (ms)
+var queue=ls('queue',[]);    // rows not yet uploaded
+var rows=ls('rows',[]);      // all rows on this device (last KEEP_DAYS days), for counts + CSV copy
+var lastOk=ls('lastok',null);
+var busy=false, lastSync=ls('lastsync',0), netErr='', remoteLoaded={};
+function pad(n){return (n<10?'0':'')+n;}
+function dLocal(t){var d=new Date(t);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());}
+function tLocal(t){var d=new Date(t);return dLocal(t)+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());}
+function hm(t){var d=new Date(t),h=d.getHours(),ap=h<12?'AM':'PM';h=h%12||12;return h+':'+pad(d.getMinutes())+' '+ap;}
+function dayName(t){return ['SUN','MON','TUE','WED','THU','FRI','SAT'][new Date(t).getDay()];}
+function clean(s){return String(s||'').replace(/[^A-Za-z0-9 _.\-]/g,'').substring(0,40);}
+// ---------- sounds (unlocked by the first tap) ----------
+var AC=null;
+function beep(f,ms,n){try{if(!AC)return;var t=AC.currentTime;for(var i=0;i<(n||1);i++){var o=AC.createOscillator(),g=AC.createGain();o.frequency.value=f;o.connect(g);g.connect(AC.destination);g.gain.value=0.25;var s=t+i*(ms/1000+0.08);o.start(s);o.stop(s+ms/1000);}}catch(e){}}
+// ---------- screen ----------
+var resetT=null;
+function show(cls,big,code,sub){var m=$('main');m.className=cls;$('big').innerHTML=big;$('code').innerHTML=code||'';$('sub').innerHTML=sub||'';
+ clearTimeout(resetT);resetT=setTimeout(function(){show('idle','SCAN A<br>BUILD SHEET','','Hold the barcode under the scanner');},cls==='ok'?4000:8000);drawHist();}
+function status(msg,c){var e=$('st');e.innerHTML=msg;e.className=c||'';}
+function todayCount(){var td=dLocal(new Date().getTime()),n=0;for(var c in seen){if(dLocal(seen[c])===td)n++;}
+ for(var i=0;i<rows.length;i++){if(rows[i].result==='OK_ORDER_ONLY'&&rows[i].date_local===td)n++;}return n;}
+function drawCount(){$('cnt').innerHTML='QC TODAY '+todayCount();}
+function drawHist(){var h=[],n=0;for(var i=rows.length-1;i>=0&&n<4;i--){var r=rows[i];if(r.result==='TEST')continue;n++;h.push(hm(r.t)+' &nbsp; '+r.code+' &nbsp; '+r.result.replace(/_/g,' '));}
+ $('hist').innerHTML=h.length?'Last scans:<br>'+h.join('<br>'):'';drawCount();}
+function drawStatus(){
+ if(!cfg.tok){status('NOT SET UP YET - scans are saved on this iPad only. Tyler: tap SETUP.','ec');return;}
+ if(queue.length){status(queue.length+' scan'+(queue.length>1?'s':'')+' waiting to upload'+(netErr?' ('+netErr+')':'')+' - they are safe on this iPad.','wc');return;}
+ status('All scans saved'+(lastSync?' &nbsp;(last upload '+hm(lastSync)+')':''),'okc');}
+function tick(){$('clock').innerHTML=hm(new Date().getTime());}tick();setInterval(tick,1000);
+// ---------- scan handling ----------
+function addRow(t,code,order,unit,result){
+ var r={id:clean(cfg.dev)+'-'+t+'-'+Math.floor(Math.random()*1e6),t:t,ts_utc:new Date(t).toISOString(),ts_local:tLocal(t),date_local:dLocal(t),code:code,order:order,unit:unit,step:'QC',device:clean(cfg.dev),result:result,app:VER};
+ rows.push(r);var cut=new Date().getTime()-KEEP_DAYS*864e5;while(rows.length&&rows[0].t<cut)rows.shift();
+ if(result!=='TEST'){queue.push(r);ss('queue',queue);}ss('rows',rows);return r;}
+function handle(raw){
+ var s=String(raw||'').replace(/[\u2010-\u2015\u2212]/g,'-').replace(/\s+/g,'').toUpperCase();
+ if(!s)return;
+ if(s.indexOf('TXCSETUP:')===0){$('f_tok').value=s.substring(9);openSetup();return;}
+ var t=new Date().getTime(),m;
+ if(s==='TXC-TEST'){addRow(t,s,'','','TEST');show('test','SCANNER<br>WORKS','TXC-TEST','Test only - nothing was saved.');beep(1200,120,2);return;}
+ if((m=RE_UNIT.exec(s))){
+  if(seen[s]){addRow(t,s,m[1],m[2],'DUPLICATE');show('dup','ALREADY<br>SCANNED',s,'First scanned '+dayName(seen[s])+' '+hm(seen[s])+'. Not counted again.');beep(220,350,2);}
+  else{seen[s]=t;ss('seen',seen);addRow(t,s,m[1],m[2],'OK');lastOk=s;ss('lastok',lastOk);show('ok','DONE &#10003;',m[1]+' &nbsp;#'+m[2],'Logged '+hm(t));beep(1400,130,1);}
+ }else if((m=RE_ORDER.exec(s))){
+  addRow(t,s,m[1],'','OK_ORDER_ONLY');lastOk='~'+s;ss('lastok',lastOk);show('warn','DONE<br>(OLD SHEET)',s,'Counted. This old sheet has no unit number - it cannot catch double scans.');beep(1000,130,2);
+ }else{addRow(t,clean(s),'','','NOT_A_BUILD_SHEET');show('bad','NOT A TXC<br>BUILD SHEET',clean(s).substring(0,24),'Scan the barcode at the top right of the build sheet. Shipping slips go to shipping.');beep(220,350,3);}
+ sync();}
+function undo(){
+ if(!lastOk){show('warn','NOTHING<br>TO UNDO','','');return;}
+ var t=new Date().getTime(),code=lastOk.charAt(0)==='~'?lastOk.substring(1):lastOk,m=RE_UNIT.exec(code)||RE_ORDER.exec(code);
+ if(lastOk.charAt(0)!=='~')delete seen[code];ss('seen',seen);
+ addRow(t,code,m?m[1]:'',m&&m[2]?m[2]:'','UNDO');lastOk=null;ss('lastok',null);show('warn','UNDONE',code,'That scan no longer counts. Scan again when it really passes QC.');beep(600,200,1);sync();}
+// keyboard-wedge input: the scanner "types" the code then presses Enter (or Tab)
+var buf='',bufT=0,inp=$('scan');
+inp.addEventListener('keydown',function(e){var k=e.keyCode||e.which;if(k===13||k===9){e.preventDefault();var v=inp.value;inp.value='';handle(v);}},false);
+document.addEventListener('keypress',function(e){if(e.target===inp)return;var k=e.which||e.keyCode;var now=new Date().getTime();if(now-bufT>800)buf='';bufT=now;
+ if(k===13){var v=buf;buf='';handle(v);e.preventDefault();return;}if(k>=32&&k<127){buf+=String.fromCharCode(k);}},false);
+document.addEventListener('keydown',function(e){if(e.target!==inp&&(e.keyCode===9)){e.preventDefault();var v=buf;buf='';handle(v);}},false);
+function focusInp(){try{inp.focus();}catch(e){}}
+setInterval(function(){if($('setup').style.display!=='block'&&document.activeElement!==inp)focusInp();},1500);
+// ---------- GitHub storage (one CSV file per day: scans/YYYY-MM-DD.csv) ----------
+function api(method,path,body,cb){
+ var x=new XMLHttpRequest();x.open(method,cfg.api+path+(method==='GET'?(path.indexOf('?')<0?'?':'&')+'t='+new Date().getTime():''),true);
+ x.setRequestHeader('Accept','application/vnd.github+json');x.setRequestHeader('Authorization','Bearer '+cfg.tok);
+ if(body)x.setRequestHeader('Content-Type','application/json');x.timeout=20000;
+ x.onreadystatechange=function(){if(x.readyState!==4)return;var j=null;try{j=JSON.parse(x.responseText);}catch(e){}cb(x.status,j);};
+ x.ontimeout=function(){};x.send(body?JSON.stringify(body):null);}
+function b64d(s){return decodeURIComponent(escape(atob(String(s).replace(/\s/g,''))));}
+function b64e(s){return btoa(unescape(encodeURIComponent(s)));}
+function csvLine(r){return [r.id,r.ts_utc,r.ts_local,r.date_local,r.code,r.order,r.unit,r.step,r.device,r.result,r.app].join(',');}
+function filePath(day){return '/repos/'+cfg.repo+'/contents/scans/'+day+'.csv';}
+function sync(){
+ drawStatus();if(busy||!cfg.tok||!queue.length)return;
+ if(navigator.onLine===false){netErr='no internet';drawStatus();return;}
+ busy=true;var day=queue[0].date_local,batch=[];for(var i=0;i<queue.length;i++){if(queue[i].date_local===day)batch.push(queue[i]);}
+ api('GET',filePath(day)+'?ref='+cfg.branch,null,function(st,j){
+  if(st!==200&&st!==404){busy=false;netErr=st===0?'no internet':(st===401||st===403?'upload key problem - tell Tyler':'error '+st);drawStatus();return;}
+  var text=st===200&&j&&j.content?b64d(j.content):HEADER+'\n';if(text.charAt(text.length-1)!=='\n')text+='\n';
+  var add='';for(var i=0;i<batch.length;i++){if(text.indexOf(batch[i].id+',')<0)add+=csvLine(batch[i])+'\n';}
+  var done=function(){var ids={};for(var i=0;i<batch.length;i++)ids[batch[i].id]=1;var q=[];for(var k=0;k<queue.length;k++){if(!ids[queue[k].id])q.push(queue[k]);}
+   queue=q;ss('queue',queue);lastSync=new Date().getTime();ss('lastsync',lastSync);netErr='';busy=false;drawStatus();if(queue.length)setTimeout(sync,300);};
+  if(!add){done();return;}
+  var body={message:'QC scans '+day+' ('+clean(cfg.dev)+')',content:b64e(text+add),branch:cfg.branch};if(st===200&&j.sha)body.sha=j.sha;
+  api('PUT',filePath(day),body,function(st2){
+   if(st2===200||st2===201){done();return;}
+   busy=false;netErr=st2===0?'no internet':(st2===409||st2===422?'busy, retrying':(st2===401||st2===403||st2===404?'upload key problem - tell Tyler':'error '+st2));drawStatus();
+   if(st2===409||st2===422)setTimeout(sync,1500);});
+ });}
+setInterval(sync,15000);
+window.addEventListener('online',function(){netErr='';sync();},false);
+// pull recent days from the log so a holster scanned on another day / device still shows ALREADY SCANNED
+function loadRemote(){
+ if(!cfg.tok)return;var now=new Date().getTime();
+ for(var d=0;d<LOAD_DAYS;d++){(function(day){if(remoteLoaded[day]&&day!==dLocal(now))return;
+  api('GET',filePath(day)+'?ref='+cfg.branch,null,function(st,j){if(st===404){remoteLoaded[day]=1;return;}if(st!==200||!j||!j.content)return;remoteLoaded[day]=1;
+   var lines=b64d(j.content).split('\n'),ch=false;
+   for(var i=1;i<lines.length;i++){var f=lines[i].split(',');if(f.length<10)continue;var code=f[4],res=f[9],t=Date.parse(f[1]);if(isNaN(t))continue;
+    if(res==='OK'&&RE_UNIT.test(code)&&(!seen[code]||seen[code]>t)){seen[code]=t;ch=true;}
+    if(res==='UNDO'&&seen[code]&&seen[code]<t){delete seen[code];ch=true;}}
+   if(ch){ss('seen',seen);drawCount();}});})(dLocal(now-d*864e5));}}
+setInterval(loadRemote,10*60000);
+// ---------- setup screen ----------
+function openSetup(){$('setup').style.display='block';$('f_dev').value=cfg.dev;$('f_repo').value=cfg.repo;if(cfg.tok&&!$('f_tok').value)$('f_tok').placeholder='(saved - leave blank to keep)';$('s_q').innerHTML=queue.length;}
+function closeSetup(){$('setup').style.display='none';focusInp();}
+$('gear').addEventListener('click',openSetup,false);$('s_close').addEventListener('click',closeSetup,false);
+$('s_save').addEventListener('click',function(){cfg.dev=clean($('f_dev').value)||'QC-iPad';cfg.repo=$('f_repo').value.replace(/\s/g,'')||DEF.repo;var tk=$('f_tok').value.replace(/\s/g,'');if(tk)cfg.tok=tk;$('f_tok').value='';
+ ss('cfg',{dev:cfg.dev,repo:cfg.repo,tok:cfg.tok,branch:cfg.branch,api:cfg.api});$('s_msg').innerHTML='Saved.';loadRemote();sync();},false);
+$('s_test').addEventListener('click',function(){$('s_msg').innerHTML='Testing...';api('GET','/repos/'+cfg.repo,null,function(st,j){
+ if(st===200&&j&&j.permissions&&j.permissions.push)$('s_msg').innerHTML='<span class="okc">CONNECTED. Uploads will work.</span>';
+ else if(st===200)$('s_msg').innerHTML='<span class="okc">CONNECTED</span> (repo found).';
+ else $('s_msg').innerHTML='<span class="ec">NOT CONNECTED (code '+st+'). Check the key and the repo name.</span>';});},false);
+$('s_csv').addEventListener('click',function(){var t=HEADER+'\n';for(var i=0;i<rows.length;i++)t+=csvLine(rows[i])+'\n';
+ var a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(t);a.download='qc-scans-'+dLocal(new Date().getTime())+'.csv';a.target='_blank';document.body.appendChild(a);a.click();},false);
+$('undo').addEventListener('click',undo,false);
+$('startb').addEventListener('click',function(){try{var C=window.AudioContext||window.webkitAudioContext;if(C&&!AC)AC=new C();beep(1000,60,1);}catch(e){}
+ $('start').style.display='none';focusInp();},false);
+document.addEventListener('click',function(e){if($('setup').style.display!=='block')focusInp();},false);
+if(location.hash==='#setup')openSetup();
+if('serviceWorker' in navigator&&location.protocol==='https:'){try{navigator.serviceWorker.register('sw.js');}catch(e){}}
+window.TXCQC={handle:handle,sync:sync,state:function(){return {seen:seen,queue:queue,rows:rows,cfg:{repo:cfg.repo,dev:cfg.dev,hasTok:!!cfg.tok}};},loadRemote:loadRemote};
+drawHist();drawStatus();loadRemote();sync();
+})();
+</script>
+</body></html>
