@@ -279,7 +279,31 @@
     48
    ]
   ],
-  "done_source": "shopify_shipped"
+  "done_source": "shopify_shipped",
+  "dealer_lane": {
+   "target": 12,
+   "queue_units": 15,
+   "orders": [
+    {
+     "n": "TXC79142",
+     "u": 7,
+     "created": "2026-08-27",
+     "age": 67,
+     "eta": "2026-11-03"
+    },
+    {
+     "n": "TXC80376",
+     "u": 8,
+     "created": "2026-10-08",
+     "age": 25,
+     "eta": "2026-11-04"
+    }
+   ],
+   "stale_units_over_max_age": 565,
+   "last_wd": "2026-11-02",
+   "last_wd_shipped": 0,
+   "rule": "build line, no LEAD TIME AGREEMENT, and DEALER/WHOLESALE/dealer part no. in title/SKU or PO# in order note or DEALER/WHOLESALE tag"
+  }
  },
  "tv": {
   "asof": "Nov 3, 2026 5:33 AM CT",
@@ -499,7 +523,26 @@
   "shipped_28d": 745,
   "days_at_goal": 7,
   "days_at_goal_of": 20,
-  "week_label": "NOV 1"
+  "week_label": "NOV 1",
+  "dealer": {
+   "target": 12,
+   "queue_units": 15,
+   "last_wd_shipped": 0,
+   "orders": [
+    {
+     "n": "TXC79142",
+     "u": 7,
+     "age": 67,
+     "eta": "2026-11-03"
+    },
+    {
+     "n": "TXC80376",
+     "u": 8,
+     "age": 25,
+     "eta": "2026-11-04"
+    }
+   ]
+  }
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -536,6 +579,7 @@
    ]
   ],
   "FRESH_MINUTES": 60,
+  "DEALER_DAILY_TARGET": 12,
   "PROMISE_DAYS": 42,
   "WORKDAYS": [
    0,
