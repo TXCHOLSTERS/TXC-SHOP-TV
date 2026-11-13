@@ -28,18 +28,24 @@ html,body{height:100%;background:#121212;color:#fff;font-family:"Helvetica Neue"
 body.locked #steps{display:none}
 body.locked #lockbar{display:block}
 body.locked #main{top:186px}
-#main{position:absolute;left:0;right:0;top:176px;bottom:96px;text-align:center;padding:16px 12px}
-#main.idle{background:#121212}#main.ok{background:#1E8E3E}#main.dup{background:#C1121F}#main.bad{background:#C1121F}#main.warn{background:#D98E04}#main.test{background:#1565C0}
+body.locked.flashing #main,body.flashing #main{top:0;bottom:0;z-index:8;padding-top:40px}
+#main{position:absolute;left:0;right:0;top:176px;bottom:110px;text-align:center;padding:16px 12px}
+#main.idle{background:#121212}#main.ok{background:#1E8E3E}#main.dup{background:#F2C500;color:#111}#main.bad{background:#C1121F}#main.warn{background:#D98E04;color:#111}#main.test{background:#1565C0}
 #big{font-size:130px;line-height:1.05;margin-top:24px}
-#code{font-size:72px;line-height:1.1;margin-top:16px}
+#code{font-size:80px;line-height:1.1;margin-top:16px}
 #sub{font-size:34px;line-height:1.25;margin-top:18px;font-weight:normal}
-#bar{position:absolute;left:0;right:0;bottom:0;height:96px;background:#1f1f1f;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;padding:0 12px;z-index:2}
+#today{font-size:42px;margin-top:28px;letter-spacing:1px;color:#AF9061}
+#main.ok #today,#main.test #today{color:#fff}#main.dup #today,#main.warn #today{color:#111}#main.bad #today{color:#fff}
+#bar{position:absolute;left:0;right:0;bottom:0;height:110px;background:#1f1f1f;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;padding:0 12px;z-index:9}
 #st{-webkit-box-flex:1;-webkit-flex:1;flex:1;font-size:22px;padding:0 8px;line-height:1.2}
 .okc{color:#5BD17A}.wc{color:#FFB627}.ec{color:#FF6B6B}
 button{font-size:22px;font-weight:bold;padding:14px 18px;border-radius:10px;border:0;background:#3a3a3a;color:#fff;margin-left:8px;-webkit-appearance:none}
-#scan{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;font-size:16px;border:0;padding:0}
-#start,#setup{position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.92);z-index:10;text-align:center;padding:40px}
-#start .b{display:inline-block;margin-top:140px;font-size:56px;background:#1E8E3E;padding:36px 50px;border-radius:24px}
+#undo{font-size:28px;padding:18px 26px;min-height:72px;background:#444}
+#undo.on{background:#AF9061;color:#000}
+#undo[disabled]{opacity:.35;background:#333;color:#888}
+#scan{position:absolute;left:0;top:40%;width:2px;height:2px;opacity:0;font-size:16px;border:0;padding:0;caret-color:transparent;z-index:40}
+#start,#setup,#pick{position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.92);z-index:10;text-align:center;padding:40px}
+#start .b{display:inline-block;margin-top:120px;font-size:56px;background:#1E8E3E;padding:36px 50px;border-radius:24px}
 #start p{font-size:26px;margin-top:24px;color:#ccc;font-weight:normal}
 #setup{display:none;text-align:left;overflow:auto;-webkit-overflow-scrolling:touch}
 #setup h2{font-size:36px;margin-bottom:20px;color:#AF9061}
@@ -49,9 +55,19 @@ button{font-size:22px;font-weight:bold;padding:14px 18px;border-radius:10px;bord
 #setup button{margin:22px 10px 0 0}
 #setup .chk{display:block;font-size:22px;margin-top:18px;font-weight:normal}
 #setup .chk input{width:auto;margin-right:10px}
+#s_snd{background:#1E8E3E;font-size:28px;padding:18px 28px}
 #main.ok #hist,#main.dup #hist,#main.bad #hist,#main.warn #hist,#main.test #hist{display:none}
-@media (max-width:900px){#big{font-size:88px}#code{font-size:52px}#sub{font-size:26px}#top .t{display:none}#steps button{font-size:22px}#lockbar .lab{font-size:40px}}
-#hist{font-size:18px;font-weight:normal;color:#bbb;margin-top:28px;line-height:1.5}
+@media (max-width:900px){#big{font-size:88px}#code{font-size:52px}#sub{font-size:26px}#top .t{display:none}#steps button{font-size:22px}#lockbar .lab{font-size:40px}#today{font-size:32px}}
+#hist{font-size:18px;font-weight:normal;color:#bbb;margin-top:20px;line-height:1.5}
+#pick{display:none;z-index:12}
+#pick h2{font-size:64px;margin-top:40px;color:#AF9061}
+#pick .pmsg{font-size:36px;font-weight:normal;margin:20px 0 36px;color:#eee}
+#pick .row{display:-webkit-box;display:-webkit-flex;display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+#pick .row button{font-size:56px;min-width:160px;min-height:140px;margin:0;background:#AF9061;color:#000;border-radius:20px}
+#pick .all{display:block;width:80%;max-width:640px;margin:28px auto 0;font-size:44px;min-height:100px;background:#1E8E3E}
+#pick .cancel{display:block;margin:24px auto 0;background:#333;font-size:28px}
+#ahs{display:none;position:absolute;left:8%;right:8%;top:12px;background:#AF9061;color:#111;padding:16px 20px;border-radius:14px;z-index:11;font-size:22px;text-align:center}
+#ahs.show{display:block}
 .cam{display:none;position:absolute;inset:0;background:#000;z-index:20}
 .cam.show{display:block}
 .cam video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -70,14 +86,16 @@ button{font-size:22px;font-weight:bold;padding:14px 18px;border-radius:10px;bord
 <span id="counts"></span>
 <span class="c" id="clock"></span></div>
 <div id="steps"></div>
-<div id="lockbar"><div class="lab" id="locklab">BUFF DONE</div><div class="hint">SCAN THE UNIT BARCODE</div></div>
-<div id="main" class="idle"><div id="big">SCAN A<br>BUILD SHEET</div><div id="code"></div><div id="sub">Lock this device to a station in SETUP, then scan</div><div id="hist"></div></div>
-<div id="bar"><div id="st">Starting...</div><button id="cambtn" type="button">CAMERA</button><button id="undo" type="button">UNDO LAST</button><button id="gear" type="button">SETUP</button></div>
-<input id="scan" type="text" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
-<div id="start"><div class="b" id="startb">TAP HERE TO START</div><p id="startp">This device can be locked to one station in SETUP. Then just scan.</p></div>
+<div id="lockbar"><div class="lab" id="locklab">BUFF DONE</div><div class="hint">PULL THE TRIGGER</div></div>
+<div id="main" class="idle"><div id="big">PULL THE<br>TRIGGER</div><div id="code"></div><div id="sub">Scan the unit barcode on the sheet</div><div id="today"></div><div id="hist"></div></div>
+<div id="bar"><div id="st">Starting...</div><button id="cambtn" type="button">CAMERA</button><button id="undo" type="button" disabled>UNDO LAST</button><button id="gear" type="button">SETUP</button></div>
+<input id="scan" type="text" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" inputmode="none">
+<div id="ahs">Add this page to the Home Screen: Share (box with arrow) → Add to Home Screen. Then always open it from there.</div>
+<div id="start"><div class="b" id="startb">TAP ONCE FOR SOUND</div><p id="startp">Then just pull the trigger on the sheet barcode. No typing.</p></div>
 <div id="setup">
  <h2>Scan station setup (Tyler / Billy)</h2>
  <div class="msg">Saved on this device only. The key is never put on the website. Worker names are optional and are never shown on the shop TVs.</div>
+ <button id="s_snd" type="button">ENABLE SOUND</button>
  <label>This device is locked to</label>
  <select id="f_lock"></select>
  <label>Device name (for the log, not the TV)</label><input id="f_dev" value="Scan-iPad">
@@ -86,8 +104,11 @@ button{font-size:22px;font-weight:bold;padding:14px 18px;border-radius:10px;bord
  <label class="chk"><input id="f_qc" type="checkbox"> Show a QC / SHIP button (only if the Redo packing-slip scan is not being used)</label>
  <button id="s_save" type="button">SAVE</button><button id="s_test" type="button">TEST CONNECTION</button><button id="s_csv" type="button">EMAIL/SAVE A COPY (CSV)</button><button id="s_close" type="button">CLOSE</button>
  <div class="msg" id="s_msg"></div>
- <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan4-20261113. Default stations: PRESS / TRIM, BUFF DONE, ASSEMBLY DONE. QC / SHIP comes from the Redo packing-slip print scan, not this page, unless the fallback box is ticked.</div>
+ <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan5-20261113. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen and Enable Sound, the crew just pulls the trigger.</div>
 </div>
+<div id="pick"><h2 id="pickh">WHICH UNIT?</h2><div class="pmsg" id="pickm"></div><div class="row" id="pickbtns"></div>
+<button type="button" class="all" id="pickall">ALL UNITS</button>
+<button type="button" class="cancel" id="pickx">CANCEL</button></div>
 <div class="cam" id="cam"><video id="camv" playsinline muted autoplay></video><div class="aim"></div>
 <div class="chint">Hold the sheet barcode in the box</div><div class="cmsg" id="cmsg">Starting camera…</div>
 <button class="ccancel" type="button" id="camcancel">CANCEL</button></div>
@@ -95,11 +116,11 @@ button{font-size:22px;font-weight:bold;padding:14px 18px;border-radius:10px;bord
 <script>
 (function(){
 'use strict';
-var VER='scan4-20261113';
+var VER='scan5-20261113';
 var DEF={api:'https://api.github.com',repo:'TXCHOLSTERS/txc-qc-scans',branch:'main',dev:'Scan-iPad',tok:'',lockStation:'',showQc:false};
 var HEADER='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app';
 var RE_UNIT=/^(TXC\d{3,7})-(\d{1,3})$/, RE_ORDER=/^(TXC\d{3,7})$/;
-var KEEP_DAYS=45, LOAD_DAYS=14;
+var KEEP_DAYS=45, LOAD_DAYS=14, SILENT_MS=2500, UNDO_MS=60000, BURST_IDLE=140;
 var STATIONS=[
  {id:'PRESS',label:'PRESS',done_label:'PRESSED',short:'PRESS',enabled:false,scan_page:false,source:'scan',maps_from:[]},
  {id:'TRIM',label:'TRIM',done_label:'TRIMMED',short:'TRIM',enabled:false,scan_page:false,source:'scan',maps_from:[]},
@@ -108,7 +129,7 @@ var STATIONS=[
  {id:'ASSEMBLY',label:'ASSEMBLY DONE',done_label:'ASSEMBLY DONE',short:'ASSEMBLY',enabled:true,scan_page:true,source:'scan',maps_from:['ASSEMBLY DONE']},
  {id:'QC_SHIP',label:'QC / SHIP',done_label:'QC / SHIP',short:'QC/SHIP',enabled:true,scan_page:false,source:'redo_print_scan',fallback_scan_page:true,maps_from:['QC','QC PASS','SHIP','QC/SHIP','QC / SHIP']}
 ];
-var ALIAS={};
+var ALIAS={}, UNITS={};
 function rebuildAlias(){ALIAS={};for(var i=0;i<STATIONS.length;i++){var s=STATIONS[i];ALIAS[s.id]=s.id;ALIAS[String(s.label||'').toUpperCase()]=s.id;ALIAS[String(s.done_label||'').toUpperCase()]=s.id;ALIAS[String(s.short||'').toUpperCase()]=s.id;
  var mf=s.maps_from||[];for(var j=0;j<mf.length;j++)ALIAS[String(mf[j]).toUpperCase()]=s.id;}}
 rebuildAlias();
@@ -126,9 +147,24 @@ var cfg=ls('cfg',{});for(var k in DEF){if(cfg[k]===undefined)cfg[k]=DEF[k];}
 if(window.TXCQC_TEST_CFG){for(var k2 in window.TXCQC_TEST_CFG)cfg[k2]=window.TXCQC_TEST_CFG[k2];}
 if(cfg.showQc===undefined)cfg.showQc=false;
 if(cfg.lockStation===undefined)cfg.lockStation='';
-function applyStationsJson(j){if(!j||!j.stations||!j.stations.length)return;STATIONS=j.stations;rebuildAlias();buildStepButtons();fillLockSelect();applyLock();drawCount();drawSteps();}
+if(cfg.units)UNITS=cfg.units;
+function stationFromUrl(){
+ var raw=((location.search||'')+'&'+(location.hash||'').replace(/^#/, 'station=')).toLowerCase();
+ var m=/[?&#]station=([^&]+)/.exec(raw); if(!m)return '';
+ var v=decodeURIComponent(m[1]).replace(/^\s+|\s+$/g,'').replace(/[_\s]+/g,'-');
+ var map={'press-trim':'PRESS_TRIM','press/trim':'PRESS_TRIM','presstrim':'PRESS_TRIM','press':'PRESS_TRIM','start':'PRESS_TRIM','trim':'PRESS_TRIM',
+  'buff':'BUFF','buff-done':'BUFF','assembly':'ASSEMBLY','assembly-done':'ASSEMBLY','qc':'QC_SHIP','qc-ship':'QC_SHIP','ship':'QC_SHIP'};
+ return map[v]||normStep(v);
+}
+(function applyUrlStation(){var sid=stationFromUrl(); if(!sid)return;
+ cfg.lockStation=sid; if(sid==='QC_SHIP')cfg.showQc=true;
+ if(!cfg.dev||cfg.dev==='Scan-iPad'||cfg.dev==='QC-iPad'){var s=stationById(sid);cfg.dev=(s?s.short.replace(/\W+/g,''):sid)+'-iPad';}
+})();
+function applyStationsJson(j){if(!j||!j.stations||!j.stations.length)return;STATIONS=j.stations;rebuildAlias();buildStepButtons();fillLockSelect();applyLock();drawCount();}
 function loadStationsCfg(){try{var x=new XMLHttpRequest();x.open('GET','stations.json?t='+new Date().getTime(),true);x.timeout=4000;
  x.onreadystatechange=function(){if(x.readyState!==4)return;if(x.status!==200)return;try{applyStationsJson(JSON.parse(x.responseText));}catch(e){}};x.send(null);}catch(e){}}
+function loadUnits(){if(cfg.units)return;try{var x=new XMLHttpRequest();x.open('GET','units.json?t='+new Date().getTime(),true);x.timeout=6000;
+ x.onreadystatechange=function(){if(x.readyState!==4)return;if(x.status!==200)return;try{var j=JSON.parse(x.responseText);if(j&&typeof j==='object')UNITS=j;}catch(e){}};x.send(null);}catch(e){}}
 function pageStations(){var out=[],i,s;for(i=0;i<STATIONS.length;i++){s=STATIONS[i];if(!s.enabled)continue;
  if(s.scan_page)out.push(s);else if(s.fallback_scan_page&&cfg.showQc)out.push(s);}return out;}
 function defaultStep(){var ps=pageStations();return ps.length?ps[0].id:'PRESS_TRIM';}
@@ -139,7 +175,7 @@ var queue=ls('queue',[]);
 var rows=ls('rows',[]);
 var lastOk=ls('lastok',null);
 var step=normStep(ls('step',defaultStep()));
-var busy=false, lastSync=ls('lastsync',0), netErr='', remoteLoaded={};
+var busy=false, lastSync=ls('lastsync',0), netErr='', remoteLoaded={}, lastHandled={code:'',t:0}, pickOrder=null, resetT=null;
 function pad(n){return (n<10?'0':'')+n;}
 function dLocal(t){var d=new Date(t);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());}
 function tLocal(t){var d=new Date(t);return dLocal(t)+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());}
@@ -147,23 +183,31 @@ function hm(t){var d=new Date(t),h=d.getHours(),ap=h<12?'AM':'PM';h=h%12||12;ret
 function dayName(t){return ['SUN','MON','TUE','WED','THU','FRI','SAT'][new Date(t).getDay()];}
 function clean(s){return String(s||'').replace(/[^A-Za-z0-9 _.\-]/g,'').substring(0,40);}
 function sk(st,code){return st+'|'+code;}
-function lastInfo(){if(!lastOk)return null;if(typeof lastOk==='string')return {code:lastOk,step:'QC_SHIP'};return lastOk;}
+function lastInfo(){if(!lastOk)return null;if(typeof lastOk==='string')return {code:lastOk,step:'QC_SHIP',t:0};return lastOk;}
 function isLocked(){return !!(cfg.lockStation&&stationById(cfg.lockStation));}
 function lockedTo(){return isLocked()?normStep(cfg.lockStation):'';}
-function idlePrompt(){if(isLocked())return 'Scan the unit barcode';return 'Scan the unit barcode at '+labelOf(step);}
-var AC=null;
-function beep(f,ms,n){try{if(!AC)return;var t=AC.currentTime;for(var i=0;i<(n||1);i++){var o=AC.createOscillator(),g=AC.createGain();o.frequency.value=f;o.connect(g);g.connect(AC.destination);g.gain.value=0.25;var s=t+i*(ms/1000+0.08);o.start(s);o.stop(s+ms/1000);}}catch(e){}}
-var resetT=null;
-function show(cls,big,code,sub){var m=$('main');m.className=cls;$('big').innerHTML=big;$('code').innerHTML=code||'';$('sub').innerHTML=sub||'';
- clearTimeout(resetT);resetT=setTimeout(function(){show('idle','SCAN A<br>BUILD SHEET','',idlePrompt());},cls==='ok'?4000:8000);drawHist();}
-function status(msg,c){var e=$('st');e.innerHTML=msg;e.className=c||'';}
+function idlePrompt(){return isLocked()?'Pull the trigger on the sheet barcode':'Scan the unit barcode at '+labelOf(step);}
+function unitsOf(order){var u=UNITS[order]||UNITS[String(order||'').toUpperCase()]; if(!u||!u.length)return []; var out=[],i; for(i=0;i<u.length;i++)out.push(+u[i]); return out;}
+function overlayUp(){return $('setup').style.display==='block'||$('cam').className.indexOf('show')>=0||$('pick').style.display==='block';}
+var AC=null, audioOn=!!ls('audioOn',false);
+function unlockAudio(){try{var C=window.AudioContext||window.webkitAudioContext;if(C&&!AC)AC=new C();if(AC&&AC.state==='suspended'&&AC.resume)AC.resume();audioOn=true;ss('audioOn',true);return true;}catch(e){return false;}}
+function beep(f,ms,n,vol){try{if(!AC)return;var t=AC.currentTime,v=vol==null?0.55:vol;for(var i=0;i<(n||1);i++){var o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.value=f;o.connect(g);g.connect(AC.destination);g.gain.setValueAtTime(v,t+i*(ms/1000+0.07));g.gain.exponentialRampToValueAtTime(0.001,t+i*(ms/1000+0.07)+ms/1000);o.start(t+i*(ms/1000+0.07));o.stop(t+i*(ms/1000+0.07)+ms/1000);}}catch(e){}}
+function beepOk(){beep(880,90,1,0.6);setTimeout(function(){beep(1320,140,1,0.65);},100);}
+function beepDup(){beep(620,120,2,0.5);}
+function beepBad(){beep(160,420,1,0.7);}
+function buzz(pat){try{if(navigator.vibrate)navigator.vibrate(pat);}catch(e){}}
 function todayCount(st){var td=dLocal(new Date().getTime()),n=0,k;
  for(k in seen){if(k.indexOf(st+'|')===0&&dLocal(seen[k])===td)n++;}
  for(var i=0;i<rows.length;i++){if(rows[i].result==='OK_ORDER_ONLY'&&normStep(rows[i].step||'')===st&&rows[i].date_local===td)n++;}return n;}
+function todayLine(){return 'TODAY AT '+(isLocked()?labelOf(step):labelOf(step))+' · '+todayCount(step);}
+function show(cls,big,code,sub){var m=$('main');m.className=cls;$('big').innerHTML=big;$('code').innerHTML=code||'';$('sub').innerHTML=sub||'';$('today').innerHTML=todayLine();
+ document.body.className=(document.body.className.replace(/\s*flashing/g,'')+(cls==='idle'?'':' flashing'));
+ clearTimeout(resetT);resetT=setTimeout(function(){show('idle',isLocked()?'PULL THE<br>TRIGGER':'SCAN A<br>BUILD SHEET','',idlePrompt());},cls==='ok'||cls==='test'?3500:5000);drawHist();drawUndo();}
+function status(msg,c){var e=$('st');e.innerHTML=msg;e.className=c||'';}
 function drawCount(){
  var host=$('counts');if(!host)return;var ps=pageStations(),html='',i;
  for(i=0;i<ps.length;i++){var s=ps[i],on=step===s.id?' on':'';html+='<span class="n'+on+'" id="c_'+s.id+'">'+s.short+' '+todayCount(s.id)+'</span>';}
- host.innerHTML=html;}
+ host.innerHTML=html; if($('today')&&$('main').className==='idle')$('today').innerHTML=todayLine();}
 function buildStepButtons(){
  var host=$('steps');if(!host)return;var ps=pageStations(),html='',i;
  for(i=0;i<ps.length;i++){html+='<button type="button" id="b_'+ps[i].id+'">'+ps[i].label+'</button>';}
@@ -173,61 +217,123 @@ function buildStepButtons(){
 function drawSteps(){var ps=pageStations(),i;for(i=0;i<ps.length;i++){var b=$('b_'+ps[i].id);if(b)b.className=ps[i].id===step?'on':'';}}
 function applyLock(){
  var lock=lockedTo();
- document.body.className=lock?'locked':'';
+ document.body.className=(lock?'locked':'')+(/\bflashing\b/.test(document.body.className)?' flashing':'');
  if(lock){step=lock;ss('step',step);$('locklab').innerHTML=labelOf(lock);}
  var p=$('startp');
- if(p)p.innerHTML=lock?(labelOf(lock)+' – scan the unit barcode. A USB or Bluetooth scanner works, or tap CAMERA.'):'Default stations: PRESS / TRIM, BUFF DONE, ASSEMBLY DONE. Lock this device to one station in SETUP. A USB or Bluetooth scanner works, or tap CAMERA.';
- if($('main')&&($('main').className==='idle'||!$('main').className))show('idle','SCAN A<br>BUILD SHEET','',idlePrompt());
+ if(p)p.innerHTML=lock?(labelOf(lock)+' — tap once for sound, then just pull the trigger. No typing.'):'Default stations: PRESS / TRIM, BUFF DONE, ASSEMBLY DONE. Or open /scan/?station=buff. A trigger scanner is best.';
+ if($('startb'))$('startb').innerHTML='TAP ONCE FOR SOUND';
+ if($('main')&&($('main').className==='idle'||!$('main').className))show('idle',lock?'PULL THE<br>TRIGGER':'SCAN A<br>BUILD SHEET','',idlePrompt());
+ maybeHomeHint();
  drawSteps();drawCount();}
+function maybeHomeHint(){
+ var stand=('standalone' in navigator&&navigator.standalone)||(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches);
+ if(isLocked()&&!stand)$('ahs').className='show'; else $('ahs').className='';}
 function setStep(s){s=normStep(s);var ps=pageStations(),ok=false,i;for(i=0;i<ps.length;i++){if(ps[i].id===s)ok=true;}
- if(!ok){// allow tests / setup to jump to a known station, including QC_SHIP when fallback is on
-  if(!stationById(s))return;
-  if(s==='QC_SHIP'&&!cfg.showQc)return;
- }
+ if(!ok){if(!stationById(s))return; if(s==='QC_SHIP'&&!cfg.showQc)return;}
  if(isLocked()&&s!==lockedTo())return;
  step=s;ss('step',step);drawSteps();drawCount();
- show('idle','SCAN A<br>BUILD SHEET','',idlePrompt());focusInp();}
+ show('idle',isLocked()?'PULL THE<br>TRIGGER':'SCAN A<br>BUILD SHEET','',idlePrompt());focusInp();}
 function drawHist(){var h=[],n=0;for(var i=rows.length-1;i>=0&&n<4;i--){var r=rows[i];if(r.result==='TEST')continue;n++;h.push(hm(r.t)+' &nbsp; '+labelOf(normStep(r.step||''))+' &nbsp; '+r.code+' &nbsp; '+r.result.replace(/_/g,' '));}
  $('hist').innerHTML=h.length?'Last scans:<br>'+h.join('<br>'):'';drawCount();}
+function undoArmed(){var info=lastInfo();return !!(info&&info.t&&(new Date().getTime()-info.t)<UNDO_MS);}
+function drawUndo(){var b=$('undo'); if(!b)return; if(undoArmed()){b.disabled=false;b.className='on';b.innerHTML='UNDO LAST';}else{b.disabled=true;b.className='';b.innerHTML='UNDO LAST';}}
 function drawStatus(){
  if(!cfg.tok){status('NOT SET UP YET - scans are saved on this device only. Tyler: tap SETUP.','ec');return;}
  if(queue.length){status(queue.length+' scan'+(queue.length>1?'s':'')+' waiting to upload'+(netErr?' ('+netErr+')':'')+' - they are safe on this device.','wc');return;}
  status('All scans saved'+(lastSync?' &nbsp;(last upload '+hm(lastSync)+')':''),'okc');}
-function tick(){$('clock').innerHTML=hm(new Date().getTime());}tick();setInterval(tick,1000);
+function tick(){$('clock').innerHTML=hm(new Date().getTime());drawUndo();}tick();setInterval(tick,500);
 function addRow(t,code,order,unit,result){
  var r={id:clean(cfg.dev)+'-'+t+'-'+Math.floor(Math.random()*1e6),t:t,ts_utc:new Date(t).toISOString(),ts_local:tLocal(t),date_local:dLocal(t),code:code,order:order,unit:unit,step:step,device:clean(cfg.dev),result:result,app:VER};
  rows.push(r);var cut=new Date().getTime()-KEEP_DAYS*864e5;while(rows.length&&rows[0].t<cut)rows.shift();
  if(result!=='TEST'){queue.push(r);ss('queue',queue);}ss('rows',rows);return r;}
-function handle(raw){
- var s=String(raw||'').replace(/[\u2010-\u2015\u2212]/g,'-').replace(/\s+/g,'').toUpperCase();
+function extract(raw){
+ var s=String(raw||"").replace(/[\u2010-\u2015\u2212]/g,"-").replace(/\s+/g,"").toUpperCase();
+ s=s.replace(/^\][A-Z0-9]{2}/,"").replace(/^\*+|\*+$/g,"");
+ if(/TXC-TEST/.test(s))return "TXC-TEST";
+ var su=s.match(/TXCSETUP:[A-Z0-9_\-]+/); if(su)return su[0];
+ var all=s.match(/TXC\d{3,7}(?:-\d{1,3})?/g); return (all&&all.length)?all[all.length-1]:s;
+}
+function hideStart(){if($('start').style.display!=='none')$('start').style.display='none';}
+function logUnit(code,order,unit,t){
+ var key=sk(step,code);
+ if(seen[key]){addRow(t,code,order,unit,'DUPLICATE');show('dup','ALREADY<br>COUNTED',code,labelOf(step)+' · '+dayName(seen[key])+' '+hm(seen[key]));beepDup();buzz([40,80,40]);return 'dup';}
+ seen[key]=t;ss('seen',seen);addRow(t,code,order,unit,'OK');lastOk={code:code,step:step,t:t};ss('lastok',lastOk);
+ show('ok','&#10003; '+code,doneOf(step),'');beepOk();buzz(80);return 'ok';}
+function showPick(order, units){
+ pickOrder=order; $('pickh').innerHTML=order; $('pickm').innerHTML=units.length?(units.length+' units on this order — tap one, or all'):'Which unit?';
+ var h='',i,list=units.length?units:[1,2,3];
+ for(i=0;i<list.length;i++)h+='<button type="button" data-u="'+list[i]+'">-'+list[i]+'</button>';
+ $('pickbtns').innerHTML=h;
+ $('pickall').style.display='inline-block';
+ $('pick').style.display='block';}
+function closePick(){pickOrder=null;$('pick').style.display='none';focusInp();}
+function handle(raw, opts){
+ opts=opts||{};
+ var s=extract(raw);
  if(!s)return;
+ hideStart();
  if(s.indexOf('TXCSETUP:')===0){$('f_tok').value=s.substring(9);openSetup();return;}
- var t=new Date().getTime(),m,key;
- if(s==='TXC-TEST'){addRow(t,s,'','','TEST');show('test','SCANNER<br>WORKS','TXC-TEST','Test only - nothing was saved.');beep(1200,120,2);return;}
+ var t=new Date().getTime(),m;
+ if(s===lastHandled.code&&lastHandled.step===step&&(t-lastHandled.t)<SILENT_MS){return;}
+ if(s==='TXC-TEST'){ lastHandled={code:s,step:step,t:t};addRow(t,s,'','','TEST');show('test','SCANNER<br>WORKS','TXC-TEST','Test only — nothing was saved.');beepOk();buzz(40);return;}
  if((m=RE_UNIT.exec(s))){
-  key=sk(step,s);
-  if(seen[key]){addRow(t,s,m[1],m[2],'DUPLICATE');show('dup','ALREADY<br>SCANNED',s,labelOf(step)+' first scanned '+dayName(seen[key])+' '+hm(seen[key])+'. Not counted again.');beep(220,350,2);}
-  else{seen[key]=t;ss('seen',seen);addRow(t,s,m[1],m[2],'OK');lastOk={code:s,step:step};ss('lastok',lastOk);show('ok',doneOf(step)+' &#10003;',m[1]+' &nbsp;#'+m[2],'Logged '+hm(t)+' · '+labelOf(step));beep(1400,130,1);}
- }else if((m=RE_ORDER.exec(s))){
-  addRow(t,s,m[1],'','OK_ORDER_ONLY');lastOk={code:'~'+s,step:step};ss('lastok',lastOk);show('warn','DONE<br>(OLD SHEET)',s,'Counted at '+labelOf(step)+'. This old sheet has no unit number - it cannot catch double scans.');beep(1000,130,2);
- }else{addRow(t,clean(s),'','','NOT_A_BUILD_SHEET');show('bad','NOT A TXC<br>BUILD SHEET',clean(s).substring(0,24),'Scan the barcode at the top right of the build sheet. Shipping slips go to shipping.');beep(220,350,3);}
+  lastHandled={code:s,step:step,t:t};logUnit(s,m[1],m[2],t);sync();return;
+ }
+ if((m=RE_ORDER.exec(s))){
+  if(opts.fromPick){
+   lastHandled={code:s,step:step,t:t};addRow(t,s,m[1],'','OK_ORDER_ONLY');lastOk={code:'~'+s,step:step,t:t};ss('lastok',lastOk);
+   show('ok','&#10003; '+s,doneOf(step),'All units');beepOk();buzz(80);sync();return;
+  }
+  var us=unitsOf(m[1]);
+  if(us.length===1){handle(m[1]+'-'+us[0]);return;}
+  if(us.length>1){showPick(m[1],us);return;}
+  showPick(m[1],[]);return;
+ }
+ lastHandled={code:s,step:step,t:t};addRow(t,clean(s),'','','NOT_A_BUILD_SHEET');show('bad','GRAB ISAAC',clean(s).substring(0,24),'Not a TXC build-sheet barcode');beepBad();buzz([200,80,200]);
  sync();}
 function undo(){
  var info=lastInfo();
- if(!info){show('warn','NOTHING<br>TO UNDO','','');return;}
+ if(!info||!undoArmed()){show('warn','NOTHING<br>TO UNDO','','Undo is only good for 60 seconds.');return;}
  var t=new Date().getTime(),raw=info.code,code=raw.charAt(0)==='~'?raw.substring(1):raw,m=RE_UNIT.exec(code)||RE_ORDER.exec(code);
  var prev=step;step=normStep(info.step||step);
- if(isLocked()&&step!==lockedTo()){step=prev;show('warn','LOCKED<br>STATION','','This device is locked to '+labelOf(lockedTo())+'. Undo that scan on the station that logged it.');return;}
+ if(isLocked()&&step!==lockedTo()){step=prev;show('warn','LOCKED<br>STATION','','This device is locked to '+labelOf(lockedTo())+'.');return;}
  if(raw.charAt(0)!=='~')delete seen[sk(step,code)];ss('seen',seen);
  addRow(t,code,m?m[1]:'',m&&m[2]?m[2]:'','UNDO');step=prev;
- lastOk=null;ss('lastok',null);show('warn','UNDONE',code,'That '+labelOf(info.step||'')+' scan no longer counts. Scan again if it was a mistake.');beep(600,200,1);sync();}
-var buf='',bufT=0,inp=$('scan');
-inp.addEventListener('keydown',function(e){var k=e.keyCode||e.which;if(k===13||k===9){e.preventDefault();var v=inp.value;inp.value='';handle(v);}},false);
-document.addEventListener('keypress',function(e){if(e.target===inp||e.target.tagName==='INPUT'||e.target.tagName==='SELECT')return;var k=e.which||e.keyCode;var now=new Date().getTime();if(now-bufT>800)buf='';bufT=now;
- if(k===13){var v=buf;buf='';handle(v);e.preventDefault();return;}if(k>=32&&k<127){buf+=String.fromCharCode(k);}},false);
-document.addEventListener('keydown',function(e){if(e.target!==inp&&e.target.tagName!=='INPUT'&&e.target.tagName!=='SELECT'&&(e.keyCode===9)){e.preventDefault();var v=buf;buf='';handle(v);}},false);
-function focusInp(){try{if($('setup').style.display==='block')return;inp.focus();}catch(e){}}
-setInterval(function(){if($('setup').style.display!=='block'&&$('cam').className.indexOf('show')<0&&document.activeElement!==inp)focusInp();},1500);
+ lastOk=null;ss('lastok',null);lastHandled={code:'',step:'',t:0};show('warn','UNDONE',code,'That '+labelOf(info.step||'')+' scan no longer counts.');beep(600,200,1,0.4);sync();}
+$('pickbtns').addEventListener('click',function(e){var b=e.target;if(!b||!b.getAttribute)return;var u=b.getAttribute('data-u');if(!u||!pickOrder)return;var o=pickOrder;closePick();handle(o+'-'+u,{fromPick:true});},false);
+$('pickall').addEventListener('click',function(){if(!pickOrder)return;var o=pickOrder,us=unitsOf(o),t=new Date().getTime(),n=0,i;closePick();
+ if(!us.length){handle(o,{fromPick:true});return;}
+ lastHandled={code:o,t:t};
+ for(i=0;i<us.length;i++){var code=o+'-'+us[i],key=sk(step,code); if(seen[key])continue; seen[key]=t;ss('seen',seen);addRow(t,code,o,String(us[i]),'OK');n++;}
+ if(n){lastOk={code:o+'-'+us[0],step:step,t:t};ss('lastok',lastOk);show('ok','&#10003; '+n+' UNITS',doneOf(step),o);beepOk();buzz(80);sync();}
+ else{show('dup','ALREADY<br>COUNTED',o,labelOf(step));beepDup();}},false);
+$('pickx').addEventListener('click',function(){closePick();},false);
+var buf='',bufT=0,burstT=null,inp=$('scan');
+function flushBurst(force){clearTimeout(burstT);burstT=null;var v=buf;buf='';try{inp.value='';}catch(e){}if(!v)return;
+ if(force||RE_UNIT.test(extract(v))||RE_ORDER.test(extract(v))||extract(v)==='TXC-TEST'||extract(v).indexOf('TXCSETUP:')===0)handle(v);}
+function onScanKey(e){
+ if(overlayUp()&&$('pick').style.display!=='block')return;
+ if($('pick').style.display==='block')return;
+ if(e.target&&(e.target.tagName==='INPUT'||e.target.tagName==='SELECT')&&e.target!==inp)return;
+ var k=e.key, kc=e.keyCode||e.which, now=new Date().getTime();
+ if(k==='Enter'||kc===13||kc===9){e.preventDefault();if(inp.value&&inp.value.length>=buf.length)buf=inp.value;inp.value='';flushBurst(true);return;}
+ var ch=k&&k.length===1?k:(kc>=32&&kc<127?String.fromCharCode(kc):'');
+ if(!ch)return;
+ if(now-bufT>800)buf='';
+ buf+=ch;bufT=now;unlockAudio();hideStart();
+ clearTimeout(burstT);burstT=setTimeout(function(){flushBurst(false);},BURST_IDLE);
+ if(e.target!==inp)e.preventDefault();}
+inp.addEventListener('keydown',onScanKey,false);
+inp.addEventListener('input',function(){var v=inp.value;if(!v)return;buf=v;bufT=new Date().getTime();clearTimeout(burstT);burstT=setTimeout(function(){flushBurst(false);},BURST_IDLE);},false);
+
+document.addEventListener('keydown',function(e){if(e.target===inp)return;onScanKey(e);},true);
+function focusInp(){try{if(overlayUp())return;inp.focus({preventScroll:true});}catch(e){try{inp.focus();}catch(e2){}}}
+function keepAlive(){if(!overlayUp()&&document.activeElement!==inp)focusInp();}
+setInterval(keepAlive,400);
+document.addEventListener('visibilitychange',function(){if(!document.hidden){unlockAudio();focusInp();}},false);
+window.addEventListener('pageshow',function(){focusInp();},false);
+window.addEventListener('focus',function(){focusInp();},false);
+document.addEventListener('touchend',function(e){if(!overlayUp())focusInp();},false);
 function api(method,path,body,cb){
  var x=new XMLHttpRequest();x.open(method,cfg.api+path+(method==='GET'?(path.indexOf('?')<0?'?':'&')+'t='+new Date().getTime():''),true);
  x.setRequestHeader('Accept','application/vnd.github+json');x.setRequestHeader('Authorization','Bearer '+cfg.tok);
@@ -269,17 +375,16 @@ function loadRemote(){
 setInterval(loadRemote,10*60000);
 function fillLockSelect(){
  var sel=$('f_lock');if(!sel)return;var cur=cfg.lockStation||'';
- var opts=[{id:'',label:'All stations on this page (picker)'}].concat(pageStations());
- // always offer every enabled scan_page station plus QC fallback option in the list even if checkbox is off
- var seenIds={'':1},i;sel.innerHTML='';
+ var seenIds={},i;sel.innerHTML='';
  function add(id,lab){if(seenIds[id])return;seenIds[id]=1;var o=document.createElement('option');o.value=id;o.textContent=lab;if(id===cur)o.selected=true;sel.appendChild(o);}
  add('','All stations on this page (picker)');
  for(i=0;i<STATIONS.length;i++){var s=STATIONS[i];if(!s.enabled)continue;
-  if(s.scan_page||(s.fallback_scan_page))add(s.id,s.label+(s.scan_page?'':' (Redo is the usual QC / SHIP scan)'))}}
+  if(s.scan_page||s.fallback_scan_page)add(s.id,s.label+(s.scan_page?'':' (Redo is the usual QC / SHIP scan)'));}}
 function openSetup(){$('setup').style.display='block';fillLockSelect();$('f_dev').value=cfg.dev;$('f_repo').value=cfg.repo;$('f_qc').checked=!!cfg.showQc;if(cfg.tok&&!$('f_tok').value)$('f_tok').placeholder='(saved - leave blank to keep)';$('s_q').innerHTML=queue.length;}
 function closeSetup(){$('setup').style.display='none';focusInp();}
 $('gear').addEventListener('click',openSetup,false);
 $('s_close').addEventListener('click',closeSetup,false);
+$('s_snd').addEventListener('click',function(){unlockAudio();beepOk();$('s_msg').innerHTML='<span class="okc">Sound is on. The crew can just pull the trigger.</span>';},false);
 $('s_save').addEventListener('click',function(){cfg.dev=clean($('f_dev').value)||'Scan-iPad';cfg.repo=$('f_repo').value.replace(/\s/g,'')||DEF.repo;var tk=$('f_tok').value.replace(/\s/g,'');if(tk)cfg.tok=tk;$('f_tok').value='';
  cfg.showQc=!!$('f_qc').checked;cfg.lockStation=$('f_lock').value||'';
  if(cfg.lockStation){var s=stationById(cfg.lockStation);if(s&&(cfg.dev==='Scan-iPad'||cfg.dev==='QC-iPad'))cfg.dev=s.short.replace(/\W+/g,'')+'-iPad';$('f_dev').value=cfg.dev;}
@@ -292,15 +397,14 @@ $('s_test').addEventListener('click',function(){$('s_msg').innerHTML='Testing...
 $('s_csv').addEventListener('click',function(){var t=HEADER+'\n';for(var i=0;i<rows.length;i++)t+=csvLine(rows[i])+'\n';
  var a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(t);a.download='txc-scans-'+dLocal(new Date().getTime())+'.csv';a.target='_blank';document.body.appendChild(a);a.click();},false);
 $('undo').addEventListener('click',undo,false);
-$('startb').addEventListener('click',function(){try{var C=window.AudioContext||window.webkitAudioContext;if(C&&!AC)AC=new C();beep(1000,60,1);}catch(e){}
- $('start').style.display='none';focusInp();},false);
-document.addEventListener('click',function(e){if($('setup').style.display!=='block'&&$('cam').className.indexOf('show')<0)focusInp();},false);
+$('startb').addEventListener('click',function(){unlockAudio();beep(1000,80,1,0.4);hideStart();focusInp();},false);
+document.addEventListener('click',function(e){if(!overlayUp())focusInp();},false);
 if(location.hash==='#setup')openSetup();
 if('serviceWorker' in navigator&&location.protocol==='https:'){try{navigator.serviceWorker.register('sw.js');}catch(e){}}
-window.TXCQC={handle:handle,sync:sync,setStep:setStep,state:function(){return {seen:seen,queue:queue,rows:rows,step:step,cfg:{repo:cfg.repo,dev:cfg.dev,hasTok:!!cfg.tok,lockStation:cfg.lockStation||'',showQc:!!cfg.showQc},locked:isLocked()};},loadRemote:loadRemote,normStep:normStep};
+window.TXCQC={handle:handle,sync:sync,setStep:setStep,extract:extract,state:function(){return {seen:seen,queue:queue,rows:rows,step:step,cfg:{repo:cfg.repo,dev:cfg.dev,hasTok:!!cfg.tok,lockStation:cfg.lockStation||'',showQc:!!cfg.showQc},locked:isLocked(),lastOk:lastOk,undoArmed:undoArmed(),pick:pickOrder};},loadRemote:loadRemote,normStep:normStep,closePick:closePick};
 if(cfg.lockStation){step=lockedTo()||step;ss('step',step);}
 else if(pageStations().filter(function(s){return s.id===step;}).length===0){step=defaultStep();ss('step',step);}
-buildStepButtons();applyLock();drawHist();drawStatus();loadStationsCfg();loadRemote();sync();
+buildStepButtons();applyLock();drawHist();drawStatus();drawUndo();loadStationsCfg();loadUnits();loadRemote();sync();
 
 var C128=['212222','222122','222221','121223','121322','131222','122213','122312','132212','221213','221312','231212','112232','122132','122231','113222','123122','123221','223211','221132','221231','213212','223112','312131','311222','321122','321221','312212','322112','322211','212123','212321','232121','111323','131123','131321','112313','132113','132311','211313','231113','231311','112133','112331','132131','113123','113321','133121','313121','211331','231131','213113','213311','213131','311123','311321','331121','312113','312311','332111','314111','221411','431111','111224','111422','121124','121421','141122','141221','112214','112412','122114','122411','142112','142211','241211','221114','413111','241112','134111','111242','121142','121241','114212','124112','124211','411212','421112','421211','212141','214121','412121','111143','111341','131141','114113','114311','411113','411311','113141','114131','311141','411131','211412','211214','211232'];
 var C128M={};for(var ci=0;ci<C128.length;ci++)C128M[C128[ci]]=ci;
