@@ -525,7 +525,31 @@
     }
    ]
   },
-  "wip": null,
+  "qc": {
+   "today": 0,
+   "week": 4,
+   "last_scan": "2026-11-12T10:13:57.863000-06:00",
+   "used": false,
+   "step_today": {},
+   "step_week": {
+    "QC_SHIP": 4
+   }
+  },
+  "wip": {
+   "ready": false,
+   "waiting_press": 0,
+   "buff_queue": 0,
+   "wait_assembly": 0,
+   "wait_qc": 0,
+   "shipped_today": 0,
+   "at_qc": 0,
+   "press_today": 0,
+   "start_today": 0,
+   "buff_today": 0,
+   "assembly_today": 0,
+   "qc_today": 0,
+   "released": 222
+  },
   "best_day": [
    "OCT 27",
    177
@@ -640,5 +664,41 @@
   },
   "open_now": 0,
   "note": "count = Redo returns + claims + exchanges created in the window; reasons counted once per return; products = returned build units by station rules (add-ons like Kydex Color excluded)."
+ },
+ "qc": {
+  "ok": true,
+  "pull_ok": true,
+  "pull_error": "HTTP 404 (repo not created yet, or token has no access to it)",
+  "fetched_at": "2026-11-13T14:39:18.675626+00:00",
+  "rows": 202,
+  "files": 14,
+  "today": 0,
+  "week": 4,
+  "st_week": {
+   "Other": 2,
+   "CVRT Complete Set": 2
+  },
+  "unknown_codes": 109,
+  "out_of_scope": 0,
+  "last_scan": "2026-11-12T10:13:57.863000-06:00",
+  "step_today": {},
+  "step_week": {
+   "QC_SHIP": 4
+  },
+  "wip": {
+   "ready": false,
+   "waiting_press": 0,
+   "buff_queue": 0,
+   "wait_assembly": 0,
+   "wait_qc": 0,
+   "shipped_today": 0,
+   "at_qc": 0,
+   "press_today": 0,
+   "start_today": 0,
+   "buff_today": 0,
+   "assembly_today": 0,
+   "qc_today": 0,
+   "released": 222
+  }
  }
 }

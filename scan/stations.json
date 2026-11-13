@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "notes": "Single station list for the scan page, WIP board, and scan-log mapping. Turn a station on or off, or merge two, by editing this file — no code changes. Default live setup is Tyler's Nov 13 2026 flow.",
+  "flow": ["PRESS_TRIM", "BUFF", "ASSEMBLY", "QC_SHIP"],
+  "stations": [
+    {
+      "id": "PRESS",
+      "label": "PRESS",
+      "done_label": "PRESSED",
+      "short": "PRESS",
+      "enabled": false,
+      "scan_page": false,
+      "source": "scan",
+      "maps_from": []
+    },
+    {
+      "id": "TRIM",
+      "label": "TRIM",
+      "done_label": "TRIMMED",
+      "short": "TRIM",
+      "enabled": false,
+      "scan_page": false,
+      "source": "scan",
+      "maps_from": []
+    },
+    {
+      "id": "PRESS_TRIM",
+      "label": "PRESS / TRIM",
+      "done_label": "PRESS / TRIM",
+      "short": "PRESS/TRIM",
+      "enabled": true,
+      "scan_page": true,
+      "source": "scan",
+      "maps_from": ["START", "PRESS", "TRIM", "PRESS/TRIM", "PRESS / TRIM", "PULLED", "CUT", "BUILD START"]
+    },
+    {
+      "id": "BUFF",
+      "label": "BUFF DONE",
+      "done_label": "BUFF DONE",
+      "short": "BUFF",
+      "enabled": true,
+      "scan_page": true,
+      "source": "scan",
+      "maps_from": ["BUFF DONE", "BUFFING"]
+    },
+    {
+      "id": "ASSEMBLY",
+      "label": "ASSEMBLY DONE",
+      "done_label": "ASSEMBLY DONE",
+      "short": "ASSEMBLY",
+      "enabled": true,
+      "scan_page": true,
+      "source": "scan",
+      "maps_from": ["ASSEMBLY DONE"]
+    },
+    {
+      "id": "QC_SHIP",
+      "label": "QC / SHIP",
+      "done_label": "QC / SHIP",
+      "short": "QC/SHIP",
+      "enabled": true,
+      "scan_page": false,
+      "source": "redo_print_scan",
+      "fallback_scan_page": true,
+      "maps_from": ["QC", "QC PASS", "SHIP", "QC/SHIP", "QC / SHIP"]
+    }
+  ]
+}
