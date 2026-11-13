@@ -290,8 +290,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 13, 2026 5:26 AM CT",
-  "gen": "2026-11-13T05:27:05.232003-06:00",
+  "asof": "Nov 13, 2026 5:42 AM CT",
+  "gen": "2026-11-13T05:27:05-06:00",
   "today": "2026-11-13",
   "cfg": {
    "h": {
@@ -524,7 +524,18 @@
      "eta": "2026-11-16"
     }
    ]
-  }
+  },
+  "wip": null,
+  "best_day": [
+   "OCT 27",
+   177
+  ],
+  "best_week": [
+   "WK OCT 25",
+   297
+  ],
+  "records_window": "LAST 3 WEEKS",
+  "asof_short": "5:42 AM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -587,8 +598,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-13T05:27:04.021684-06:00",
-  "last_attempt": "2026-11-13T05:27:04.021684-06:00",
+  "fetched_at": "2026-11-13T05:54:10.123592-06:00",
+  "last_attempt": "2026-11-13T05:54:10.123592-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
