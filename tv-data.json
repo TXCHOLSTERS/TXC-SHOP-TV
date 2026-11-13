@@ -272,26 +272,27 @@
      "n": "TXC79142",
      "u": 7,
      "created": "2026-08-27",
-     "age": 77,
+     "age": 78,
      "eta": "2026-11-13"
     },
     {
      "n": "TXC80376",
      "u": 8,
      "created": "2026-10-08",
-     "age": 35,
+     "age": 36,
      "eta": "2026-11-16"
     }
    ],
    "stale_units_over_max_age": 565,
    "last_wd": "2026-11-12",
    "last_wd_shipped": 0,
+   "today_shipped": 0,
    "rule": "build line, no LEAD TIME AGREEMENT, and DEALER/WHOLESALE/dealer part no. in title/SKU or PO# in order note or DEALER/WHOLESALE tag"
   }
  },
  "tv": {
   "asof": "Nov 13, 2026 5:42 AM CT",
-  "gen": "2026-11-13T05:27:05-06:00",
+  "gen": "2026-11-13T12:36:32.757020-06:00",
   "today": "2026-11-13",
   "cfg": {
    "h": {
@@ -500,6 +501,38 @@
   "done_label": "SHIPPED",
   "overdue42": 77,
   "oldest_days": 81,
+  "oldest_orders": [
+   {
+    "n": "79044",
+    "age": 81,
+    "u": 1
+   },
+   {
+    "n": "79204",
+    "age": 75,
+    "u": 1
+   },
+   {
+    "n": "79467",
+    "age": 66,
+    "u": 1
+   },
+   {
+    "n": "79492",
+    "age": 66,
+    "u": 1
+   },
+   {
+    "n": "79689",
+    "age": 61,
+    "u": 1
+   },
+   {
+    "n": "79707",
+    "age": 60,
+    "u": 4
+   }
+  ],
   "wd_finished": 4,
   "done_finished": 0,
   "shipped_28d": 610,
@@ -510,17 +543,18 @@
    "target": 12,
    "queue_units": 15,
    "last_wd_shipped": 0,
+   "today_shipped": 0,
    "orders": [
     {
      "n": "TXC79142",
      "u": 7,
-     "age": 77,
+     "age": 78,
      "eta": "2026-11-13"
     },
     {
      "n": "TXC80376",
      "u": 8,
-     "age": 35,
+     "age": 36,
      "eta": "2026-11-16"
     }
    ]
@@ -606,7 +640,7 @@
    3,
    4
   ],
-  "ROTATE_SECONDS": 15,
+  "ROTATE_SECONDS": 20,
   "RELOAD_MINUTES": 15,
   "STALE_HOURS": 36,
   "TREND_WEEKS": 12,
