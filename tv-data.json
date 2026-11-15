@@ -296,7 +296,7 @@
  },
  "tv": {
   "asof": "Nov 13, 2026 5:42 AM CT",
-  "gen": "2026-11-15T16:19:01.480056-06:00",
+  "gen": "2026-11-15T16:31:42.279502-06:00",
   "today": "2026-11-15",
   "cfg": {
    "h": {
@@ -584,7 +584,11 @@
    "buff_today": 0,
    "assembly_today": 0,
    "qc_today": 0,
-   "released": 222
+   "released": 222,
+   "released_older": 0,
+   "since": null,
+   "since_label": null,
+   "partial": false
   },
   "best_day": [
    "OCT 27",
@@ -653,6 +657,7 @@
   "MAX_AGE_DAYS": 90,
   "SCAN_COMPLETIONS": false,
   "SCAN_START": "2026-11-09",
+  "WIP_START": null,
   "PER_PERSON_STATS": false
  },
  "redo": {
@@ -704,8 +709,8 @@
  "qc": {
   "ok": true,
   "pull_ok": true,
-  "pull_error": "HTTP 404 (repo not created yet, or token has no access to it)",
-  "fetched_at": "2026-11-13T14:39:18.675626+00:00",
+  "pull_error": null,
+  "fetched_at": "2026-11-15T22:31:41.684762+00:00",
   "rows": 202,
   "files": 14,
   "today": 0,
@@ -729,7 +734,11 @@
    "buff_today": 0,
    "assembly_today": 0,
    "qc_today": 0,
-   "released": 222
+   "released": 222,
+   "released_older": 0,
+   "since": null,
+   "since_label": null,
+   "partial": false
   }
  }
 }
