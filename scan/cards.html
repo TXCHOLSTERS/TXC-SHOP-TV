@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>TXC optional batch cards</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:#fff;color:#111;padding:24px}
+h1{font-size:28px;letter-spacing:.5px}
+.opt{display:inline-block;margin-left:8px;padding:2px 10px;border:2px solid #AF9061;color:#8a6c3c;font-size:14px;letter-spacing:1px;vertical-align:middle}
+.intro{margin:12px 0 20px;font-size:16px;line-height:1.45;max-width:800px;color:#333}
+.intro b{color:#111}
+#cards{display:flex;flex-direction:column;gap:18px}
+.card{border:2px solid #111;border-radius:8px;padding:18px 22px 16px;page-break-inside:avoid;position:relative}
+.card .tag{position:absolute;top:14px;right:18px;font-size:13px;letter-spacing:2px;font-weight:bold;color:#8a6c3c;border:2px solid #AF9061;padding:3px 8px}
+.card h2{font-size:32px;letter-spacing:1px}
+.card .code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:20px;margin:4px 0 10px;letter-spacing:1px}
+.card svg{display:block;width:100%;max-width:720px;height:120px;margin:0 auto}
+.card .how{margin-top:10px;font-size:14px;line-height:1.4;color:#333}
+.cut{border-top:2px dashed #999;margin:0}
+@media print{
+  body{padding:0.4in}
+  .noprint{display:none}
+  .card{break-inside:avoid}
+  a{color:#000;text-decoration:none}
+}
+@page{size:letter;margin:0.5in}
+</style>
+</head>
+<body>
+<h1>TXC station batch cards <span class="opt">OPTIONAL</span></h1>
+<p class="intro noprint">
+  These cards are <b>optional</b>. The default at every station is plain rapid scanning:
+  pass each finished sheet under the scanner. The screen keeps a running count.
+  Use a batch card only if you want every sheet in a cart to share one completion time.
+  Print this page, cut out a card, and tape it at the station. Nothing on this page is required to scan.
+</p>
+<div id="cards"></div>
+<p class="intro" style="margin-top:20px">
+  <b>How to use (optional):</b> Scan this card to start a batch → scan each finished sheet → scan this card again to close.
+  The screen shows <b>BATCH OPEN</b> and a count. An open batch auto-closes after 30 minutes idle.
+  Press / Trim should still scan each piece after trim, even if a card is posted there.
+</p>
+<script>
+(function(){
+var PAT=['212222','222122','222221','121223','121322','131222','122213','122312','132212','221213','221312','231212','112232','122132','122231','113222','123122','123221','223211','221132','221231','213212','223112','312131','311222','321122','321221','312212','322112','322211','212123','212321','232121','111323','131123','131321','112313','132113','132311','211313','231113','231311','112133','112331','132131','113123','113321','133121','313121','211331','231131','213113','213311','213131','311123','311321','331121','312113','312311','332111','314111','221411','431111','111224','111422','121124','121421','141122','141221','112214','112412','122114','122411','142112','142211','241211','221114','413111','241112','134111','111242','121142','121241','114212','124112','124211','411212','421112','421211','212141','214121','412121','111143','111341','131141','114113','114311','411113','411311','113141','114131','311141','411131','211412','211214','211232','211133','311113','311211','421111','111221','111112'];
+function widthsFor(text){
+  var start=104, codes=[start], i, chk=start, v;
+  for(i=0;i<text.length;i++){
+    v=text.charCodeAt(i)-32;
+    if(v<0||v>94) throw new Error('unsupported char '+text[i]);
+    codes.push(v); chk+=v*(i+1);
+  }
+  codes.push(chk%103);
+  var w=[], p, j;
+  for(i=0;i<codes.length;i++){p=PAT[codes[i]]; for(j=0;j<p.length;j++) w.push(+p[j]);}
+  w.push(2,3,3,1,1,1,2); // stop
+  return w;
+}
+function svgBarcode(text){
+  var w=widthsFor(text), q=10, sum=0,i;
+  for(i=0;i<w.length;i++) sum+=w[i];
+  var total=sum+q*2, x=q, h=80, parts=[], bar=true;
+  for(i=0;i<w.length;i++){
+    if(bar) parts.push('<rect x="'+x+'" y="0" width="'+w[i]+'" height="'+h+'" fill="#000"/>');
+    x+=w[i]; bar=!bar;
+  }
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+total+' '+h+'" role="img" aria-label="'+text+'">'+parts.join('')+'</svg>';
+}
+var cards=[
+  {title:'PRESS / TRIM', code:'TXC-BATCH-PRESS-TRIM', note:'Optional. Press / Trim should still scan each piece after trim. Use this card only if a cart needs one shared timestamp.'},
+  {title:'BUFF', code:'TXC-BATCH-BUFF', note:'Optional. Default is to scan each finished sheet when the batch is done, with no card. Use this card only if you want one shared timestamp for the cart.'},
+  {title:'ASSEMBLY', code:'TXC-BATCH-ASSEMBLY', note:'Optional. Default is to scan each finished sheet when the batch is done, with no card. Use this card only if you want one shared timestamp for the cart.'}
+];
+var host=document.getElementById('cards'), i, c, html='';
+for(i=0;i<cards.length;i++){
+  c=cards[i];
+  if(i) html+='<div class="cut"></div>';
+  html+='<div class="card"><div class="tag">OPTIONAL</div><h2>'+c.title+'</h2><div class="code">'+c.code+'</div>'+svgBarcode(c.code)+'<div class="how">'+c.note+' Scan the card to open a batch, scan the sheets, then scan the card again to close.</div></div>';
+}
+host.innerHTML=html;
+})();
+</script>
+</body>
+</html>
