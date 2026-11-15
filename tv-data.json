@@ -236,7 +236,7 @@
   "remakes_4wk": 4,
   "remakes_week": 0,
   "returns": null,
-  "unknown_active": 7,
+  "unknown_active": 0,
   "daily_recent": [
    [
     "2026-10-27",
@@ -296,7 +296,7 @@
  },
  "tv": {
   "asof": "Nov 13, 2026 5:42 AM CT",
-  "gen": "2026-11-15T16:31:42.279502-06:00",
+  "gen": "2026-11-15T17:58:47.866311-06:00",
   "today": "2026-11-15",
   "cfg": {
    "h": {
@@ -435,7 +435,7 @@
     "d": 20.0
    }
   ],
-  "unknown": 7,
+  "unknown": 0,
   "overdue": 23,
   "oldest": 81,
   "oldest_weeks": [
@@ -513,7 +513,7 @@
    },
    {
     "n": "79204",
-    "age": 77,
+    "age": 78,
     "u": 1
    },
    {
@@ -584,8 +584,9 @@
    "buff_today": 0,
    "assembly_today": 0,
    "qc_today": 0,
-   "released": 222,
+   "released": 199,
    "released_older": 0,
+   "excluded_stocked": 23,
    "since": null,
    "since_label": null,
    "partial": false
@@ -663,8 +664,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-15T16:19:00.401899-06:00",
-  "last_attempt": "2026-11-15T16:19:00.401899-06:00",
+  "fetched_at": "2026-11-15T17:58:36.785665-06:00",
+  "last_attempt": "2026-11-15T17:58:36.785665-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -710,7 +711,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-15T22:31:41.684762+00:00",
+  "fetched_at": "2026-11-15T23:58:47.304335+00:00",
   "rows": 202,
   "files": 14,
   "today": 0,
@@ -734,8 +735,9 @@
    "buff_today": 0,
    "assembly_today": 0,
    "qc_today": 0,
-   "released": 222,
+   "released": 199,
    "released_older": 0,
+   "excluded_stocked": 23,
    "since": null,
    "since_label": null,
    "partial": false
