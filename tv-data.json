@@ -274,33 +274,173 @@
   "done_source": "shopify_shipped",
   "dealer_lane": {
    "target": 12,
-   "queue_units": 15,
+   "queue_units": 445,
+   "queue_order_units": 15,
+   "queue_draft_units": 430,
+   "workdays_queued": 38,
    "orders": [
     {
-     "n": "TXC79142",
+     "n": "79142",
      "u": 7,
      "created": "2026-08-27",
      "age": 81,
+     "kind": "order",
+     "mark": "ORDER",
+     "net30": false,
      "eta": "2026-11-16"
     },
     {
-     "n": "TXC80376",
+     "n": "D5520",
+     "u": 12,
+     "created": "2026-08-27",
+     "age": 81,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-11-17"
+    },
+    {
+     "n": "D5521",
+     "u": 12,
+     "created": "2026-08-27",
+     "age": 81,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-11-18"
+    },
+    {
+     "n": "D5527",
+     "u": 8,
+     "created": "2026-08-31",
+     "age": 77,
+     "kind": "draft",
+     "mark": "INV SENT",
+     "net30": false,
+     "eta": "2026-11-19"
+    },
+    {
+     "n": "D5533",
+     "u": 2,
+     "created": "2026-09-03",
+     "age": 74,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-11-19"
+    },
+    {
+     "n": "D5545",
+     "u": 3,
+     "created": "2026-09-10",
+     "age": 67,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-11-19"
+    },
+    {
+     "n": "D5554",
+     "u": 7,
+     "created": "2026-09-15",
+     "age": 62,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-11-20"
+    },
+    {
+     "n": "80376",
      "u": 8,
      "created": "2026-10-08",
      "age": 39,
-     "eta": "2026-11-17"
+     "kind": "order",
+     "mark": "ORDER",
+     "net30": false,
+     "eta": "2026-11-20"
+    },
+    {
+     "n": "D5611",
+     "u": 10,
+     "created": "2026-10-13",
+     "age": 34,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-11-23"
+    },
+    {
+     "n": "D5613",
+     "u": 115,
+     "created": "2026-10-13",
+     "age": 34,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-12-07"
+    },
+    {
+     "n": "D5620",
+     "u": 59,
+     "created": "2026-10-16",
+     "age": 31,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-12-14"
+    },
+    {
+     "n": "D5621",
+     "u": 46,
+     "created": "2026-10-16",
+     "age": 31,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-12-18"
+    },
+    {
+     "n": "D5627",
+     "u": 84,
+     "created": "2026-10-19",
+     "age": 28,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-12-29"
+    },
+    {
+     "n": "D5630",
+     "u": 12,
+     "created": "2026-10-20",
+     "age": 27,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": "2026-12-30"
+    },
+    {
+     "n": "D5632",
+     "u": 60,
+     "created": "2026-10-21",
+     "age": 25,
+     "kind": "draft",
+     "mark": "INV SENT",
+     "net30": false,
+     "eta": "2027-01-06"
     }
    ],
    "stale_units_over_max_age": 565,
+   "stale_draft_units_over_max_age": 0,
    "last_wd": "2026-11-13",
    "last_wd_shipped": 0,
    "today_shipped": 0,
-   "rule": "build line, no LEAD TIME AGREEMENT, and DEALER/WHOLESALE/dealer part no. in title/SKU or PO# in order note or DEALER/WHOLESALE tag"
+   "rule": "build line, no LEAD TIME AGREEMENT, and DEALER/WHOLESALE/dealer part no. in title/SKU or PO# in note or DEALER/WHOLESALE tag; drafts also count with customer tag b2b/DEALER/WHOLESALE, B2B purchasing company, or an internal known-dealer name match. Completed drafts are excluded. Same 90-day cap as open orders. Dealer units never count toward the 50/day web goal."
   }
  },
  "tv": {
   "asof": "Nov 16, 2026 4:45 PM CT",
-  "gen": "2026-11-16T16:45:04.464738-06:00",
+  "gen": "2026-11-16T16:54:28.023702-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -542,21 +682,132 @@
   "week_label": "NOV 15",
   "dealer": {
    "target": 12,
-   "queue_units": 15,
+   "queue_units": 445,
+   "queue_order_units": 15,
+   "queue_draft_units": 430,
+   "workdays_queued": 38,
    "last_wd_shipped": 0,
    "today_shipped": 0,
    "orders": [
     {
-     "n": "TXC79142",
+     "n": "79142",
      "u": 7,
      "age": 81,
-     "eta": "2026-11-16"
+     "eta": "2026-11-16",
+     "kind": "order",
+     "mark": "ORDER"
     },
     {
-     "n": "TXC80376",
+     "n": "D5520",
+     "u": 12,
+     "age": 81,
+     "eta": "2026-11-17",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "D5521",
+     "u": 12,
+     "age": 81,
+     "eta": "2026-11-18",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "D5527",
+     "u": 8,
+     "age": 77,
+     "eta": "2026-11-19",
+     "kind": "draft",
+     "mark": "INV SENT"
+    },
+    {
+     "n": "D5533",
+     "u": 2,
+     "age": 74,
+     "eta": "2026-11-19",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "D5545",
+     "u": 3,
+     "age": 67,
+     "eta": "2026-11-19",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "D5554",
+     "u": 7,
+     "age": 62,
+     "eta": "2026-11-20",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "80376",
      "u": 8,
      "age": 39,
-     "eta": "2026-11-17"
+     "eta": "2026-11-20",
+     "kind": "order",
+     "mark": "ORDER"
+    },
+    {
+     "n": "D5611",
+     "u": 10,
+     "age": 34,
+     "eta": "2026-11-23",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "D5613",
+     "u": 115,
+     "age": 34,
+     "eta": "2026-12-07",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "D5620",
+     "u": 59,
+     "age": 31,
+     "eta": "2026-12-14",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "D5621",
+     "u": 46,
+     "age": 31,
+     "eta": "2026-12-18",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "D5627",
+     "u": 84,
+     "age": 28,
+     "eta": "2026-12-29",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "D5630",
+     "u": 12,
+     "age": 27,
+     "eta": "2026-12-30",
+     "kind": "draft",
+     "mark": "DRAFT"
+    },
+    {
+     "n": "D5632",
+     "u": 60,
+     "age": 25,
+     "eta": "2027-01-06",
+     "kind": "draft",
+     "mark": "INV SENT"
     }
    ]
   },
@@ -714,7 +965,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T22:45:03.612737+00:00",
+  "fetched_at": "2026-11-16T22:54:27.266723+00:00",
   "rows": 239,
   "files": 16,
   "today": 35,
