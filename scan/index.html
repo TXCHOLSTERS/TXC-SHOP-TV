@@ -255,8 +255,8 @@ function isLocked(){return !!(cfg.lockStation&&stationById(cfg.lockStation));}
 function lockedTo(){return isLocked()?normStep(cfg.lockStation):'';}
 function ruleText(){
  if(step==='PRESS_TRIM')return 'SCAN EACH BUILD AFTER TRIM';
- if(step==='BUFF')return 'SCAN EACH BUILD WHEN BUFF IS DONE <span class="bnote">(batch OK)</span>';
- if(step==='ASSEMBLY')return 'SCAN EACH BUILD WHEN ASSEMBLY IS DONE <span class="bnote">(batch OK)</span>';
+ if(step==='BUFF')return 'SCAN EACH BUILD WHEN BUFF IS DONE';
+ if(step==='ASSEMBLY')return 'SCAN EACH BUILD WHEN ASSEMBLY IS DONE';
  return 'SCAN EACH BUILD AT THE END OF THIS STAGE';}
 function unitsOf(order){var u=UNITS[order]||UNITS[String(order||'').toUpperCase()]; if(!u||!u.length)return []; var out=[],i; for(i=0;i<u.length;i++)out.push(+u[i]); return out;}
 function overlayUp(){return $('setup').style.display==='block'||$('cam').className.indexOf('show')>=0||$('pick').style.display==='block'||$('admin').style.display==='block';}
