@@ -5,8 +5,8 @@
   "full_start": "2026-08-09",
   "done_today": 77,
   "done_week": 77,
-  "in_today": 37,
-  "in_week": 58,
+  "in_today": 38,
+  "in_week": 59,
   "wd_week": 1,
   "pace_week": null,
   "wd_finished": 0,
@@ -94,10 +94,10 @@
     77
    ]
   ],
-  "lead_fwd": 4.05,
+  "lead_fwd": 4.06,
   "ontime_week": 86,
   "intake_wd": 33.9,
-  "backlog": 638,
+  "backlog": 639,
   "glide_weeks": 6,
   "need_promise": 21,
   "need_glide": 21,
@@ -105,7 +105,7 @@
   "target_source": "config",
   "goal_rate": 37,
   "goal_extra": 6,
-  "goal_backlog": 338,
+  "goal_backlog": 339,
   "goal_date": "2027-03-31",
   "wd_to_goal": 97,
   "pace_window": [
@@ -120,11 +120,11 @@
    ],
    [
     37,
-    19.0
+    19.4
    ],
    [
     39,
-    11.6
+    11.8
    ],
    [
     44,
@@ -204,8 +204,8 @@
    },
    {
     "st": "CVRT Complete Set",
-    "units": 99,
-    "days": 22.0
+    "units": 100,
+    "days": 22.2
    },
    {
     "st": "CVRT Mag Carrier",
@@ -299,8 +299,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 2:31 PM CT",
-  "gen": "2026-11-16T14:31:14.461102-06:00",
+  "asof": "Nov 16, 2026 2:39 PM CT",
+  "gen": "2026-11-16T14:39:41.929935-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -335,12 +335,12 @@
   },
   "target": 50,
   "done_today": 77,
-  "in_today": 37,
+  "in_today": 38,
   "last_wd": "2026-11-13",
   "last_wd_name": "FRIDAY",
   "last_wd_done": 20,
   "done_week": 77,
-  "in_week": 58,
+  "in_week": 59,
   "week_goal": 250,
   "weekly_target": 250,
   "streak": 0,
@@ -410,8 +410,8 @@
    },
    {
     "n": "CVRT SET",
-    "u": 99,
-    "d": 22.0
+    "u": 100,
+    "d": 22.2
    },
    {
     "n": "CVRT MAG",
@@ -601,7 +601,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "2:31 PM CT"
+  "asof_short": "2:39 PM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -712,7 +712,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T20:31:13.147001+00:00",
+  "fetched_at": "2026-11-16T20:39:40.906820+00:00",
   "rows": 203,
   "files": 15,
   "today": 0,
