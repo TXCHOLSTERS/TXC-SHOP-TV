@@ -295,8 +295,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 8:20 AM CT",
-  "gen": "2026-11-16T08:21:18.332427-06:00",
+  "asof": "Nov 16, 2026 5:40 AM CT",
+  "gen": "2026-11-16T09:10:02.718992-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -600,7 +600,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "8:20 AM CT"
+  "asof_short": "5:40 AM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -711,7 +711,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T14:20:47.837326+00:00",
+  "fetched_at": "2026-11-16T15:10:01.928837+00:00",
   "rows": 202,
   "files": 14,
   "today": 0,
