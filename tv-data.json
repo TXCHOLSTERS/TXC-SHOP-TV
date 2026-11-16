@@ -299,8 +299,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 5:40 AM CT",
-  "gen": "2026-11-16T10:57:03.561779-06:00",
+  "asof": "Nov 16, 2026 11:02 AM CT",
+  "gen": "2026-11-16T11:02:29.730879-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -440,8 +440,8 @@
    }
   ],
   "unknown": 0,
-  "overdue": 23,
-  "oldest": 84,
+  "overdue": 21,
+  "oldest": 80,
   "oldest_weeks": [
    [
     "AUG 23",
@@ -500,9 +500,6 @@
    "79295",
    "79956",
    "79976",
-   "80020",
-   "80061",
-   "80304",
    "80792",
    "81365"
   ],
@@ -608,7 +605,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "5:40 AM CT"
+  "asof_short": "11:02 AM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -719,7 +716,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T16:57:03.026276+00:00",
+  "fetched_at": "2026-11-16T17:02:28.951242+00:00",
   "rows": 203,
   "files": 15,
   "today": 0,
