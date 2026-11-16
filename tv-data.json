@@ -299,8 +299,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 10:55 AM CT",
-  "gen": "2026-11-16T10:55:32.013041-06:00",
+  "asof": "Nov 16, 2026 5:40 AM CT",
+  "gen": "2026-11-16T10:57:03.561779-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -441,7 +441,7 @@
   ],
   "unknown": 0,
   "overdue": 23,
-  "oldest": 78,
+  "oldest": 84,
   "oldest_weeks": [
    [
     "AUG 23",
@@ -570,30 +570,34 @@
   "qc": {
    "today": 0,
    "week": 0,
-   "last_scan": "2026-11-12T10:13:57.863000-06:00",
+   "last_scan": "2026-11-16T10:26:07.954000-06:00",
    "used": false,
-   "step_today": {},
-   "step_week": {}
+   "step_today": {
+    "PRESS_TRIM": 1
+   },
+   "step_week": {
+    "PRESS_TRIM": 1
+   }
   },
   "wip": {
-   "ready": false,
-   "waiting_press": 0,
-   "buff_queue": 0,
+   "ready": true,
+   "waiting_press": 60,
+   "buff_queue": 1,
    "wait_assembly": 0,
    "wait_qc": 0,
    "shipped_today": 0,
    "at_qc": 0,
-   "press_today": 0,
-   "start_today": 0,
+   "press_today": 1,
+   "start_today": 1,
    "buff_today": 0,
    "assembly_today": 0,
    "qc_today": 0,
-   "released": 270,
-   "released_older": 0,
+   "released": 71,
+   "released_older": 199,
    "excluded_stocked": 23,
-   "since": null,
-   "since_label": null,
-   "partial": false
+   "since": "2026-11-16",
+   "since_label": "SINCE NOV 16",
+   "partial": true
   },
   "best_day": [
    "OCT 27",
@@ -604,7 +608,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "10:55 AM CT"
+  "asof_short": "5:40 AM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -715,36 +719,40 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T16:54:45.203491+00:00",
-  "rows": 202,
-  "files": 14,
+  "fetched_at": "2026-11-16T16:57:03.026276+00:00",
+  "rows": 203,
+  "files": 15,
   "today": 0,
   "week": 0,
   "st_week": {},
   "unknown_codes": 109,
   "out_of_scope": 0,
-  "last_scan": "2026-11-12T10:13:57.863000-06:00",
-  "step_today": {},
-  "step_week": {},
+  "last_scan": "2026-11-16T10:26:07.954000-06:00",
+  "step_today": {
+   "PRESS_TRIM": 1
+  },
+  "step_week": {
+   "PRESS_TRIM": 1
+  },
   "wip": {
-   "ready": false,
-   "waiting_press": 0,
-   "buff_queue": 0,
+   "ready": true,
+   "waiting_press": 60,
+   "buff_queue": 1,
    "wait_assembly": 0,
    "wait_qc": 0,
    "shipped_today": 0,
    "at_qc": 0,
-   "press_today": 0,
-   "start_today": 0,
+   "press_today": 1,
+   "start_today": 1,
    "buff_today": 0,
    "assembly_today": 0,
    "qc_today": 0,
-   "released": 270,
-   "released_older": 0,
+   "released": 71,
+   "released_older": 199,
    "excluded_stocked": 23,
-   "since": null,
-   "since_label": null,
-   "partial": false
+   "since": "2026-11-16",
+   "since_label": "SINCE NOV 16",
+   "partial": true
   }
  }
 }
