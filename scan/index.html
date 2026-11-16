@@ -11,7 +11,13 @@
 <title>TXC Scan</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:#0c0c0c;color:#fff;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:bold;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+/* JAN4LAUNCH fonts: TXC Display is Barlow Condensed (SIL OFL); body is Inter (SIL OFL). Self-hosted so the page works offline after the first load. */
+@font-face{font-family:"TXC Display";src:url("barlow-condensed-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"TXC Display";src:url("barlow-condensed-700.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url("inter-latin.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+html,body{height:100%;background:#0c0c0c;color:#fff;font-family:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:bold;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+#locklab,#rule,#batchbar .bt,#steps button,#big,#code,#todn,#todwrap .lbl,#today,#pick h2,#pick .row button,#pick .all,#admin h2,#setup h2,.camfail b{font-family:"TXC Display","Arial Narrow",sans-serif}
+#todn{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
 #top{position:absolute;left:0;right:0;top:0;height:76px;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;padding:0 16px;background:#000;border-bottom:4px solid #F0C14B;z-index:2}
 #top img{height:36px}
 #locklab{font-size:42px;margin-left:14px;color:#F0C14B;letter-spacing:1px;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-webkit-box-flex:1;-webkit-flex:1;flex:1}
@@ -166,7 +172,7 @@ body.flashing #main{z-index:15;bottom:0}
  <label class="chk"><input id="f_qc" type="checkbox"> Show a QC / SHIP button (only if the Redo packing-slip scan is not being used)</label>
  <button id="s_save" type="button">SAVE</button><button id="s_test" type="button">TEST CONNECTION</button><button id="s_csv" type="button">EMAIL/SAVE A COPY (CSV)</button><button id="s_close" type="button">CLOSE</button>
  <div class="msg" id="s_msg"></div>
- <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan8-20261115. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
+ <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan9-20261115. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
 </div>
 <div id="pick"><h2 id="pickh">WHICH UNIT?</h2><div class="pmsg" id="pickm"></div><div class="row" id="pickbtns"></div>
 <button type="button" class="all" id="pickall">ALL UNITS</button>
@@ -178,7 +184,7 @@ body.flashing #main{z-index:15;bottom:0}
 <script>
 (function(){
 'use strict';
-var VER='scan8-20261115';
+var VER='scan9-20261115';
 var DEF={api:'https://api.github.com',repo:'TXCHOLSTERS/txc-qc-scans',branch:'main',dev:'Scan-iPad',tok:'',lockStation:'',showQc:false};
 var HEADER='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app,batch_id,batch_size';
 var HEADER_OLD='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app';
