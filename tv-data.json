@@ -6,7 +6,7 @@
   "done_today": 79,
   "done_week": 79,
   "in_today": 38,
-  "in_week": 59,
+  "in_week": 58,
   "wd_week": 1,
   "pace_week": null,
   "wd_finished": 0,
@@ -97,7 +97,7 @@
   "lead_fwd": 4.04,
   "ontime_week": 86,
   "intake_wd": 33.9,
-  "backlog": 637,
+  "backlog": 636,
   "glide_weeks": 6,
   "need_promise": 21,
   "need_glide": 21,
@@ -105,7 +105,7 @@
   "target_source": "config",
   "goal_rate": 37,
   "goal_extra": 6,
-  "goal_backlog": 339,
+  "goal_backlog": 338,
   "goal_date": "2027-03-31",
   "wd_to_goal": 97,
   "pace_window": [
@@ -120,11 +120,11 @@
    ],
    [
     37,
-    19.2
+    18.9
    ],
    [
     39,
-    11.7
+    11.6
    ],
    [
     44,
@@ -209,8 +209,8 @@
    },
    {
     "st": "CVRT Mag Carrier",
-    "units": 71,
-    "days": 26.8
+    "units": 70,
+    "days": 26.4
    },
    {
     "st": "OVRT Holster",
@@ -299,8 +299,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 2:44 PM CT",
-  "gen": "2026-11-16T14:44:32.160080-06:00",
+  "asof": "Nov 16, 2026 2:54 PM CT",
+  "gen": "2026-11-16T14:54:35.358309-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -340,7 +340,7 @@
   "last_wd_name": "FRIDAY",
   "last_wd_done": 20,
   "done_week": 79,
-  "in_week": 59,
+  "in_week": 58,
   "week_goal": 250,
   "weekly_target": 250,
   "streak": 0,
@@ -415,8 +415,8 @@
    },
    {
     "n": "CVRT MAG",
-    "u": 71,
-    "d": 26.8
+    "u": 70,
+    "d": 26.4
    },
    {
     "n": "OVRT",
@@ -574,7 +574,7 @@
   },
   "wip": {
    "ready": true,
-   "waiting_press": 60,
+   "waiting_press": 59,
    "buff_queue": 1,
    "wait_assembly": 0,
    "wait_qc": 0,
@@ -601,7 +601,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "2:44 PM CT"
+  "asof_short": "2:54 PM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -712,7 +712,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T20:44:31.307005+00:00",
+  "fetched_at": "2026-11-16T20:54:34.610716+00:00",
   "rows": 203,
   "files": 15,
   "today": 0,
@@ -729,7 +729,7 @@
   },
   "wip": {
    "ready": true,
-   "waiting_press": 60,
+   "waiting_press": 59,
    "buff_queue": 1,
    "wait_assembly": 0,
    "wait_qc": 0,
