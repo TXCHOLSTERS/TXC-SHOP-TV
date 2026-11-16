@@ -3,8 +3,8 @@
   "scope": "made-to-order units (line has a LEAD TIME AGREEMENT)",
   "hist_start": "2026-08-03",
   "full_start": "2026-08-09",
-  "done_today": 77,
-  "done_week": 77,
+  "done_today": 79,
+  "done_week": 79,
   "in_today": 38,
   "in_week": 59,
   "wd_week": 1,
@@ -12,14 +12,14 @@
   "wd_finished": 0,
   "done_finished": 0,
   "week_start": "2026-11-15",
-  "shipped_28d": 678,
+  "shipped_28d": 680,
   "days_at_goal": 5,
   "days_at_goal_of": 20,
   "pace_4wk": 31.5,
   "shipped_4wk": 630,
   "lead_now": 3.41,
-  "lead_median": 2.74,
-  "lead_n": 678,
+  "lead_median": 2.75,
+  "lead_n": 680,
   "lead_trend": [
    [
     "2026-08-30",
@@ -90,14 +90,14 @@
    [
     "2026-11-15",
     "WK NOV 15",
-    6.86,
-    77
+    6.76,
+    79
    ]
   ],
-  "lead_fwd": 4.06,
+  "lead_fwd": 4.04,
   "ontime_week": 86,
   "intake_wd": 33.9,
-  "backlog": 639,
+  "backlog": 637,
   "glide_weeks": 6,
   "need_promise": 21,
   "need_glide": 21,
@@ -120,11 +120,11 @@
    ],
    [
     37,
-    19.4
+    19.2
    ],
    [
     39,
-    11.8
+    11.7
    ],
    [
     44,
@@ -132,7 +132,7 @@
    ],
    [
     49,
-    4.0
+    3.9
    ]
   ],
   "last_wd": "2026-11-13",
@@ -180,9 +180,9 @@
    },
    {
     "st": "OVRT Mag Carriers",
-    "done": 5,
+    "done": 7,
     "target": 38,
-    "pct": 13
+    "pct": 18
    },
    {
     "st": "X1 line",
@@ -219,8 +219,8 @@
    },
    {
     "st": "OVRT Mag Carriers",
-    "units": 27,
-    "days": 5.7
+    "units": 25,
+    "days": 5.3
    },
    {
     "st": "X1 line",
@@ -268,7 +268,7 @@
    ],
    [
     "2026-11-16",
-    77
+    79
    ]
   ],
   "done_source": "shopify_shipped",
@@ -299,8 +299,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 2:39 PM CT",
-  "gen": "2026-11-16T14:39:41.929935-06:00",
+  "asof": "Nov 16, 2026 2:44 PM CT",
+  "gen": "2026-11-16T14:44:32.160080-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -334,12 +334,12 @@
    "fresh": 60
   },
   "target": 50,
-  "done_today": 77,
+  "done_today": 79,
   "in_today": 38,
   "last_wd": "2026-11-13",
   "last_wd_name": "FRIDAY",
   "last_wd_done": 20,
-  "done_week": 77,
+  "done_week": 79,
   "in_week": 59,
   "week_goal": 250,
   "weekly_target": 250,
@@ -377,8 +377,8 @@
    },
    {
     "n": "OVRT MAG",
-    "p": 13,
-    "d": 5,
+    "p": 18,
+    "d": 7,
     "t": 38
    },
    {
@@ -425,8 +425,8 @@
    },
    {
     "n": "OVRT MAG",
-    "u": 27,
-    "d": 5.7
+    "u": 25,
+    "d": 5.3
    },
    {
     "n": "X1",
@@ -536,7 +536,7 @@
   ],
   "wd_finished": 0,
   "done_finished": 0,
-  "shipped_28d": 678,
+  "shipped_28d": 680,
   "days_at_goal": 5,
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
@@ -601,7 +601,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "2:39 PM CT"
+  "asof_short": "2:44 PM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -712,7 +712,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T20:39:40.906820+00:00",
+  "fetched_at": "2026-11-16T20:44:31.307005+00:00",
   "rows": 203,
   "files": 15,
   "today": 0,
