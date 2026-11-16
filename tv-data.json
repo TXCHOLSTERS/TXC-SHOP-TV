@@ -5,8 +5,8 @@
   "full_start": "2026-08-09",
   "done_today": 54,
   "done_week": 54,
-  "in_today": 29,
-  "in_week": 50,
+  "in_today": 30,
+  "in_week": 51,
   "wd_week": 1,
   "pace_week": null,
   "wd_finished": 0,
@@ -97,7 +97,7 @@
   "lead_fwd": 4.15,
   "ontime_week": 80,
   "intake_wd": 33.5,
-  "backlog": 653,
+  "backlog": 654,
   "glide_weeks": 6,
   "need_promise": 34,
   "need_glide": 34,
@@ -105,7 +105,7 @@
   "target_source": "config",
   "goal_rate": 37,
   "goal_extra": 6,
-  "goal_backlog": 334,
+  "goal_backlog": 335,
   "goal_date": "2027-03-31",
   "wd_to_goal": 97,
   "pace_window": [
@@ -120,15 +120,15 @@
    ],
    [
     37,
-    17.9
+    18.2
    ],
    [
     39,
-    11.5
+    11.6
    ],
    [
     44,
-    6.0
+    6.1
    ],
    [
     49,
@@ -194,8 +194,8 @@
   "waiting": [
    {
     "st": "Delta",
-    "units": 225,
-    "days": 48.9
+    "units": 226,
+    "days": 49.1
    },
    {
     "st": "CVRT Holster",
@@ -299,8 +299,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 12:37 PM CT",
-  "gen": "2026-11-16T12:37:53.416093-06:00",
+  "asof": "Nov 16, 2026 12:40 PM CT",
+  "gen": "2026-11-16T12:40:43.146621-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -335,12 +335,12 @@
   },
   "target": 50,
   "done_today": 54,
-  "in_today": 29,
+  "in_today": 30,
   "last_wd": "2026-11-13",
   "last_wd_name": "FRIDAY",
   "last_wd_done": 20,
   "done_week": 54,
-  "in_week": 50,
+  "in_week": 51,
   "week_goal": 250,
   "weekly_target": 250,
   "streak": 0,
@@ -400,8 +400,8 @@
   "waiting": [
    {
     "n": "DELTA",
-    "u": 225,
-    "d": 48.9
+    "u": 226,
+    "d": 49.1
    },
    {
     "n": "CVRT",
@@ -604,7 +604,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "12:37 PM CT"
+  "asof_short": "12:40 PM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -715,7 +715,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T18:37:52.346367+00:00",
+  "fetched_at": "2026-11-16T18:40:42.407889+00:00",
   "rows": 203,
   "files": 15,
   "today": 0,
