@@ -70,9 +70,9 @@ body.flashing #main{top:0;bottom:0;z-index:8;padding-top:8vh}
 #sub{font-size:32px;line-height:1.25;margin-top:16px;font-weight:normal}
 #today{font-size:32px;margin-top:22px;letter-spacing:1px;color:#fff}
 #main.dup #today,#main.warn #today{color:#111}
-#todwrap{margin-top:12px;text-align:center}
-#todn{font-size:200px;line-height:.9;color:#fff;letter-spacing:-8px;font-weight:bold}
-#todwrap .lbl{font-size:26px;margin-top:2px;color:#F0C14B;letter-spacing:8px}
+#todwrap{margin-top:12px;width:100%;text-align:center;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;align-items:center}
+#todn{font-size:200px;line-height:.9;color:#fff;letter-spacing:-8px;text-indent:-8px;font-weight:bold}
+#todwrap .lbl{font-size:26px;margin-top:2px;color:#F0C14B;letter-spacing:8px;text-indent:8px}
 #pace{display:none}
 #lastwrap{-webkit-box-flex:1;-webkit-flex:1;flex:1;margin-top:18px;text-align:center;padding:0 8px;min-height:0}
 #lastwrap .lh{font-size:14px;color:#777;letter-spacing:3px;margin-bottom:6px;font-weight:normal}
@@ -125,7 +125,7 @@ body.flashing #main{z-index:15;bottom:0}
 @media (max-width:900px){
  #locklab{font-size:28px}
  #big{font-size:72px}#code{font-size:42px}#sub{font-size:24px}
- #todn{font-size:140px;letter-spacing:-4px}#hist{font-size:20px}#today{font-size:24px}
+ #todn{font-size:140px;letter-spacing:-4px;text-indent:-4px}#hist{font-size:20px}#today{font-size:24px}
  #rule{font-size:32px}#rulebar{height:96px}#main{top:172px;bottom:48px}body.batch #main{top:208px}
  #batchbar{top:172px}#batchbar .bt{font-size:18px}
 }
@@ -158,6 +158,7 @@ body.flashing #main{z-index:15;bottom:0}
  <button id="a_undo" type="button">UNDO LAST</button>
  <button id="a_setup" type="button">SETUP</button>
  <button id="a_cam" type="button">CAMERA</button>
+ <button id="a_reload" type="button">RELOAD PAGE</button>
  <button id="a_close" type="button">CLOSE</button>
 </div>
 <div id="setup">
@@ -172,7 +173,7 @@ body.flashing #main{z-index:15;bottom:0}
  <label class="chk"><input id="f_qc" type="checkbox"> Show a QC / SHIP button (only if the Redo packing-slip scan is not being used)</label>
  <button id="s_save" type="button">SAVE</button><button id="s_test" type="button">TEST CONNECTION</button><button id="s_csv" type="button">EMAIL/SAVE A COPY (CSV)</button><button id="s_close" type="button">CLOSE</button>
  <div class="msg" id="s_msg"></div>
- <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan9-20261115. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
+ <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan10-20261115. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
 </div>
 <div id="pick"><h2 id="pickh">WHICH UNIT?</h2><div class="pmsg" id="pickm"></div><div class="row" id="pickbtns"></div>
 <button type="button" class="all" id="pickall">ALL UNITS</button>
@@ -184,7 +185,7 @@ body.flashing #main{z-index:15;bottom:0}
 <script>
 (function(){
 'use strict';
-var VER='scan9-20261115';
+var VER='scan10-20261115';
 var DEF={api:'https://api.github.com',repo:'TXCHOLSTERS/txc-qc-scans',branch:'main',dev:'Scan-iPad',tok:'',lockStation:'',showQc:false};
 var HEADER='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app,batch_id,batch_size';
 var HEADER_OLD='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app';
@@ -601,6 +602,7 @@ $('a_close').addEventListener('click',closeAdmin,false);
 $('a_undo').addEventListener('click',function(){closeAdmin();undo();},false);
 $('a_setup').addEventListener('click',function(){openSetup();},false);
 $('a_cam').addEventListener('click',function(){closeAdmin();camStart();},false);
+$('a_reload').addEventListener('click',function(){location.reload();},false);
 $('s_close').addEventListener('click',closeSetup,false);
 $('s_snd').addEventListener('click',function(){unlockAudio();beepOk();$('s_msg').innerHTML='<span class="okc">Sound is on.</span>';},false);
 $('s_save').addEventListener('click',function(){cfg.dev=clean($('f_dev').value)||'Scan-iPad';cfg.repo=$('f_repo').value.replace(/\s/g,'')||DEF.repo;var tk=$('f_tok').value.replace(/\s/g,'');if(tk)cfg.tok=tk;$('f_tok').value='';
