@@ -8,15 +8,15 @@
   "in_today": 41,
   "in_week": 61,
   "wd_week": 1,
-  "pace_week": null,
-  "wd_finished": 0,
-  "done_finished": 0,
+  "pace_week": 79.0,
+  "wd_finished": 1,
+  "done_finished": 79,
   "week_start": "2026-11-15",
   "shipped_28d": 680,
-  "days_at_goal": 5,
+  "days_at_goal": 6,
   "days_at_goal_of": 20,
-  "pace_4wk": 31.5,
-  "shipped_4wk": 630,
+  "pace_4wk": 34.0,
+  "shipped_4wk": 680,
   "lead_now": 3.41,
   "lead_median": 2.75,
   "lead_n": 680,
@@ -94,7 +94,7 @@
     79
    ]
   ],
-  "lead_fwd": 4.05,
+  "lead_fwd": 3.75,
   "ontime_week": 86,
   "intake_wd": 34.0,
   "backlog": 638,
@@ -104,18 +104,18 @@
   "target": 50,
   "target_source": "config",
   "goal_rate": 38,
-  "goal_extra": 6,
+  "goal_extra": 4,
   "goal_backlog": 340,
   "goal_date": "2027-03-31",
   "wd_to_goal": 97,
   "pace_window": [
-   "2026-10-19",
-   "2026-11-15"
+   "2026-10-20",
+   "2026-11-16"
   ],
   "improve_pct": 5,
   "rate_table": [
    [
-    32,
+    34,
     null
    ],
    [
@@ -135,9 +135,9 @@
     4.0
    ]
   ],
-  "last_wd": "2026-11-13",
-  "last_wd_done": 20,
-  "streak": 0,
+  "last_wd": "2026-11-16",
+  "last_wd_done": 79,
+  "streak": 1,
   "best_day": [
    "2026-08-26",
    235
@@ -151,32 +151,32 @@
    {
     "st": "CVRT Complete Set",
     "done": 22,
-    "target": 36,
-    "pct": 61
+    "target": 41,
+    "pct": 54
    },
    {
     "st": "OVRT Holster",
     "done": 9,
-    "target": 22,
-    "pct": 41
+    "target": 24,
+    "pct": 38
    },
    {
     "st": "CVRT Holster",
     "done": 23,
-    "target": 63,
-    "pct": 37
+    "target": 66,
+    "pct": 35
    },
    {
     "st": "CVRT Mag Carrier",
     "done": 7,
-    "target": 22,
-    "pct": 32
+    "target": 20,
+    "pct": 35
    },
    {
     "st": "Delta",
     "done": 8,
-    "target": 37,
-    "pct": 22
+    "target": 31,
+    "pct": 26
    },
    {
     "st": "OVRT Mag Carriers",
@@ -187,7 +187,7 @@
    {
     "st": "X1 line",
     "done": 3,
-    "target": 35,
+    "target": 33,
     "pct": 9
    }
   ],
@@ -195,37 +195,37 @@
    {
     "st": "Delta",
     "units": 226,
-    "days": 49.1
+    "days": 54.5
    },
    {
     "st": "CVRT Holster",
     "units": 172,
-    "days": 21.9
+    "days": 19.4
    },
    {
     "st": "CVRT Complete Set",
     "units": 100,
-    "days": 22.2
+    "days": 18.3
    },
    {
     "st": "CVRT Mag Carrier",
     "units": 71,
-    "days": 26.8
+    "days": 26.3
    },
    {
     "st": "OVRT Holster",
     "units": 20,
-    "days": 7.4
+    "days": 6.3
    },
    {
     "st": "OVRT Mag Carriers",
     "units": 25,
-    "days": 5.3
+    "days": 4.9
    },
    {
     "st": "X1 line",
     "units": 21,
-    "days": 4.9
+    "days": 4.7
    },
    {
     "st": "Other",
@@ -274,10 +274,12 @@
   "done_source": "shopify_shipped",
   "dealer_lane": {
    "target": 12,
-   "queue_units": 445,
+   "queue_units": 15,
    "queue_order_units": 15,
    "queue_draft_units": 430,
-   "workdays_queued": 38,
+   "queue_draft_n": 13,
+   "queue_draft_inv_sent": 2,
+   "workdays_queued": 2,
    "orders": [
     {
      "n": "79142",
@@ -287,67 +289,7 @@
      "kind": "order",
      "mark": "ORDER",
      "net30": false,
-     "eta": "2026-11-16"
-    },
-    {
-     "n": "D5520",
-     "u": 12,
-     "created": "2026-08-27",
-     "age": 81,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "net30": false,
      "eta": "2026-11-17"
-    },
-    {
-     "n": "D5521",
-     "u": 12,
-     "created": "2026-08-27",
-     "age": 81,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "net30": false,
-     "eta": "2026-11-18"
-    },
-    {
-     "n": "D5527",
-     "u": 8,
-     "created": "2026-08-31",
-     "age": 77,
-     "kind": "draft",
-     "mark": "INV SENT",
-     "net30": false,
-     "eta": "2026-11-19"
-    },
-    {
-     "n": "D5533",
-     "u": 2,
-     "created": "2026-09-03",
-     "age": 74,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "net30": false,
-     "eta": "2026-11-19"
-    },
-    {
-     "n": "D5545",
-     "u": 3,
-     "created": "2026-09-10",
-     "age": 67,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "net30": false,
-     "eta": "2026-11-19"
-    },
-    {
-     "n": "D5554",
-     "u": 7,
-     "created": "2026-09-15",
-     "age": 62,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "net30": false,
-     "eta": "2026-11-20"
     },
     {
      "n": "80376",
@@ -357,7 +299,69 @@
      "kind": "order",
      "mark": "ORDER",
      "net30": false,
-     "eta": "2026-11-20"
+     "eta": "2026-11-18"
+    }
+   ],
+   "drafts": [
+    {
+     "n": "D5520",
+     "u": 12,
+     "created": "2026-08-27",
+     "age": 81,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": null
+    },
+    {
+     "n": "D5521",
+     "u": 12,
+     "created": "2026-08-27",
+     "age": 81,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": null
+    },
+    {
+     "n": "D5527",
+     "u": 8,
+     "created": "2026-08-31",
+     "age": 77,
+     "kind": "draft",
+     "mark": "INV SENT",
+     "net30": false,
+     "eta": null
+    },
+    {
+     "n": "D5533",
+     "u": 2,
+     "created": "2026-09-03",
+     "age": 74,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": null
+    },
+    {
+     "n": "D5545",
+     "u": 3,
+     "created": "2026-09-10",
+     "age": 67,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": null
+    },
+    {
+     "n": "D5554",
+     "u": 7,
+     "created": "2026-09-15",
+     "age": 62,
+     "kind": "draft",
+     "mark": "DRAFT",
+     "net30": false,
+     "eta": null
     },
     {
      "n": "D5611",
@@ -367,7 +371,7 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": "2026-11-23"
+     "eta": null
     },
     {
      "n": "D5613",
@@ -377,7 +381,7 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": "2026-12-07"
+     "eta": null
     },
     {
      "n": "D5620",
@@ -387,7 +391,7 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": "2026-12-14"
+     "eta": null
     },
     {
      "n": "D5621",
@@ -397,7 +401,7 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": "2026-12-18"
+     "eta": null
     },
     {
      "n": "D5627",
@@ -407,7 +411,7 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": "2026-12-29"
+     "eta": null
     },
     {
      "n": "D5630",
@@ -417,7 +421,7 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": "2026-12-30"
+     "eta": null
     },
     {
      "n": "D5632",
@@ -427,20 +431,20 @@
      "kind": "draft",
      "mark": "INV SENT",
      "net30": false,
-     "eta": "2027-01-06"
+     "eta": null
     }
    ],
    "stale_units_over_max_age": 565,
    "stale_draft_units_over_max_age": 0,
-   "last_wd": "2026-11-13",
+   "last_wd": "2026-11-16",
    "last_wd_shipped": 0,
    "today_shipped": 0,
    "rule": "build line, no LEAD TIME AGREEMENT, and DEALER/WHOLESALE/dealer part no. in title/SKU or PO# in note or DEALER/WHOLESALE tag; drafts also count with customer tag b2b/DEALER/WHOLESALE, B2B purchasing company, or an internal known-dealer name match. Completed drafts are excluded. Same 90-day cap as open orders. Dealer units never count toward the 50/day web goal."
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 4:45 PM CT",
-  "gen": "2026-11-16T16:54:28.023702-06:00",
+  "asof": "Nov 16, 2026 4:59 PM CT",
+  "gen": "2026-11-16T17:02:04.292268-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -476,44 +480,44 @@
   "target": 50,
   "done_today": 79,
   "in_today": 41,
-  "last_wd": "2026-11-13",
-  "last_wd_name": "FRIDAY",
-  "last_wd_done": 20,
+  "last_wd": "2026-11-16",
+  "last_wd_name": "MONDAY",
+  "last_wd_done": 79,
   "done_week": 79,
   "in_week": 61,
   "week_goal": 250,
   "weekly_target": 250,
-  "streak": 0,
+  "streak": 1,
   "board": [
    {
     "n": "CVRT SET",
-    "p": 61,
+    "p": 54,
     "d": 22,
-    "t": 36
+    "t": 41
    },
    {
     "n": "OVRT",
-    "p": 41,
+    "p": 38,
     "d": 9,
-    "t": 22
+    "t": 24
    },
    {
     "n": "CVRT",
-    "p": 37,
+    "p": 35,
     "d": 23,
-    "t": 63
+    "t": 66
    },
    {
     "n": "CVRT MAG",
-    "p": 32,
+    "p": 35,
     "d": 7,
-    "t": 22
+    "t": 20
    },
    {
     "n": "DELTA",
-    "p": 22,
+    "p": 26,
     "d": 8,
-    "t": 37
+    "t": 31
    },
    {
     "n": "OVRT MAG",
@@ -525,53 +529,53 @@
     "n": "X1",
     "p": 9,
     "d": 3,
-    "t": 35
+    "t": 33
    }
   ],
   "goal": 2,
   "stretch": 1,
   "promise": 6,
-  "pace_week": null,
-  "pace_4wk": 31.5,
+  "pace_week": 79.0,
+  "pace_4wk": 34.0,
   "goal_rate": 38,
-  "goal_extra": 6,
+  "goal_extra": 4,
   "ttg": null,
   "goal_date": "MAR 31",
   "waiting": [
    {
     "n": "DELTA",
     "u": 226,
-    "d": 49.1
+    "d": 54.5
    },
    {
     "n": "CVRT",
     "u": 172,
-    "d": 21.9
+    "d": 19.4
    },
    {
     "n": "CVRT SET",
     "u": 100,
-    "d": 22.2
+    "d": 18.3
    },
    {
     "n": "CVRT MAG",
     "u": 71,
-    "d": 26.8
+    "d": 26.3
    },
    {
     "n": "OVRT",
     "u": 20,
-    "d": 7.4
+    "d": 6.3
    },
    {
     "n": "OVRT MAG",
     "u": 25,
-    "d": 5.3
+    "d": 4.9
    },
    {
     "n": "X1",
     "u": 21,
-    "d": 4.9
+    "d": 4.7
    },
    {
     "n": "OTHER",
@@ -674,18 +678,20 @@
     "u": 2
    }
   ],
-  "wd_finished": 0,
-  "done_finished": 0,
+  "wd_finished": 1,
+  "done_finished": 79,
   "shipped_28d": 680,
-  "days_at_goal": 5,
+  "days_at_goal": 6,
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
   "dealer": {
    "target": 12,
-   "queue_units": 445,
+   "queue_units": 15,
    "queue_order_units": 15,
    "queue_draft_units": 430,
-   "workdays_queued": 38,
+   "queue_draft_n": 13,
+   "queue_draft_inv_sent": 2,
+   "workdays_queued": 2,
    "last_wd_shipped": 0,
    "today_shipped": 0,
    "orders": [
@@ -693,15 +699,25 @@
      "n": "79142",
      "u": 7,
      "age": 81,
-     "eta": "2026-11-16",
+     "eta": "2026-11-17",
      "kind": "order",
      "mark": "ORDER"
     },
     {
+     "n": "80376",
+     "u": 8,
+     "age": 39,
+     "eta": "2026-11-18",
+     "kind": "order",
+     "mark": "ORDER"
+    }
+   ],
+   "drafts": [
+    {
      "n": "D5520",
      "u": 12,
      "age": 81,
-     "eta": "2026-11-17",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
     },
@@ -709,7 +725,7 @@
      "n": "D5521",
      "u": 12,
      "age": 81,
-     "eta": "2026-11-18",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
     },
@@ -717,7 +733,7 @@
      "n": "D5527",
      "u": 8,
      "age": 77,
-     "eta": "2026-11-19",
+     "eta": null,
      "kind": "draft",
      "mark": "INV SENT"
     },
@@ -725,7 +741,7 @@
      "n": "D5533",
      "u": 2,
      "age": 74,
-     "eta": "2026-11-19",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
     },
@@ -733,7 +749,7 @@
      "n": "D5545",
      "u": 3,
      "age": 67,
-     "eta": "2026-11-19",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
     },
@@ -741,23 +757,15 @@
      "n": "D5554",
      "u": 7,
      "age": 62,
-     "eta": "2026-11-20",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
-    },
-    {
-     "n": "80376",
-     "u": 8,
-     "age": 39,
-     "eta": "2026-11-20",
-     "kind": "order",
-     "mark": "ORDER"
     },
     {
      "n": "D5611",
      "u": 10,
      "age": 34,
-     "eta": "2026-11-23",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
     },
@@ -765,7 +773,7 @@
      "n": "D5613",
      "u": 115,
      "age": 34,
-     "eta": "2026-12-07",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
     },
@@ -773,7 +781,7 @@
      "n": "D5620",
      "u": 59,
      "age": 31,
-     "eta": "2026-12-14",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
     },
@@ -781,7 +789,7 @@
      "n": "D5621",
      "u": 46,
      "age": 31,
-     "eta": "2026-12-18",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
     },
@@ -789,7 +797,7 @@
      "n": "D5627",
      "u": 84,
      "age": 28,
-     "eta": "2026-12-29",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
     },
@@ -797,7 +805,7 @@
      "n": "D5630",
      "u": 12,
      "age": 27,
-     "eta": "2026-12-30",
+     "eta": null,
      "kind": "draft",
      "mark": "DRAFT"
     },
@@ -805,7 +813,7 @@
      "n": "D5632",
      "u": 60,
      "age": 25,
-     "eta": "2027-01-06",
+     "eta": null,
      "kind": "draft",
      "mark": "INV SENT"
     }
@@ -854,7 +862,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "4:45 PM CT"
+  "asof_short": "4:59 PM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -965,7 +973,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T22:54:27.266723+00:00",
+  "fetched_at": "2026-11-16T23:02:03.478304+00:00",
   "rows": 239,
   "files": 16,
   "today": 35,
