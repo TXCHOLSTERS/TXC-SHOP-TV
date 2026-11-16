@@ -5,8 +5,8 @@
   "full_start": "2026-08-09",
   "done_today": 54,
   "done_week": 54,
-  "in_today": 23,
-  "in_week": 44,
+  "in_today": 25,
+  "in_week": 46,
   "wd_week": 1,
   "pace_week": null,
   "wd_finished": 0,
@@ -94,17 +94,17 @@
     54
    ]
   ],
-  "lead_fwd": 4.11,
+  "lead_fwd": 4.12,
   "ontime_week": 80,
-  "intake_wd": 33.1,
-  "backlog": 647,
+  "intake_wd": 33.2,
+  "backlog": 649,
   "glide_weeks": 6,
   "need_promise": 34,
   "need_glide": 34,
   "target": 50,
   "target_source": "config",
   "goal_rate": 37,
-  "goal_extra": 5,
+  "goal_extra": 6,
   "goal_backlog": 332,
   "goal_date": "2027-03-31",
   "wd_to_goal": 97,
@@ -120,15 +120,15 @@
    ],
    [
     37,
-    16.4
+    16.9
    ],
    [
     39,
-    10.8
+    11.0
    ],
    [
     44,
-    5.8
+    5.9
    ],
    [
     49,
@@ -199,13 +199,13 @@
    },
    {
     "st": "CVRT Holster",
-    "units": 177,
-    "days": 22.5
+    "units": 178,
+    "days": 22.7
    },
    {
     "st": "CVRT Complete Set",
-    "units": 103,
-    "days": 22.9
+    "units": 104,
+    "days": 23.1
    },
    {
     "st": "CVRT Mag Carrier",
@@ -299,8 +299,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 11:28 AM CT",
-  "gen": "2026-11-16T11:28:46.934242-06:00",
+  "asof": "Nov 16, 2026 12:00 PM CT",
+  "gen": "2026-11-16T12:00:58.611424-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -335,12 +335,12 @@
   },
   "target": 50,
   "done_today": 54,
-  "in_today": 23,
+  "in_today": 25,
   "last_wd": "2026-11-13",
   "last_wd_name": "FRIDAY",
   "last_wd_done": 20,
   "done_week": 54,
-  "in_week": 44,
+  "in_week": 46,
   "week_goal": 250,
   "weekly_target": 250,
   "streak": 0,
@@ -394,7 +394,7 @@
   "pace_week": null,
   "pace_4wk": 31.5,
   "goal_rate": 37,
-  "goal_extra": 5,
+  "goal_extra": 6,
   "ttg": null,
   "goal_date": "MAR 31",
   "waiting": [
@@ -405,13 +405,13 @@
    },
    {
     "n": "CVRT",
-    "u": 177,
-    "d": 22.5
+    "u": 178,
+    "d": 22.7
    },
    {
     "n": "CVRT SET",
-    "u": 103,
-    "d": 22.9
+    "u": 104,
+    "d": 23.1
    },
    {
     "n": "CVRT MAG",
@@ -440,7 +440,7 @@
    }
   ],
   "unknown": 0,
-  "overdue": 13,
+  "overdue": 10,
   "oldest": 81,
   "oldest_weeks": [
    [
@@ -497,7 +497,6 @@
    "80832"
   ],
   "check": [
-   "79295",
    "79956",
    "79976",
    "80792",
@@ -605,7 +604,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "11:28 AM CT"
+  "asof_short": "12:00 PM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -669,8 +668,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-16T10:54:44.443465-06:00",
-  "last_attempt": "2026-11-16T10:54:44.443465-06:00",
+  "fetched_at": "2026-11-16T12:00:57.169042-06:00",
+  "last_attempt": "2026-11-16T12:00:57.169042-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -716,7 +715,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T17:28:45.672964+00:00",
+  "fetched_at": "2026-11-16T18:00:56.782840+00:00",
   "rows": 203,
   "files": 15,
   "today": 0,
