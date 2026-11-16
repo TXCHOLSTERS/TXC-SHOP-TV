@@ -3,8 +3,8 @@
   "scope": "made-to-order units (line has a LEAD TIME AGREEMENT)",
   "hist_start": "2026-08-03",
   "full_start": "2026-08-09",
-  "done_today": 46,
-  "done_week": 46,
+  "done_today": 49,
+  "done_week": 49,
   "in_today": 23,
   "in_week": 44,
   "wd_week": 1,
@@ -12,14 +12,14 @@
   "wd_finished": 0,
   "done_finished": 0,
   "week_start": "2026-11-15",
-  "shipped_28d": 647,
+  "shipped_28d": 650,
   "days_at_goal": 5,
   "days_at_goal_of": 20,
   "pace_4wk": 31.5,
   "shipped_4wk": 630,
-  "lead_now": 3.2,
+  "lead_now": 3.23,
   "lead_median": 2.69,
-  "lead_n": 647,
+  "lead_n": 650,
   "lead_trend": [
    [
     "2026-08-30",
@@ -90,17 +90,17 @@
    [
     "2026-11-15",
     "WK NOV 15",
-    6.25,
-    46
+    6.5,
+    49
    ]
   ],
-  "lead_fwd": 4.16,
-  "ontime_week": 93,
+  "lead_fwd": 4.14,
+  "ontime_week": 88,
   "intake_wd": 33.1,
-  "backlog": 655,
+  "backlog": 652,
   "glide_weeks": 6,
-  "need_promise": 42,
-  "need_glide": 42,
+  "need_promise": 39,
+  "need_glide": 39,
   "target": 50,
   "target_source": "config",
   "goal_rate": 37,
@@ -120,19 +120,19 @@
    ],
    [
     37,
-    16.8
+    16.6
    ],
    [
     39,
-    11.1
+    11.0
    ],
    [
     44,
-    6.0
+    5.9
    ],
    [
     49,
-    4.1
+    4.0
    ]
   ],
   "last_wd": "2026-11-13",
@@ -162,15 +162,15 @@
    },
    {
     "st": "CVRT Holster",
-    "done": 13,
+    "done": 15,
     "target": 63,
-    "pct": 21
+    "pct": 24
    },
    {
     "st": "Delta",
-    "done": 5,
+    "done": 6,
     "target": 37,
-    "pct": 14
+    "pct": 16
    },
    {
     "st": "CVRT Mag Carrier",
@@ -194,13 +194,13 @@
   "waiting": [
    {
     "st": "Delta",
-    "units": 225,
-    "days": 48.9
+    "units": 224,
+    "days": 48.7
    },
    {
     "st": "CVRT Holster",
-    "units": 179,
-    "days": 22.8
+    "units": 177,
+    "days": 22.5
    },
    {
     "st": "CVRT Complete Set",
@@ -268,7 +268,7 @@
    ],
    [
     "2026-11-16",
-    46
+    49
    ]
   ],
   "done_source": "shopify_shipped",
@@ -299,8 +299,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 11:02 AM CT",
-  "gen": "2026-11-16T11:05:45.715199-06:00",
+  "asof": "Nov 16, 2026 11:11 AM CT",
+  "gen": "2026-11-16T11:11:52.248884-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -334,12 +334,12 @@
    "fresh": 60
   },
   "target": 50,
-  "done_today": 46,
+  "done_today": 49,
   "in_today": 23,
   "last_wd": "2026-11-13",
   "last_wd_name": "FRIDAY",
   "last_wd_done": 20,
-  "done_week": 46,
+  "done_week": 49,
   "in_week": 44,
   "week_goal": 250,
   "weekly_target": 250,
@@ -359,14 +359,14 @@
    },
    {
     "n": "CVRT",
-    "p": 21,
-    "d": 13,
+    "p": 24,
+    "d": 15,
     "t": 63
    },
    {
     "n": "DELTA",
-    "p": 14,
-    "d": 5,
+    "p": 16,
+    "d": 6,
     "t": 37
    },
    {
@@ -400,13 +400,13 @@
   "waiting": [
    {
     "n": "DELTA",
-    "u": 225,
-    "d": 48.9
+    "u": 224,
+    "d": 48.7
    },
    {
     "n": "CVRT",
-    "u": 179,
-    "d": 22.8
+    "u": 177,
+    "d": 22.5
    },
    {
     "n": "CVRT SET",
@@ -440,26 +440,26 @@
    }
   ],
   "unknown": 0,
-  "overdue": 21,
+  "overdue": 18,
   "oldest": 80,
   "oldest_weeks": [
-   [
-    "AUG 23",
-    "#FF9A3C",
-    "ORANGE",
-    1
-   ],
-   [
-    "SEP 6",
-    "#FF5FA2",
-    "PINK",
-    2
-   ],
    [
     "SEP 13",
     "#6CCB4A",
     "GREEN",
     5
+   ],
+   [
+    "SEP 20",
+    "#8E44D8",
+    "PURPLE",
+    24
+   ],
+   [
+    "SEP 27",
+    "#3FA9F5",
+    "BLUE",
+    10
    ]
   ],
   "remakes": 3,
@@ -504,24 +504,9 @@
    "81365"
   ],
   "done_label": "SHIPPED",
-  "overdue42": 42,
-  "oldest_days": 78,
+  "overdue42": 39,
+  "oldest_days": 64,
   "oldest_orders": [
-   {
-    "n": "79204",
-    "age": 78,
-    "u": 1
-   },
-   {
-    "n": "79467",
-    "age": 69,
-    "u": 1
-   },
-   {
-    "n": "79492",
-    "age": 69,
-    "u": 1
-   },
    {
     "n": "79689",
     "age": 64,
@@ -536,11 +521,26 @@
     "n": "79727",
     "age": 62,
     "u": 2
+   },
+   {
+    "n": "79860",
+    "age": 56,
+    "u": 1
+   },
+   {
+    "n": "79882",
+    "age": 55,
+    "u": 1
+   },
+   {
+    "n": "79885",
+    "age": 55,
+    "u": 1
    }
   ],
   "wd_finished": 0,
   "done_finished": 0,
-  "shipped_28d": 647,
+  "shipped_28d": 650,
   "days_at_goal": 5,
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
@@ -605,7 +605,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "11:02 AM CT"
+  "asof_short": "11:11 AM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -716,7 +716,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T17:05:45.013380+00:00",
+  "fetched_at": "2026-11-16T17:11:51.523756+00:00",
   "rows": 203,
   "files": 15,
   "today": 0,
