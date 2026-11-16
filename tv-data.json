@@ -279,7 +279,7 @@
    "queue_draft_units": 430,
    "queue_draft_n": 13,
    "queue_draft_inv_sent": 2,
-   "workdays_queued": 2,
+   "workdays_queued": 0,
    "orders": [
     {
      "n": "79142",
@@ -289,7 +289,11 @@
      "kind": "order",
      "mark": "ORDER",
      "net30": false,
-     "eta": "2026-11-17"
+     "who": "Dawson Precision Inc.",
+     "what": "7 OVRTs",
+     "eta": "2026-10-08",
+     "eta_past": true,
+     "eta_weeks": 6
     },
     {
      "n": "80376",
@@ -299,7 +303,11 @@
      "kind": "order",
      "mark": "ORDER",
      "net30": false,
-     "eta": "2026-11-18"
+     "who": "Dawson Precision Inc.",
+     "what": "6 OVRTs, 2 X1s",
+     "eta": "2026-11-19",
+     "eta_past": false,
+     "eta_weeks": 6
     }
    ],
    "drafts": [
@@ -311,7 +319,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "John Doe",
+     "what": "2 Deltas, 2 CVRTs, 2 CVRT sets, 1 OVRT, 4 X1s, 1 mag carrier",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5521",
@@ -321,7 +333,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "John Doe",
+     "what": "2 Deltas, 2 CVRTs, 2 CVRT sets, 1 OVRT, 4 X1s, 1 mag carrier",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5527",
@@ -331,7 +347,11 @@
      "kind": "draft",
      "mark": "INV SENT",
      "net30": false,
-     "eta": null
+     "who": "Kris Smith",
+     "what": "8 OVRTs",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5533",
@@ -341,7 +361,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "Larry Nguyen",
+     "what": "2 CVRT sets",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5545",
@@ -351,7 +375,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "Charles Rudney",
+     "what": "3 Deltas",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5554",
@@ -361,7 +389,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "Alceu Aragao",
+     "what": "5 CVRTs, 1 OVRT, 1 mag carrier",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5611",
@@ -371,7 +403,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "Flye Reginald",
+     "what": "10 Deltas",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5613",
@@ -381,7 +417,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "Sean Kratzberg",
+     "what": "95 CVRTs, 20 mag carriers",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5620",
@@ -391,7 +431,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "Rooftop shooting team",
+     "what": "6 Deltas, 3 CVRTs, 3 CVRT sets, 9 OVRTs, 38 mag carriers",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5621",
@@ -401,7 +445,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "ETTS shooting team",
+     "what": "1 CVRT, 15 CVRT sets, 11 OVRTs, 19 mag carriers",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5627",
@@ -411,7 +459,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "Eric Knight",
+     "what": "9 Deltas, 27 CVRTs, 18 OVRTs, 30 mag carriers",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5630",
@@ -421,7 +473,11 @@
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
-     "eta": null
+     "who": "Robert Floyd",
+     "what": "12 CVRT sets",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     },
     {
      "n": "D5632",
@@ -431,7 +487,11 @@
      "kind": "draft",
      "mark": "INV SENT",
      "net30": false,
-     "eta": null
+     "who": "Hunter Constantine",
+     "what": "60 CVRTs",
+     "eta": null,
+     "eta_past": false,
+     "eta_weeks": null
     }
    ],
    "stale_units_over_max_age": 565,
@@ -443,8 +503,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 4:59 PM CT",
-  "gen": "2026-11-16T17:02:04.292268-06:00",
+  "asof": "Nov 16, 2026 5:20 PM CT",
+  "gen": "2026-11-16T17:34:31.636017-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -585,7 +645,7 @@
   ],
   "unknown": 1,
   "overdue": 10,
-  "oldest": 81,
+  "oldest": 54,
   "oldest_weeks": [
    [
     "SEP 20",
@@ -685,31 +745,37 @@
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
   "dealer": {
-   "target": 12,
    "queue_units": 15,
    "queue_order_units": 15,
    "queue_draft_units": 430,
    "queue_draft_n": 13,
    "queue_draft_inv_sent": 2,
-   "workdays_queued": 2,
    "last_wd_shipped": 0,
    "today_shipped": 0,
+   "eta_weeks": 6,
+   "eta_method": "order date + current shop promise (glide path)",
    "orders": [
     {
      "n": "79142",
      "u": 7,
      "age": 81,
-     "eta": "2026-11-17",
+     "eta": "2026-10-08",
+     "eta_past": true,
      "kind": "order",
-     "mark": "ORDER"
+     "mark": "ORDER",
+     "who": "Dawson Precision Inc.",
+     "what": "7 OVRTs"
     },
     {
      "n": "80376",
      "u": 8,
      "age": 39,
-     "eta": "2026-11-18",
+     "eta": "2026-11-19",
+     "eta_past": false,
      "kind": "order",
-     "mark": "ORDER"
+     "mark": "ORDER",
+     "who": "Dawson Precision Inc.",
+     "what": "6 OVRTs, 2 X1s"
     }
    ],
    "drafts": [
@@ -718,104 +784,143 @@
      "u": 12,
      "age": 81,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "John Doe",
+     "what": "2 Deltas, 2 CVRTs, 2 CVRT sets, 1 OVRT, 4 X1s, 1 mag carrier"
     },
     {
      "n": "D5521",
      "u": 12,
      "age": 81,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "John Doe",
+     "what": "2 Deltas, 2 CVRTs, 2 CVRT sets, 1 OVRT, 4 X1s, 1 mag carrier"
     },
     {
      "n": "D5527",
      "u": 8,
      "age": 77,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "INV SENT"
+     "mark": "INV SENT",
+     "who": "Kris Smith",
+     "what": "8 OVRTs"
     },
     {
      "n": "D5533",
      "u": 2,
      "age": 74,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "Larry Nguyen",
+     "what": "2 CVRT sets"
     },
     {
      "n": "D5545",
      "u": 3,
      "age": 67,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "Charles Rudney",
+     "what": "3 Deltas"
     },
     {
      "n": "D5554",
      "u": 7,
      "age": 62,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "Alceu Aragao",
+     "what": "5 CVRTs, 1 OVRT, 1 mag carrier"
     },
     {
      "n": "D5611",
      "u": 10,
      "age": 34,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "Flye Reginald",
+     "what": "10 Deltas"
     },
     {
      "n": "D5613",
      "u": 115,
      "age": 34,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "Sean Kratzberg",
+     "what": "95 CVRTs, 20 mag carriers"
     },
     {
      "n": "D5620",
      "u": 59,
      "age": 31,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "Rooftop shooting team",
+     "what": "6 Deltas, 3 CVRTs, 3 CVRT sets, 9 OVRTs, 38 mag carriers"
     },
     {
      "n": "D5621",
      "u": 46,
      "age": 31,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "ETTS shooting team",
+     "what": "1 CVRT, 15 CVRT sets, 11 OVRTs, 19 mag carriers"
     },
     {
      "n": "D5627",
      "u": 84,
      "age": 28,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "Eric Knight",
+     "what": "9 Deltas, 27 CVRTs, 18 OVRTs, 30 mag carriers"
     },
     {
      "n": "D5630",
      "u": 12,
      "age": 27,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "DRAFT"
+     "mark": "DRAFT",
+     "who": "Robert Floyd",
+     "what": "12 CVRT sets"
     },
     {
      "n": "D5632",
      "u": 60,
      "age": 25,
      "eta": null,
+     "eta_past": false,
      "kind": "draft",
-     "mark": "INV SENT"
+     "mark": "INV SENT",
+     "who": "Hunter Constantine",
+     "what": "60 CVRTs"
     }
    ]
   },
@@ -862,7 +967,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "4:59 PM CT"
+  "asof_short": "5:20 PM CT"
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -926,8 +1031,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-16T16:16:39.717195-06:00",
-  "last_attempt": "2026-11-16T16:16:39.717195-06:00",
+  "fetched_at": "2026-11-16T17:20:52.267910-06:00",
+  "last_attempt": "2026-11-16T17:20:52.267910-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -973,7 +1078,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T23:02:03.478304+00:00",
+  "fetched_at": "2026-11-16T23:34:30.893055+00:00",
   "rows": 239,
   "files": 16,
   "today": 35,
