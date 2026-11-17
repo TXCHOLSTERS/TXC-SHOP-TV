@@ -333,7 +333,7 @@
      "n": "D5521",
      "u": 12,
      "created": "2026-08-27",
-     "age": 81,
+     "age": 82,
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
@@ -410,7 +410,7 @@
  },
  "tv": {
   "asof": "Nov 17, 2026 10:02 AM CT",
-  "gen": "2026-11-17T10:02:43.555333-06:00",
+  "gen": "2026-11-17T10:08:55.899084-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -699,7 +699,7 @@
     {
      "n": "D5521",
      "u": 12,
-     "age": 81,
+     "age": 82,
      "eta": null,
      "eta_past": false,
      "kind": "draft",
@@ -793,6 +793,8 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
+  "prev_week": 20,
+  "prev_week_same": 0,
   "asof_short": "10:02 AM CT",
   "attention": {
    "rush": [
@@ -1071,7 +1073,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T16:02:42.563567+00:00",
+  "fetched_at": "2026-11-17T16:08:54.996193+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
