@@ -3,23 +3,23 @@
   "scope": "made-to-order units (line has a LEAD TIME AGREEMENT)",
   "hist_start": "2026-08-03",
   "full_start": "2026-08-09",
-  "done_today": 75,
-  "done_week": 154,
-  "in_today": 38,
-  "in_week": 123,
+  "done_today": 77,
+  "done_week": 156,
+  "in_today": 39,
+  "in_week": 124,
   "wd_week": 2,
   "pace_week": 79.0,
   "wd_finished": 1,
   "done_finished": 79,
   "week_start": "2026-11-15",
-  "shipped_28d": 660,
+  "shipped_28d": 662,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "pace_4wk": 34.0,
   "shipped_4wk": 680,
-  "lead_now": 3.52,
+  "lead_now": 3.66,
   "lead_median": 2.72,
-  "lead_n": 660,
+  "lead_n": 662,
   "lead_trend": [
    [
     "2026-08-30",
@@ -90,14 +90,14 @@
    [
     "2026-11-15",
     "WK NOV 15",
-    5.85,
-    154
+    6.42,
+    156
    ]
   ],
-  "lead_fwd": 3.68,
-  "ontime_week": 90,
-  "intake_wd": 36.0,
-  "backlog": 626,
+  "lead_fwd": 3.69,
+  "ontime_week": 88,
+  "intake_wd": 36.1,
+  "backlog": 627,
   "glide_weeks": 6,
   "need_promise": 21,
   "need_glide": 21,
@@ -105,7 +105,7 @@
   "target_source": "config",
   "goal_rate": 39,
   "goal_extra": 5,
-  "goal_backlog": 360,
+  "goal_backlog": 361,
   "goal_date": "2027-03-31",
   "wd_to_goal": 96,
   "pace_window": [
@@ -120,15 +120,15 @@
    ],
    [
     39,
-    18.0
+    18.3
    ],
    [
     42,
-    8.9
+    9.0
    ],
    [
     47,
-    4.8
+    4.9
    ],
    [
     52,
@@ -168,9 +168,9 @@
    },
    {
     "st": "CVRT Holster",
-    "done": 48,
+    "done": 50,
     "target": 66,
-    "pct": 73
+    "pct": 76
    },
    {
     "st": "OVRT Holster",
@@ -214,8 +214,8 @@
    },
    {
     "st": "OVRT Holster",
-    "units": 25,
-    "days": 7.9
+    "units": 26,
+    "days": 8.3
    },
    {
     "st": "OVRT Mag Carriers",
@@ -272,7 +272,7 @@
    ],
    [
     "2026-11-17",
-    75
+    77
    ]
   ],
   "done_source": "shopify_shipped",
@@ -380,8 +380,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 17, 2026 3:16 PM CT",
-  "gen": "2026-11-17T15:16:55.221173-06:00",
+  "asof": "Nov 17, 2026 3:52 PM CT",
+  "gen": "2026-11-17T15:52:06.553634-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -415,13 +415,13 @@
    "fresh": 60
   },
   "target": 50,
-  "done_today": 75,
-  "in_today": 38,
+  "done_today": 77,
+  "in_today": 39,
   "last_wd": "2026-11-16",
   "last_wd_name": "MONDAY",
   "last_wd_done": 79,
-  "done_week": 154,
-  "in_week": 123,
+  "done_week": 156,
+  "in_week": 124,
   "week_goal": 250,
   "weekly_target": 250,
   "streak": 1,
@@ -446,8 +446,8 @@
    },
    {
     "n": "CVRT",
-    "p": 73,
-    "d": 48,
+    "p": 76,
+    "d": 50,
     "t": 66
    },
    {
@@ -501,8 +501,8 @@
    },
    {
     "n": "OVRT",
-    "u": 25,
-    "d": 7.9
+    "u": 26,
+    "d": 8.3
    },
    {
     "n": "OVRT MAG",
@@ -615,7 +615,7 @@
   ],
   "wd_finished": 1,
   "done_finished": 79,
-  "shipped_28d": 660,
+  "shipped_28d": 662,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
@@ -741,7 +741,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "3:16 PM CT",
+  "asof_short": "3:52 PM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -805,7 +805,7 @@
    {
     "k": "ovrt",
     "n": "OVRT HOLSTER",
-    "u": 25
+    "u": 26
    },
    {
     "k": "ovrt_sets",
@@ -828,7 +828,7 @@
     "u": 23
    }
   ],
-  "queue_types_total": 629,
+  "queue_types_total": 630,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -951,7 +951,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T21:16:54.513329+00:00",
+  "fetched_at": "2026-11-17T21:52:05.789267+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
