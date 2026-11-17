@@ -3,8 +3,8 @@
   "scope": "made-to-order units (line has a LEAD TIME AGREEMENT)",
   "hist_start": "2026-08-03",
   "full_start": "2026-08-09",
-  "done_today": 63,
-  "done_week": 142,
+  "done_today": 73,
+  "done_week": 152,
   "in_today": 37,
   "in_week": 122,
   "wd_week": 2,
@@ -12,14 +12,14 @@
   "wd_finished": 1,
   "done_finished": 79,
   "week_start": "2026-11-15",
-  "shipped_28d": 648,
+  "shipped_28d": 658,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "pace_4wk": 34.0,
   "shipped_4wk": 680,
-  "lead_now": 3.51,
-  "lead_median": 2.69,
-  "lead_n": 648,
+  "lead_now": 3.52,
+  "lead_median": 2.71,
+  "lead_n": 658,
   "lead_trend": [
    [
     "2026-08-30",
@@ -90,14 +90,14 @@
    [
     "2026-11-15",
     "WK NOV 15",
-    6.01,
-    142
+    5.86,
+    152
    ]
   ],
-  "lead_fwd": 3.75,
+  "lead_fwd": 3.69,
   "ontime_week": 89,
   "intake_wd": 36.0,
-  "backlog": 637,
+  "backlog": 627,
   "glide_weeks": 6,
   "need_promise": 21,
   "need_glide": 21,
@@ -120,19 +120,19 @@
    ],
    [
     39,
-    18.5
+    17.8
    ],
    [
     41,
-    11.1
+    10.7
    ],
    [
     46,
-    5.5
+    5.3
    ],
    [
     51,
-    3.7
+    3.6
    ]
   ],
   "last_wd": "2026-11-16",
@@ -150,9 +150,15 @@
   "board": [
    {
     "st": "CVRT Mag Carrier",
-    "done": 23,
+    "done": 24,
     "target": 20,
-    "pct": 115
+    "pct": 120
+   },
+   {
+    "st": "CVRT Complete Set",
+    "done": 34,
+    "target": 41,
+    "pct": 83
    },
    {
     "st": "Delta",
@@ -161,16 +167,10 @@
     "pct": 81
    },
    {
-    "st": "CVRT Complete Set",
-    "done": 32,
-    "target": 41,
-    "pct": 78
-   },
-   {
     "st": "CVRT Holster",
-    "done": 41,
+    "done": 47,
     "target": 66,
-    "pct": 62
+    "pct": 71
    },
    {
     "st": "OVRT Holster",
@@ -186,9 +186,9 @@
    },
    {
     "st": "X1 line",
-    "done": 3,
+    "done": 4,
     "target": 33,
-    "pct": 9
+    "pct": 12
    }
   ],
   "waiting": [
@@ -199,18 +199,18 @@
    },
    {
     "st": "CVRT Holster",
-    "units": 165,
-    "days": 18.6
-   },
-   {
-    "st": "CVRT Complete Set",
-    "units": 98,
+    "units": 159,
     "days": 18.0
    },
    {
+    "st": "CVRT Complete Set",
+    "units": 96,
+    "days": 17.6
+   },
+   {
     "st": "CVRT Mag Carrier",
-    "units": 64,
-    "days": 23.7
+    "units": 63,
+    "days": 23.3
    },
    {
     "st": "OVRT Holster",
@@ -224,8 +224,8 @@
    },
    {
     "st": "X1 line",
-    "units": 24,
-    "days": 5.4
+    "units": 23,
+    "days": 5.2
    },
    {
     "st": "Other",
@@ -272,7 +272,7 @@
    ],
    [
     "2026-11-17",
-    63
+    73
    ]
   ],
   "done_source": "shopify_shipped",
@@ -380,8 +380,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 17, 2026 2:04 PM CT",
-  "gen": "2026-11-17T14:05:00.649766-06:00",
+  "asof": "Nov 17, 2026 2:31 PM CT",
+  "gen": "2026-11-17T14:31:17.357833-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -415,12 +415,12 @@
    "fresh": 60
   },
   "target": 50,
-  "done_today": 63,
+  "done_today": 73,
   "in_today": 37,
   "last_wd": "2026-11-16",
   "last_wd_name": "MONDAY",
   "last_wd_done": 79,
-  "done_week": 142,
+  "done_week": 152,
   "in_week": 122,
   "week_goal": 250,
   "weekly_target": 250,
@@ -428,9 +428,15 @@
   "board": [
    {
     "n": "CVRT MAG",
-    "p": 115,
-    "d": 23,
+    "p": 120,
+    "d": 24,
     "t": 20
+   },
+   {
+    "n": "CVRT SET",
+    "p": 83,
+    "d": 34,
+    "t": 41
    },
    {
     "n": "DELTA",
@@ -439,15 +445,9 @@
     "t": 31
    },
    {
-    "n": "CVRT SET",
-    "p": 78,
-    "d": 32,
-    "t": 41
-   },
-   {
     "n": "CVRT",
-    "p": 62,
-    "d": 41,
+    "p": 71,
+    "d": 47,
     "t": 66
    },
    {
@@ -464,8 +464,8 @@
    },
    {
     "n": "X1",
-    "p": 9,
-    "d": 3,
+    "p": 12,
+    "d": 4,
     "t": 33
    }
   ],
@@ -486,18 +486,18 @@
    },
    {
     "n": "CVRT",
-    "u": 165,
-    "d": 18.6
-   },
-   {
-    "n": "CVRT SET",
-    "u": 98,
+    "u": 159,
     "d": 18.0
    },
    {
+    "n": "CVRT SET",
+    "u": 96,
+    "d": 17.6
+   },
+   {
     "n": "CVRT MAG",
-    "u": 64,
-    "d": 23.7
+    "u": 63,
+    "d": 23.3
    },
    {
     "n": "OVRT",
@@ -511,8 +511,8 @@
    },
    {
     "n": "X1",
-    "u": 24,
-    "d": 5.4
+    "u": 23,
+    "d": 5.2
    },
    {
     "n": "OTHER",
@@ -534,7 +534,7 @@
     "OCT 18",
     "#FF5FA2",
     "PINK",
-    126
+    116
    ],
    [
     "OCT 25",
@@ -616,7 +616,7 @@
   ],
   "wd_finished": 1,
   "done_finished": 79,
-  "shipped_28d": 648,
+  "shipped_28d": 658,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
@@ -742,7 +742,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "2:04 PM CT",
+  "asof_short": "2:31 PM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -803,17 +803,17 @@
    {
     "k": "cvrt",
     "n": "CVRT",
-    "u": 166
+    "u": 160
    },
    {
     "k": "cvrt_sets",
     "n": "CVRT SETS",
-    "u": 98
+    "u": 96
    },
    {
     "k": "cvrt_mags",
     "n": "CVRT MAG CARRIERS",
-    "u": 64
+    "u": 63
    },
    {
     "k": "ovrt",
@@ -838,10 +838,10 @@
    {
     "k": "heritage",
     "n": "HERITAGE",
-    "u": 24
+    "u": 23
    }
   ],
-  "queue_types_total": 641,
+  "queue_types_total": 631,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -964,7 +964,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T20:04:59.819646+00:00",
+  "fetched_at": "2026-11-17T20:31:16.528158+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
