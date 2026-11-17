@@ -3,8 +3,8 @@
   "scope": "made-to-order units (line has a LEAD TIME AGREEMENT)",
   "hist_start": "2026-08-03",
   "full_start": "2026-08-09",
-  "done_today": 43,
-  "done_week": 122,
+  "done_today": 46,
+  "done_week": 125,
   "in_today": 19,
   "in_week": 104,
   "wd_week": 2,
@@ -12,14 +12,14 @@
   "wd_finished": 1,
   "done_finished": 79,
   "week_start": "2026-11-15",
-  "shipped_28d": 628,
+  "shipped_28d": 631,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "pace_4wk": 34.0,
   "shipped_4wk": 680,
-  "lead_now": 3.43,
+  "lead_now": 3.44,
   "lead_median": 2.67,
-  "lead_n": 628,
+  "lead_n": 631,
   "lead_trend": [
    [
     "2026-08-30",
@@ -90,14 +90,14 @@
    [
     "2026-11-15",
     "WK NOV 15",
-    6.01,
-    122
+    5.97,
+    125
    ]
   ],
-  "lead_fwd": 3.76,
+  "lead_fwd": 3.74,
   "ontime_week": 90,
   "intake_wd": 35.1,
-  "backlog": 639,
+  "backlog": 636,
   "glide_weeks": 6,
   "need_promise": 21,
   "need_glide": 21,
@@ -120,15 +120,15 @@
    ],
    [
     39,
-    14.9
+    14.8
    ],
    [
     41,
-    9.8
+    9.7
    ],
    [
     46,
-    5.3
+    5.2
    ],
    [
     51,
@@ -156,15 +156,15 @@
    },
    {
     "st": "CVRT Complete Set",
-    "done": 30,
+    "done": 31,
     "target": 41,
-    "pct": 73
+    "pct": 76
    },
    {
     "st": "CVRT Holster",
-    "done": 37,
+    "done": 39,
     "target": 66,
-    "pct": 56
+    "pct": 59
    },
    {
     "st": "Delta",
@@ -199,13 +199,13 @@
    },
    {
     "st": "CVRT Holster",
-    "units": 167,
-    "days": 18.9
+    "units": 165,
+    "days": 18.6
    },
    {
     "st": "CVRT Complete Set",
-    "units": 98,
-    "days": 18.0
+    "units": 97,
+    "days": 17.8
    },
    {
     "st": "CVRT Mag Carrier",
@@ -272,7 +272,7 @@
    ],
    [
     "2026-11-17",
-    43
+    46
    ]
   ],
   "done_source": "shopify_shipped",
@@ -409,8 +409,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 17, 2026 11:06 AM CT",
-  "gen": "2026-11-17T11:06:30.171570-06:00",
+  "asof": "Nov 17, 2026 11:16 AM CT",
+  "gen": "2026-11-17T11:16:02.503386-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -444,12 +444,12 @@
    "fresh": 60
   },
   "target": 50,
-  "done_today": 43,
+  "done_today": 46,
   "in_today": 19,
   "last_wd": "2026-11-16",
   "last_wd_name": "MONDAY",
   "last_wd_done": 79,
-  "done_week": 122,
+  "done_week": 125,
   "in_week": 104,
   "week_goal": 250,
   "weekly_target": 250,
@@ -463,14 +463,14 @@
    },
    {
     "n": "CVRT SET",
-    "p": 73,
-    "d": 30,
+    "p": 76,
+    "d": 31,
     "t": 41
    },
    {
     "n": "CVRT",
-    "p": 56,
-    "d": 37,
+    "p": 59,
+    "d": 39,
     "t": 66
    },
    {
@@ -515,13 +515,13 @@
    },
    {
     "n": "CVRT",
-    "u": 167,
-    "d": 18.9
+    "u": 165,
+    "d": 18.6
    },
    {
     "n": "CVRT SET",
-    "u": 98,
-    "d": 18.0
+    "u": 97,
+    "d": 17.8
    },
    {
     "n": "CVRT MAG",
@@ -569,7 +569,7 @@
     "OCT 11",
     "#F5E400",
     "YELLOW",
-    8
+    5
    ]
   ],
   "remakes": 2,
@@ -646,7 +646,7 @@
   ],
   "wd_finished": 1,
   "done_finished": 79,
-  "shipped_28d": 628,
+  "shipped_28d": 631,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
@@ -795,7 +795,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "11:06 AM CT",
+  "asof_short": "11:16 AM CT",
   "attention": {
    "rush": [
     {
@@ -912,12 +912,12 @@
    {
     "k": "cvrt",
     "n": "CVRT",
-    "u": 168
+    "u": 166
    },
    {
     "k": "cvrt_sets",
     "n": "CVRT SETS",
-    "u": 98
+    "u": 97
    },
    {
     "k": "cvrt_mags",
@@ -927,7 +927,7 @@
    {
     "k": "ovrt",
     "n": "OVRT HOLSTER",
-    "u": 38
+    "u": 36
    },
    {
     "k": "ovrt_sets",
@@ -950,7 +950,7 @@
     "u": 25
    }
   ],
-  "queue_types_total": 660,
+  "queue_types_total": 655,
   "queue_types_unmapped": [
    {
     "n": "80144",
@@ -1073,7 +1073,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T17:06:29.307451+00:00",
+  "fetched_at": "2026-11-17T17:16:01.578771+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
