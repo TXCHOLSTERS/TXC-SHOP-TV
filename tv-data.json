@@ -3,23 +3,23 @@
   "scope": "made-to-order units (line has a LEAD TIME AGREEMENT)",
   "hist_start": "2026-08-03",
   "full_start": "2026-08-09",
-  "done_today": 74,
-  "done_week": 153,
-  "in_today": 37,
-  "in_week": 122,
+  "done_today": 75,
+  "done_week": 154,
+  "in_today": 38,
+  "in_week": 123,
   "wd_week": 2,
   "pace_week": 79.0,
   "wd_finished": 1,
   "done_finished": 79,
   "week_start": "2026-11-15",
-  "shipped_28d": 659,
+  "shipped_28d": 660,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "pace_4wk": 34.0,
   "shipped_4wk": 680,
   "lead_now": 3.52,
-  "lead_median": 2.71,
-  "lead_n": 659,
+  "lead_median": 2.72,
+  "lead_n": 660,
   "lead_trend": [
    [
     "2026-08-30",
@@ -90,8 +90,8 @@
    [
     "2026-11-15",
     "WK NOV 15",
-    5.86,
-    153
+    5.85,
+    154
    ]
   ],
   "lead_fwd": 3.68,
@@ -120,19 +120,19 @@
    ],
    [
     39,
-    17.7
+    18.0
    ],
    [
-    41,
-    10.6
+    42,
+    8.9
    ],
    [
-    46,
-    5.3
+    47,
+    4.8
    ],
    [
-    51,
-    3.5
+    52,
+    3.3
    ]
   ],
   "last_wd": "2026-11-16",
@@ -168,9 +168,9 @@
    },
    {
     "st": "CVRT Holster",
-    "done": 47,
+    "done": 48,
     "target": 66,
-    "pct": 71
+    "pct": 73
    },
    {
     "st": "OVRT Holster",
@@ -272,7 +272,7 @@
    ],
    [
     "2026-11-17",
-    74
+    75
    ]
   ],
   "done_source": "shopify_shipped",
@@ -380,8 +380,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 17, 2026 3:04 PM CT",
-  "gen": "2026-11-17T15:04:27.936184-06:00",
+  "asof": "Nov 17, 2026 3:16 PM CT",
+  "gen": "2026-11-17T15:16:55.221173-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -415,13 +415,13 @@
    "fresh": 60
   },
   "target": 50,
-  "done_today": 74,
-  "in_today": 37,
+  "done_today": 75,
+  "in_today": 38,
   "last_wd": "2026-11-16",
   "last_wd_name": "MONDAY",
   "last_wd_done": 79,
-  "done_week": 153,
-  "in_week": 122,
+  "done_week": 154,
+  "in_week": 123,
   "week_goal": 250,
   "weekly_target": 250,
   "streak": 1,
@@ -446,8 +446,8 @@
    },
    {
     "n": "CVRT",
-    "p": 71,
-    "d": 47,
+    "p": 73,
+    "d": 48,
     "t": 66
    },
    {
@@ -521,14 +521,14 @@
    }
   ],
   "unknown": 0,
-  "overdue": 1,
-  "oldest": 36,
+  "overdue": 0,
+  "oldest": 37,
   "oldest_weeks": [
    [
     "OCT 11",
     "#F5E400",
     "YELLOW",
-    3
+    2
    ],
    [
     "OCT 18",
@@ -576,26 +576,20 @@
   },
   "rush": [],
   "check": [
-   "79976",
    "80792"
   ],
   "done_label": "SHIPPED",
   "overdue42": 0,
-  "oldest_days": 36,
+  "oldest_days": 37,
   "oldest_orders": [
    {
     "n": "80489",
-    "age": 36,
+    "age": 37,
     "u": 1
    },
    {
     "n": "80490",
-    "age": 36,
-    "u": 1
-   },
-   {
-    "n": "80667",
-    "age": 30,
+    "age": 37,
     "u": 1
    },
    {
@@ -612,11 +606,16 @@
     "n": "80673",
     "age": 30,
     "u": 1
+   },
+   {
+    "n": "80674",
+    "age": 30,
+    "u": 1
    }
   ],
   "wd_finished": 1,
   "done_finished": 79,
-  "shipped_28d": 659,
+  "shipped_28d": 660,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
@@ -742,17 +741,10 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "3:04 PM CT",
+  "asof_short": "3:16 PM CT",
   "attention": {
    "rush": [],
    "check": [
-    {
-     "n": "79976",
-     "age": 54,
-     "u": 1,
-     "tag": "CHECK",
-     "why": "NO HAND SELECTED"
-    },
     {
      "n": "80792",
      "age": 25,
@@ -763,11 +755,6 @@
    ],
    "notes": [
     {
-     "n": "79976",
-     "age": 54,
-     "why": "M&P BG 2.0 SET ( MC )"
-    },
-    {
      "n": "80792",
      "age": 25,
      "why": "CVRT HOLSTER - STACCATO HD P4 - RH - BLK - DUAL DCC CLIPS"
@@ -776,14 +763,14 @@
    "held": [
     {
      "n": "80489",
-     "age": 36,
+     "age": 37,
      "u": 1,
      "tag": "HELD",
      "why": "ON HOLD \u00b7 PAYMENT VOIDED"
     },
     {
      "n": "80490",
-     "age": 36,
+     "age": 37,
      "u": 1,
      "tag": "HELD",
      "why": "ON HOLD \u00b7 PAYMENT VOIDED"
@@ -833,7 +820,7 @@
    {
     "k": "delta",
     "n": "DELTA",
-    "u": 222
+    "u": 221
    },
    {
     "k": "heritage",
@@ -841,7 +828,7 @@
     "u": 23
    }
   ],
-  "queue_types_total": 630,
+  "queue_types_total": 629,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -964,7 +951,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T21:04:26.753415+00:00",
+  "fetched_at": "2026-11-17T21:16:54.513329+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
