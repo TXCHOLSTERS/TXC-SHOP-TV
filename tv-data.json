@@ -236,7 +236,7 @@
   "remakes_4wk": 2,
   "remakes_week": 0,
   "returns": null,
-  "unknown_active": 1,
+  "unknown_active": 0,
   "daily_recent": [
    [
     "2026-10-27",
@@ -406,7 +406,7 @@
  },
  "tv": {
   "asof": "Nov 17, 2026 5:36 AM CT",
-  "gen": "2026-11-17T05:36:52.224837-06:00",
+  "gen": "2026-11-17T07:22:19.583854-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -545,7 +545,7 @@
     "d": 20.0
    }
   ],
-  "unknown": 1,
+  "unknown": 0,
   "overdue": 10,
   "oldest": 55,
   "oldest_weeks": [
@@ -762,7 +762,7 @@
   },
   "wip": {
    "ready": true,
-   "waiting_press": 59,
+   "waiting_press": 123,
    "buff_queue": 1,
    "wait_assembly": 0,
    "wait_qc": 0,
@@ -773,7 +773,7 @@
    "buff_today": 0,
    "assembly_today": 0,
    "qc_today": 0,
-   "released": 71,
+   "released": 137,
    "released_older": 199,
    "excluded_stocked": 23,
    "since": "2026-11-16",
@@ -858,15 +858,7 @@
      "why": "ON HOLD \u00b7 PAYMENT VOIDED"
     }
    ],
-   "unknown": [
-    {
-     "n": "81477",
-     "age": 0,
-     "u": 2,
-     "tag": "UNKNOWN",
-     "why": "ADD ON LIGHT BEARING"
-    }
-   ],
+   "unknown": [],
    "overdue": [
     {
      "n": "79948",
@@ -978,8 +970,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-17T05:36:32.809401-06:00",
-  "last_attempt": "2026-11-17T05:36:32.809401-06:00",
+  "fetched_at": "2026-11-17T07:15:00.980265-06:00",
+  "last_attempt": "2026-11-17T07:15:00.980265-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -1025,7 +1017,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T11:36:51.496027+00:00",
+  "fetched_at": "2026-11-17T13:22:18.874159+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
@@ -1047,7 +1039,7 @@
   },
   "wip": {
    "ready": true,
-   "waiting_press": 59,
+   "waiting_press": 123,
    "buff_queue": 1,
    "wait_assembly": 0,
    "wait_qc": 0,
@@ -1058,7 +1050,7 @@
    "buff_today": 0,
    "assembly_today": 0,
    "qc_today": 0,
-   "released": 71,
+   "released": 137,
    "released_older": 199,
    "excluded_stocked": 23,
    "since": "2026-11-16",
