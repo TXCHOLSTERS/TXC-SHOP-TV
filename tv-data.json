@@ -409,8 +409,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 17, 2026 9:37 AM CT",
-  "gen": "2026-11-17T09:37:20.652850-06:00",
+  "asof": "Nov 17, 2026 9:50 AM CT",
+  "gen": "2026-11-17T09:57:28.843128-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -793,7 +793,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "9:37 AM CT",
+  "asof_short": "9:50 AM CT",
   "attention": {
    "rush": [
     {
@@ -905,7 +905,62 @@
      "u": 1
     }
    ]
-  }
+  },
+  "queue_types": [
+   {
+    "k": "cvrt",
+    "n": "CVRT",
+    "u": 174
+   },
+   {
+    "k": "cvrt_sets",
+    "n": "CVRT SETS",
+    "u": 101
+   },
+   {
+    "k": "cvrt_mags",
+    "n": "CVRT MAG CARRIERS",
+    "u": 77
+   },
+   {
+    "k": "ovrt",
+    "n": "OVRT HOLSTER",
+    "u": 38
+   },
+   {
+    "k": "ovrt_sets",
+    "n": "OVRT SETS",
+    "u": 0
+   },
+   {
+    "k": "ovrt_mags",
+    "n": "OVRT MAGS",
+    "u": 34
+   },
+   {
+    "k": "delta",
+    "n": "DELTA",
+    "u": 230
+   },
+   {
+    "k": "heritage",
+    "n": "HERITAGE",
+    "u": 25
+   }
+  ],
+  "queue_types_total": 682,
+  "queue_types_unmapped": [
+   {
+    "n": "80144",
+    "title": "OVRT - CAT TOURNIQUET CARRIER",
+    "u": 2
+   },
+   {
+    "n": "81201",
+    "title": "OVRT - CAT TOURNIQUET CARRIER",
+    "u": 1
+   }
+  ]
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -1016,7 +1071,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T15:37:19.526232+00:00",
+  "fetched_at": "2026-11-17T15:57:27.957386+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
