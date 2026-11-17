@@ -3,8 +3,8 @@
   "scope": "made-to-order units (line has a LEAD TIME AGREEMENT)",
   "hist_start": "2026-08-03",
   "full_start": "2026-08-09",
-  "done_today": 73,
-  "done_week": 152,
+  "done_today": 74,
+  "done_week": 153,
   "in_today": 37,
   "in_week": 122,
   "wd_week": 2,
@@ -12,14 +12,14 @@
   "wd_finished": 1,
   "done_finished": 79,
   "week_start": "2026-11-15",
-  "shipped_28d": 658,
+  "shipped_28d": 659,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "pace_4wk": 34.0,
   "shipped_4wk": 680,
   "lead_now": 3.52,
   "lead_median": 2.71,
-  "lead_n": 658,
+  "lead_n": 659,
   "lead_trend": [
    [
     "2026-08-30",
@@ -91,13 +91,13 @@
     "2026-11-15",
     "WK NOV 15",
     5.86,
-    152
+    153
    ]
   ],
-  "lead_fwd": 3.69,
-  "ontime_week": 89,
+  "lead_fwd": 3.68,
+  "ontime_week": 90,
   "intake_wd": 36.0,
-  "backlog": 627,
+  "backlog": 626,
   "glide_weeks": 6,
   "need_promise": 21,
   "need_glide": 21,
@@ -120,11 +120,11 @@
    ],
    [
     39,
-    17.8
+    17.7
    ],
    [
     41,
-    10.7
+    10.6
    ],
    [
     46,
@@ -132,7 +132,7 @@
    ],
    [
     51,
-    3.6
+    3.5
    ]
   ],
   "last_wd": "2026-11-16",
@@ -156,9 +156,9 @@
    },
    {
     "st": "CVRT Complete Set",
-    "done": 34,
+    "done": 35,
     "target": 41,
-    "pct": 83
+    "pct": 85
    },
    {
     "st": "Delta",
@@ -204,8 +204,8 @@
    },
    {
     "st": "CVRT Complete Set",
-    "units": 96,
-    "days": 17.6
+    "units": 95,
+    "days": 17.4
    },
    {
     "st": "CVRT Mag Carrier",
@@ -272,7 +272,7 @@
    ],
    [
     "2026-11-17",
-    73
+    74
    ]
   ],
   "done_source": "shopify_shipped",
@@ -380,8 +380,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 17, 2026 2:31 PM CT",
-  "gen": "2026-11-17T14:31:17.357833-06:00",
+  "asof": "Nov 17, 2026 3:04 PM CT",
+  "gen": "2026-11-17T15:04:27.936184-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -415,12 +415,12 @@
    "fresh": 60
   },
   "target": 50,
-  "done_today": 73,
+  "done_today": 74,
   "in_today": 37,
   "last_wd": "2026-11-16",
   "last_wd_name": "MONDAY",
   "last_wd_done": 79,
-  "done_week": 152,
+  "done_week": 153,
   "in_week": 122,
   "week_goal": 250,
   "weekly_target": 250,
@@ -434,8 +434,8 @@
    },
    {
     "n": "CVRT SET",
-    "p": 83,
-    "d": 34,
+    "p": 85,
+    "d": 35,
     "t": 41
    },
    {
@@ -491,8 +491,8 @@
    },
    {
     "n": "CVRT SET",
-    "u": 96,
-    "d": 17.6
+    "u": 95,
+    "d": 17.4
    },
    {
     "n": "CVRT MAG",
@@ -528,7 +528,7 @@
     "OCT 11",
     "#F5E400",
     "YELLOW",
-    4
+    3
    ],
    [
     "OCT 18",
@@ -594,11 +594,6 @@
     "u": 1
    },
    {
-    "n": "80657",
-    "age": 30,
-    "u": 1
-   },
-   {
     "n": "80667",
     "age": 30,
     "u": 1
@@ -612,11 +607,16 @@
     "n": "80671",
     "age": 30,
     "u": 1
+   },
+   {
+    "n": "80673",
+    "age": 30,
+    "u": 1
    }
   ],
   "wd_finished": 1,
   "done_finished": 79,
-  "shipped_28d": 658,
+  "shipped_28d": 659,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
@@ -742,7 +742,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "2:31 PM CT",
+  "asof_short": "3:04 PM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -808,7 +808,7 @@
    {
     "k": "cvrt_sets",
     "n": "CVRT SETS",
-    "u": 96
+    "u": 95
    },
    {
     "k": "cvrt_mags",
@@ -841,7 +841,7 @@
     "u": 23
    }
   ],
-  "queue_types_total": 631,
+  "queue_types_total": 630,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -917,8 +917,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-17T13:58:39.886287-06:00",
-  "last_attempt": "2026-11-17T13:58:39.886287-06:00",
+  "fetched_at": "2026-11-17T15:04:27.074776-06:00",
+  "last_attempt": "2026-11-17T15:04:27.074776-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -964,7 +964,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T20:31:16.528158+00:00",
+  "fetched_at": "2026-11-17T21:04:26.753415+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
