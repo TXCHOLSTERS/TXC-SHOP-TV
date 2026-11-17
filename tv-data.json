@@ -405,8 +405,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 17, 2026 8:18 AM CT",
-  "gen": "2026-11-17T08:18:07.276284-06:00",
+  "asof": "Nov 17, 2026 8:34 AM CT",
+  "gen": "2026-11-17T08:34:48.033273-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -636,7 +636,7 @@
    },
    {
     "n": "80079",
-    "age": 50,
+    "age": 51,
     "u": 2
    }
   ],
@@ -789,12 +789,12 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "8:18 AM CT",
+  "asof_short": "8:34 AM CT",
   "attention": {
    "rush": [
     {
      "n": "81154",
-     "age": 13,
+     "age": 14,
      "u": 2,
      "tag": "PRIORITY",
      "why": "FRONT OF THE LINE \u00b7 REBUILD OF #81015"
@@ -887,7 +887,7 @@
     },
     {
      "n": "80079",
-     "age": 50,
+     "age": 51,
      "u": 2
     },
     {
@@ -1017,7 +1017,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T14:18:06.017741+00:00",
+  "fetched_at": "2026-11-17T14:34:47.233703+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
