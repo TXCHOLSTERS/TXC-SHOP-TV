@@ -5,8 +5,8 @@
   "full_start": "2026-08-09",
   "done_today": 77,
   "done_week": 156,
-  "in_today": 41,
-  "in_week": 126,
+  "in_today": 42,
+  "in_week": 127,
   "wd_week": 2,
   "pace_week": 79.0,
   "wd_finished": 1,
@@ -94,17 +94,17 @@
     156
    ]
   ],
-  "lead_fwd": 3.7,
+  "lead_fwd": 3.71,
   "ontime_week": 88,
   "intake_wd": 36.2,
-  "backlog": 629,
+  "backlog": 630,
   "glide_weeks": 6,
   "need_promise": 21,
   "need_glide": 21,
   "target": 50,
   "target_source": "config",
-  "goal_rate": 39,
-  "goal_extra": 5,
+  "goal_rate": 40,
+  "goal_extra": 6,
   "goal_backlog": 362,
   "goal_date": "2027-03-31",
   "wd_to_goal": 96,
@@ -119,16 +119,16 @@
     null
    ],
    [
-    39,
-    19.1
+    40,
+    14.3
    ],
    [
     42,
-    9.2
+    9.3
    ],
    [
     47,
-    4.9
+    5.0
    ],
    [
     52,
@@ -194,8 +194,8 @@
   "waiting": [
    {
     "st": "Delta",
-    "units": 221,
-    "days": 53.3
+    "units": 222,
+    "days": 53.5
    },
    {
     "st": "CVRT Holster",
@@ -380,8 +380,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 17, 2026 4:08 PM CT",
-  "gen": "2026-11-17T16:08:25.818196-06:00",
+  "asof": "Nov 17, 2026 4:23 PM CT",
+  "gen": "2026-11-17T16:23:26.091406-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -416,12 +416,12 @@
   },
   "target": 50,
   "done_today": 77,
-  "in_today": 41,
+  "in_today": 42,
   "last_wd": "2026-11-16",
   "last_wd_name": "MONDAY",
   "last_wd_done": 79,
   "done_week": 156,
-  "in_week": 126,
+  "in_week": 127,
   "week_goal": 250,
   "weekly_target": 250,
   "streak": 1,
@@ -474,15 +474,15 @@
   "promise": 6,
   "pace_week": 79.0,
   "pace_4wk": 34.0,
-  "goal_rate": 39,
-  "goal_extra": 5,
+  "goal_rate": 40,
+  "goal_extra": 6,
   "ttg": null,
   "goal_date": "MAR 31",
   "waiting": [
    {
     "n": "DELTA",
-    "u": 221,
-    "d": 53.3
+    "u": 222,
+    "d": 53.5
    },
    {
     "n": "CVRT",
@@ -741,7 +741,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "4:08 PM CT",
+  "asof_short": "4:23 PM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -820,7 +820,7 @@
    {
     "k": "delta",
     "n": "DELTA",
-    "u": 221
+    "u": 222
    },
    {
     "k": "heritage",
@@ -828,7 +828,7 @@
     "u": 23
    }
   ],
-  "queue_types_total": 632,
+  "queue_types_total": 633,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -951,7 +951,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T22:08:24.065506+00:00",
+  "fetched_at": "2026-11-17T22:23:25.351269+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
