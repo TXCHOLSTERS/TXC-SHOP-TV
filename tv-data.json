@@ -5,8 +5,8 @@
   "full_start": "2026-08-09",
   "done_today": 63,
   "done_week": 142,
-  "in_today": 20,
-  "in_week": 105,
+  "in_today": 23,
+  "in_week": 108,
   "wd_week": 2,
   "pace_week": 79.0,
   "wd_finished": 1,
@@ -94,18 +94,18 @@
     142
    ]
   ],
-  "lead_fwd": 3.65,
+  "lead_fwd": 3.66,
   "ontime_week": 89,
-  "intake_wd": 35.2,
-  "backlog": 620,
+  "intake_wd": 35.4,
+  "backlog": 623,
   "glide_weeks": 6,
-  "need_promise": 20,
-  "need_glide": 20,
+  "need_promise": 21,
+  "need_glide": 21,
   "target": 50,
   "target_source": "config",
-  "goal_rate": 38,
-  "goal_extra": 4,
-  "goal_backlog": 352,
+  "goal_rate": 39,
+  "goal_extra": 5,
+  "goal_backlog": 354,
   "goal_date": "2027-03-31",
   "wd_to_goal": 96,
   "pace_window": [
@@ -119,16 +119,16 @@
     null
    ],
    [
-    38,
-    19.1
+    39,
+    14.8
    ],
    [
     41,
-    9.2
+    9.5
    ],
    [
     46,
-    5.0
+    5.1
    ],
    [
     51,
@@ -219,8 +219,8 @@
    },
    {
     "st": "OVRT Mag Carriers",
-    "units": 34,
-    "days": 6.7
+    "units": 37,
+    "days": 7.3
    },
    {
     "st": "X1 line",
@@ -278,42 +278,13 @@
   "done_source": "shopify_shipped",
   "dealer_lane": {
    "target": 12,
-   "queue_units": 15,
-   "queue_order_units": 15,
+   "queue_units": 0,
+   "queue_order_units": 0,
    "queue_draft_units": 233,
    "queue_draft_n": 6,
    "queue_draft_inv_sent": 0,
    "workdays_queued": 0,
-   "orders": [
-    {
-     "n": "79142",
-     "u": 7,
-     "created": "2026-08-27",
-     "age": 82,
-     "kind": "order",
-     "mark": "ORDER",
-     "net30": false,
-     "who": "Dawson Precision Inc.",
-     "what": "7 OVRTs",
-     "eta": "2026-10-08",
-     "eta_past": true,
-     "eta_weeks": 6
-    },
-    {
-     "n": "80376",
-     "u": 8,
-     "created": "2026-10-08",
-     "age": 40,
-     "kind": "order",
-     "mark": "ORDER",
-     "net30": false,
-     "who": "Dawson Precision Inc.",
-     "what": "6 OVRTs, 2 X1s",
-     "eta": "2026-11-19",
-     "eta_past": false,
-     "eta_weeks": 6
-    }
-   ],
+   "orders": [],
    "drafts": [
     {
      "n": "D5520",
@@ -404,13 +375,13 @@
    "stale_draft_units_over_max_age": 0,
    "last_wd": "2026-11-16",
    "last_wd_shipped": 0,
-   "today_shipped": 0,
+   "today_shipped": 15,
    "rule": "build line, no LEAD TIME AGREEMENT, and DEALER/WHOLESALE/dealer part no. in title/SKU or PO# in note or DEALER/WHOLESALE tag; drafts also count with customer tag b2b/DEALER/WHOLESALE, B2B purchasing company, or an internal known-dealer name match. Completed drafts are excluded. Same 90-day cap as open orders. Dealer units never count toward the 50/day web goal."
   }
  },
  "tv": {
-  "asof": "Nov 17, 2026 12:15 PM CT",
-  "gen": "2026-11-17T12:15:55.373921-06:00",
+  "asof": "Nov 17, 2026 12:22 PM CT",
+  "gen": "2026-11-17T12:22:45.570916-06:00",
   "today": "2026-11-17",
   "cfg": {
    "h": {
@@ -445,12 +416,12 @@
   },
   "target": 50,
   "done_today": 63,
-  "in_today": 20,
+  "in_today": 23,
   "last_wd": "2026-11-16",
   "last_wd_name": "MONDAY",
   "last_wd_done": 79,
   "done_week": 142,
-  "in_week": 105,
+  "in_week": 108,
   "week_goal": 250,
   "weekly_target": 250,
   "streak": 1,
@@ -503,8 +474,8 @@
   "promise": 6,
   "pace_week": 79.0,
   "pace_4wk": 34.0,
-  "goal_rate": 38,
-  "goal_extra": 4,
+  "goal_rate": 39,
+  "goal_extra": 5,
   "ttg": null,
   "goal_date": "MAR 31",
   "waiting": [
@@ -535,8 +506,8 @@
    },
    {
     "n": "OVRT MAG",
-    "u": 34,
-    "d": 6.7
+    "u": 37,
+    "d": 7.3
    },
    {
     "n": "X1",
@@ -550,7 +521,7 @@
    }
   ],
   "unknown": 0,
-  "overdue": 8,
+  "overdue": 1,
   "oldest": 36,
   "oldest_weeks": [
    [
@@ -650,39 +621,16 @@
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
   "dealer": {
-   "queue_units": 15,
-   "queue_order_units": 15,
+   "queue_units": 0,
+   "queue_order_units": 0,
    "queue_draft_units": 233,
    "queue_draft_n": 6,
    "queue_draft_inv_sent": 0,
    "last_wd_shipped": 0,
-   "today_shipped": 0,
+   "today_shipped": 15,
    "eta_weeks": 6,
    "eta_method": "order date + current shop promise (glide path)",
-   "orders": [
-    {
-     "n": "79142",
-     "u": 7,
-     "age": 82,
-     "eta": "2026-10-08",
-     "eta_past": true,
-     "kind": "order",
-     "mark": "ORDER",
-     "who": "Dawson Precision Inc.",
-     "what": "7 OVRTs"
-    },
-    {
-     "n": "80376",
-     "u": 8,
-     "age": 40,
-     "eta": "2026-11-19",
-     "eta_past": false,
-     "kind": "order",
-     "mark": "ORDER",
-     "who": "Dawson Precision Inc.",
-     "what": "6 OVRTs, 2 X1s"
-    }
-   ],
+   "orders": [],
    "drafts": [
     {
      "n": "D5520",
@@ -794,7 +742,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "12:15 PM CT",
+  "asof_short": "12:22 PM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -870,7 +818,7 @@
    {
     "k": "ovrt",
     "n": "OVRT HOLSTER",
-    "u": 36
+    "u": 23
    },
    {
     "k": "ovrt_sets",
@@ -880,7 +828,7 @@
    {
     "k": "ovrt_mags",
     "n": "OVRT MAGS",
-    "u": 36
+    "u": 39
    },
    {
     "k": "delta",
@@ -890,10 +838,10 @@
    {
     "k": "heritage",
     "n": "HERITAGE",
-    "u": 25
+    "u": 23
    }
   ],
-  "queue_types_total": 639,
+  "queue_types_total": 627,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -1011,7 +959,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T18:15:54.574328+00:00",
+  "fetched_at": "2026-11-17T18:22:44.785305+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
