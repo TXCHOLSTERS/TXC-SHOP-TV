@@ -3,23 +3,23 @@
   "scope": "made-to-order units (line has a LEAD TIME AGREEMENT)",
   "hist_start": "2026-08-03",
   "full_start": "2026-08-09",
-  "done_today": 79,
+  "done_today": 0,
   "done_week": 79,
-  "in_today": 43,
-  "in_week": 63,
-  "wd_week": 1,
+  "in_today": 4,
+  "in_week": 89,
+  "wd_week": 2,
   "pace_week": 79.0,
   "wd_finished": 1,
   "done_finished": 79,
   "week_start": "2026-11-15",
-  "shipped_28d": 680,
+  "shipped_28d": 585,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "pace_4wk": 34.0,
   "shipped_4wk": 680,
-  "lead_now": 3.41,
-  "lead_median": 2.75,
-  "lead_n": 680,
+  "lead_now": 3.35,
+  "lead_median": 2.57,
+  "lead_n": 585,
   "lead_trend": [
    [
     "2026-08-30",
@@ -94,20 +94,20 @@
     79
    ]
   ],
-  "lead_fwd": 3.76,
+  "lead_fwd": 3.92,
   "ontime_week": 86,
-  "intake_wd": 34.1,
-  "backlog": 640,
+  "intake_wd": 34.4,
+  "backlog": 666,
   "glide_weeks": 6,
-  "need_promise": 21,
-  "need_glide": 21,
+  "need_promise": 23,
+  "need_glide": 23,
   "target": 50,
   "target_source": "config",
   "goal_rate": 38,
   "goal_extra": 4,
-  "goal_backlog": 341,
+  "goal_backlog": 344,
   "goal_date": "2027-03-31",
-  "wd_to_goal": 97,
+  "wd_to_goal": 96,
   "pace_window": [
    "2026-10-20",
    "2026-11-16"
@@ -120,19 +120,19 @@
    ],
    [
     38,
-    15.3
+    17.9
    ],
    [
     40,
-    10.1
+    11.5
    ],
    [
     45,
-    5.5
+    6.1
    ],
    [
     50,
-    3.8
+    4.1
    ]
   ],
   "last_wd": "2026-11-16",
@@ -194,38 +194,38 @@
   "waiting": [
    {
     "st": "Delta",
-    "units": 226,
-    "days": 54.5
+    "units": 232,
+    "days": 55.9
    },
    {
     "st": "CVRT Holster",
-    "units": 172,
-    "days": 19.4
+    "units": 178,
+    "days": 20.1
    },
    {
     "st": "CVRT Complete Set",
-    "units": 100,
-    "days": 18.3
+    "units": 103,
+    "days": 18.9
    },
    {
     "st": "CVRT Mag Carrier",
-    "units": 71,
-    "days": 26.3
+    "units": 75,
+    "days": 27.8
    },
    {
     "st": "OVRT Holster",
-    "units": 20,
-    "days": 6.3
+    "units": 21,
+    "days": 6.7
    },
    {
     "st": "OVRT Mag Carriers",
-    "units": 27,
-    "days": 5.3
+    "units": 32,
+    "days": 6.3
    },
    {
     "st": "X1 line",
-    "units": 21,
-    "days": 4.7
+    "units": 22,
+    "days": 4.9
    },
    {
     "st": "Other",
@@ -233,7 +233,7 @@
     "days": 20.0
    }
   ],
-  "remakes_4wk": 3,
+  "remakes_4wk": 2,
   "remakes_week": 0,
   "returns": null,
   "unknown_active": 1,
@@ -276,9 +276,9 @@
    "target": 12,
    "queue_units": 15,
    "queue_order_units": 15,
-   "queue_draft_units": 430,
-   "queue_draft_n": 13,
-   "queue_draft_inv_sent": 2,
+   "queue_draft_units": 233,
+   "queue_draft_n": 6,
+   "queue_draft_inv_sent": 0,
    "workdays_queued": 0,
    "orders": [
     {
@@ -340,34 +340,6 @@
      "eta_weeks": null
     },
     {
-     "n": "D5527",
-     "u": 8,
-     "created": "2026-08-31",
-     "age": 77,
-     "kind": "draft",
-     "mark": "INV SENT",
-     "net30": false,
-     "who": "Kris Smith",
-     "what": "8 OVRTs",
-     "eta": null,
-     "eta_past": false,
-     "eta_weeks": null
-    },
-    {
-     "n": "D5533",
-     "u": 2,
-     "created": "2026-09-03",
-     "age": 74,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "net30": false,
-     "who": "Larry Nguyen",
-     "what": "2 CVRT sets",
-     "eta": null,
-     "eta_past": false,
-     "eta_weeks": null
-    },
-    {
      "n": "D5545",
      "u": 3,
      "created": "2026-09-10",
@@ -396,20 +368,6 @@
      "eta_weeks": null
     },
     {
-     "n": "D5611",
-     "u": 10,
-     "created": "2026-10-13",
-     "age": 34,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "net30": false,
-     "who": "Flye Reginald",
-     "what": "10 Deltas",
-     "eta": null,
-     "eta_past": false,
-     "eta_weeks": null
-    },
-    {
      "n": "D5613",
      "u": 115,
      "created": "2026-10-13",
@@ -419,34 +377,6 @@
      "net30": false,
      "who": "Sean Kratzberg",
      "what": "95 CVRTs, 20 mag carriers",
-     "eta": null,
-     "eta_past": false,
-     "eta_weeks": null
-    },
-    {
-     "n": "D5620",
-     "u": 59,
-     "created": "2026-10-16",
-     "age": 31,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "net30": false,
-     "who": "Rooftop shooting team",
-     "what": "6 Deltas, 3 CVRTs, 3 CVRT sets, 9 OVRTs, 38 mag carriers",
-     "eta": null,
-     "eta_past": false,
-     "eta_weeks": null
-    },
-    {
-     "n": "D5621",
-     "u": 46,
-     "created": "2026-10-16",
-     "age": 31,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "net30": false,
-     "who": "ETTS shooting team",
-     "what": "1 CVRT, 15 CVRT sets, 11 OVRTs, 19 mag carriers",
      "eta": null,
      "eta_past": false,
      "eta_weeks": null
@@ -464,34 +394,6 @@
      "eta": null,
      "eta_past": false,
      "eta_weeks": null
-    },
-    {
-     "n": "D5630",
-     "u": 12,
-     "created": "2026-10-20",
-     "age": 27,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "net30": false,
-     "who": "Robert Floyd",
-     "what": "12 CVRT sets",
-     "eta": null,
-     "eta_past": false,
-     "eta_weeks": null
-    },
-    {
-     "n": "D5632",
-     "u": 60,
-     "created": "2026-10-21",
-     "age": 25,
-     "kind": "draft",
-     "mark": "INV SENT",
-     "net30": false,
-     "who": "Hunter Constantine",
-     "what": "60 CVRTs",
-     "eta": null,
-     "eta_past": false,
-     "eta_weeks": null
     }
    ],
    "stale_units_over_max_age": 565,
@@ -503,9 +405,9 @@
   }
  },
  "tv": {
-  "asof": "Nov 16, 2026 5:56 PM CT",
-  "gen": "2026-11-16T19:52:01.873407-06:00",
-  "today": "2026-11-16",
+  "asof": "Nov 17, 2026 5:36 AM CT",
+  "gen": "2026-11-17T05:36:52.224837-06:00",
+  "today": "2026-11-17",
   "cfg": {
    "h": {
     "start": "08:00",
@@ -538,13 +440,13 @@
    "fresh": 60
   },
   "target": 50,
-  "done_today": 79,
-  "in_today": 43,
+  "done_today": 0,
+  "in_today": 4,
   "last_wd": "2026-11-16",
   "last_wd_name": "MONDAY",
   "last_wd_done": 79,
   "done_week": 79,
-  "in_week": 63,
+  "in_week": 89,
   "week_goal": 250,
   "weekly_target": 250,
   "streak": 1,
@@ -599,43 +501,43 @@
   "pace_4wk": 34.0,
   "goal_rate": 38,
   "goal_extra": 4,
-  "ttg": 3.8,
+  "ttg": 4.1,
   "goal_date": "MAR 31",
   "waiting": [
    {
     "n": "DELTA",
-    "u": 226,
-    "d": 54.5
+    "u": 232,
+    "d": 55.9
    },
    {
     "n": "CVRT",
-    "u": 172,
-    "d": 19.4
+    "u": 178,
+    "d": 20.1
    },
    {
     "n": "CVRT SET",
-    "u": 100,
-    "d": 18.3
+    "u": 103,
+    "d": 18.9
    },
    {
     "n": "CVRT MAG",
-    "u": 71,
-    "d": 26.3
+    "u": 75,
+    "d": 27.8
    },
    {
     "n": "OVRT",
-    "u": 20,
-    "d": 6.3
+    "u": 21,
+    "d": 6.7
    },
    {
     "n": "OVRT MAG",
-    "u": 27,
-    "d": 5.3
+    "u": 32,
+    "d": 6.3
    },
    {
     "n": "X1",
-    "u": 21,
-    "d": 4.7
+    "u": 22,
+    "d": 4.9
    },
    {
     "n": "OTHER",
@@ -645,7 +547,7 @@
   ],
   "unknown": 1,
   "overdue": 10,
-  "oldest": 54,
+  "oldest": 55,
   "oldest_weeks": [
    [
     "SEP 20",
@@ -666,7 +568,7 @@
     1
    ]
   ],
-  "remakes": 3,
+  "remakes": 2,
   "returns": 2,
   "redo": {
    "d7": 0,
@@ -694,7 +596,7 @@
     ]
    ],
    "ok": true,
-   "asof": "NOV 16",
+   "asof": "NOV 17",
    "since": "OCT 25"
   },
   "rush": [],
@@ -705,11 +607,11 @@
   ],
   "done_label": "SHIPPED",
   "overdue42": 14,
-  "oldest_days": 54,
+  "oldest_days": 55,
   "oldest_orders": [
    {
     "n": "79948",
-    "age": 54,
+    "age": 55,
     "u": 1
    },
    {
@@ -729,7 +631,7 @@
    },
    {
     "n": "80052",
-    "age": 51,
+    "age": 52,
     "u": 2
    },
    {
@@ -740,16 +642,16 @@
   ],
   "wd_finished": 1,
   "done_finished": 79,
-  "shipped_28d": 680,
+  "shipped_28d": 585,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
   "dealer": {
    "queue_units": 15,
    "queue_order_units": 15,
-   "queue_draft_units": 430,
-   "queue_draft_n": 13,
-   "queue_draft_inv_sent": 2,
+   "queue_draft_units": 233,
+   "queue_draft_n": 6,
+   "queue_draft_inv_sent": 0,
    "last_wd_shipped": 0,
    "today_shipped": 0,
    "eta_weeks": 6,
@@ -802,28 +704,6 @@
      "what": "2 Deltas, 2 CVRTs, 2 CVRT sets, 1 OVRT, 4 X1s, 1 mag carrier"
     },
     {
-     "n": "D5527",
-     "u": 8,
-     "age": 77,
-     "eta": null,
-     "eta_past": false,
-     "kind": "draft",
-     "mark": "INV SENT",
-     "who": "Kris Smith",
-     "what": "8 OVRTs"
-    },
-    {
-     "n": "D5533",
-     "u": 2,
-     "age": 74,
-     "eta": null,
-     "eta_past": false,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "who": "Larry Nguyen",
-     "what": "2 CVRT sets"
-    },
-    {
      "n": "D5545",
      "u": 3,
      "age": 67,
@@ -846,17 +726,6 @@
      "what": "5 CVRTs, 1 OVRT, 1 mag carrier"
     },
     {
-     "n": "D5611",
-     "u": 10,
-     "age": 34,
-     "eta": null,
-     "eta_past": false,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "who": "Flye Reginald",
-     "what": "10 Deltas"
-    },
-    {
      "n": "D5613",
      "u": 115,
      "age": 34,
@@ -868,28 +737,6 @@
      "what": "95 CVRTs, 20 mag carriers"
     },
     {
-     "n": "D5620",
-     "u": 59,
-     "age": 31,
-     "eta": null,
-     "eta_past": false,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "who": "Rooftop shooting team",
-     "what": "6 Deltas, 3 CVRTs, 3 CVRT sets, 9 OVRTs, 38 mag carriers"
-    },
-    {
-     "n": "D5621",
-     "u": 46,
-     "age": 31,
-     "eta": null,
-     "eta_past": false,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "who": "ETTS shooting team",
-     "what": "1 CVRT, 15 CVRT sets, 11 OVRTs, 19 mag carriers"
-    },
-    {
      "n": "D5627",
      "u": 84,
      "age": 28,
@@ -899,40 +746,15 @@
      "mark": "DRAFT",
      "who": "Eric Knight",
      "what": "9 Deltas, 27 CVRTs, 18 OVRTs, 30 mag carriers"
-    },
-    {
-     "n": "D5630",
-     "u": 12,
-     "age": 27,
-     "eta": null,
-     "eta_past": false,
-     "kind": "draft",
-     "mark": "DRAFT",
-     "who": "Robert Floyd",
-     "what": "12 CVRT sets"
-    },
-    {
-     "n": "D5632",
-     "u": 60,
-     "age": 25,
-     "eta": null,
-     "eta_past": false,
-     "kind": "draft",
-     "mark": "INV SENT",
-     "who": "Hunter Constantine",
-     "what": "60 CVRTs"
     }
    ]
   },
   "qc": {
-   "today": 35,
+   "today": 0,
    "week": 35,
    "last_scan": "2026-11-16T16:00:26.535000-06:00",
    "used": false,
-   "step_today": {
-    "PRESS_TRIM": 1,
-    "QC_SHIP": 35
-   },
+   "step_today": {},
    "step_week": {
     "PRESS_TRIM": 1,
     "QC_SHIP": 35
@@ -944,13 +766,13 @@
    "buff_queue": 1,
    "wait_assembly": 0,
    "wait_qc": 0,
-   "shipped_today": 35,
+   "shipped_today": 0,
    "at_qc": 0,
-   "press_today": 1,
-   "start_today": 1,
+   "press_today": 0,
+   "start_today": 0,
    "buff_today": 0,
    "assembly_today": 0,
-   "qc_today": 35,
+   "qc_today": 0,
    "released": 71,
    "released_older": 199,
    "excluded_stocked": 23,
@@ -967,7 +789,7 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "5:56 PM CT",
+  "asof_short": "5:36 AM CT",
   "attention": {
    "rush": [
     {
@@ -981,7 +803,7 @@
    "check": [
     {
      "n": "79976",
-     "age": 53,
+     "age": 54,
      "u": 1,
      "tag": "CHECK",
      "why": "NO HAND SELECTED"
@@ -1004,7 +826,7 @@
    "notes": [
     {
      "n": "79976",
-     "age": 53,
+     "age": 54,
      "why": "M&P BG 2.0 SET ( MC )"
     },
     {
@@ -1030,7 +852,7 @@
     },
     {
      "n": "80868",
-     "age": 22,
+     "age": 23,
      "u": 1,
      "tag": "HELD",
      "why": "ON HOLD \u00b7 PAYMENT VOIDED"
@@ -1048,7 +870,7 @@
    "overdue": [
     {
      "n": "79948",
-     "age": 54,
+     "age": 55,
      "u": 1
     },
     {
@@ -1068,7 +890,7 @@
     },
     {
      "n": "80052",
-     "age": 51,
+     "age": 52,
      "u": 2
     },
     {
@@ -1078,7 +900,7 @@
     },
     {
      "n": "80144",
-     "age": 48,
+     "age": 49,
      "u": 5
     },
     {
@@ -1156,8 +978,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-16T19:52:00.798862-06:00",
-  "last_attempt": "2026-11-16T19:52:00.798862-06:00",
+  "fetched_at": "2026-11-17T05:36:32.809401-06:00",
+  "last_attempt": "2026-11-17T05:36:32.809401-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -1203,10 +1025,10 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T01:52:00.514090+00:00",
+  "fetched_at": "2026-11-17T11:36:51.496027+00:00",
   "rows": 239,
   "files": 16,
-  "today": 35,
+  "today": 0,
   "week": 35,
   "st_week": {
    "X1 line": 2,
@@ -1218,10 +1040,7 @@
   "unknown_codes": 106,
   "out_of_scope": 0,
   "last_scan": "2026-11-16T16:00:26.535000-06:00",
-  "step_today": {
-   "PRESS_TRIM": 1,
-   "QC_SHIP": 35
-  },
+  "step_today": {},
   "step_week": {
    "PRESS_TRIM": 1,
    "QC_SHIP": 35
@@ -1232,13 +1051,13 @@
    "buff_queue": 1,
    "wait_assembly": 0,
    "wait_qc": 0,
-   "shipped_today": 35,
+   "shipped_today": 0,
    "at_qc": 0,
-   "press_today": 1,
-   "start_today": 1,
+   "press_today": 0,
+   "start_today": 0,
    "buff_today": 0,
    "assembly_today": 0,
-   "qc_today": 35,
+   "qc_today": 0,
    "released": 71,
    "released_older": 199,
    "excluded_stocked": 23,
