@@ -504,7 +504,7 @@
  },
  "tv": {
   "asof": "Nov 16, 2026 5:56 PM CT",
-  "gen": "2026-11-16T17:56:21.919860-06:00",
+  "gen": "2026-11-16T19:52:01.873407-06:00",
   "today": "2026-11-16",
   "cfg": {
    "h": {
@@ -719,7 +719,7 @@
    },
    {
     "n": "79972",
-    "age": 53,
+    "age": 54,
     "u": 1
    },
    {
@@ -967,7 +967,132 @@
    297
   ],
   "records_window": "LAST 3 WEEKS",
-  "asof_short": "5:56 PM CT"
+  "asof_short": "5:56 PM CT",
+  "attention": {
+   "rush": [
+    {
+     "n": "81154",
+     "age": 13,
+     "u": 2,
+     "tag": "PRIORITY",
+     "why": "FRONT OF THE LINE \u00b7 REBUILD OF #81015"
+    }
+   ],
+   "check": [
+    {
+     "n": "79976",
+     "age": 53,
+     "u": 1,
+     "tag": "CHECK",
+     "why": "NO HAND SELECTED"
+    },
+    {
+     "n": "80792",
+     "age": 24,
+     "u": 2,
+     "tag": "CHECK",
+     "why": "NO HAND SELECTED \u00b7 NOTE SAYS RH"
+    },
+    {
+     "n": "81365",
+     "age": 4,
+     "u": 1,
+     "tag": "CHECK",
+     "why": "UPCHARGE NOT PAID \u00b7 COLOR AND HARDWARE"
+    }
+   ],
+   "notes": [
+    {
+     "n": "79976",
+     "age": 53,
+     "why": "M&P BG 2.0 SET ( MC )"
+    },
+    {
+     "n": "80792",
+     "age": 24,
+     "why": "CVRT HOLSTER - STACCATO HD P4 - RH - BLK - DUAL DCC CLIPS"
+    }
+   ],
+   "held": [
+    {
+     "n": "80489",
+     "age": 36,
+     "u": 1,
+     "tag": "HELD",
+     "why": "ON HOLD \u00b7 PAYMENT VOIDED"
+    },
+    {
+     "n": "80490",
+     "age": 36,
+     "u": 1,
+     "tag": "HELD",
+     "why": "ON HOLD \u00b7 PAYMENT VOIDED"
+    },
+    {
+     "n": "80868",
+     "age": 22,
+     "u": 1,
+     "tag": "HELD",
+     "why": "ON HOLD \u00b7 PAYMENT VOIDED"
+    }
+   ],
+   "unknown": [
+    {
+     "n": "81477",
+     "age": 0,
+     "u": 2,
+     "tag": "UNKNOWN",
+     "why": "ADD ON LIGHT BEARING"
+    }
+   ],
+   "overdue": [
+    {
+     "n": "79948",
+     "age": 54,
+     "u": 1
+    },
+    {
+     "n": "79966",
+     "age": 54,
+     "u": 2
+    },
+    {
+     "n": "79972",
+     "age": 54,
+     "u": 1
+    },
+    {
+     "n": "79983",
+     "age": 53,
+     "u": 1
+    },
+    {
+     "n": "80052",
+     "age": 51,
+     "u": 2
+    },
+    {
+     "n": "80079",
+     "age": 50,
+     "u": 2
+    },
+    {
+     "n": "80144",
+     "age": 48,
+     "u": 5
+    },
+    {
+     "n": "80172",
+     "age": 48,
+     "u": 1
+    },
+    {
+     "n": "80211",
+     "age": 46,
+     "u": 1
+    }
+   ]
+  }
  },
  "config": {
   "PROMISE_WEEKS": 6,
@@ -1031,8 +1156,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-16T17:20:52.267910-06:00",
-  "last_attempt": "2026-11-16T17:20:52.267910-06:00",
+  "fetched_at": "2026-11-16T19:52:00.798862-06:00",
+  "last_attempt": "2026-11-16T19:52:00.798862-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -1078,7 +1203,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-16T23:56:21.100682+00:00",
+  "fetched_at": "2026-11-17T01:52:00.514090+00:00",
   "rows": 239,
   "files": 16,
   "today": 35,
