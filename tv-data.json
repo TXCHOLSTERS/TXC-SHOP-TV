@@ -356,7 +356,7 @@
      "n": "D5627",
      "u": 84,
      "created": "2026-10-19",
-     "age": 29,
+     "age": 30,
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
@@ -376,8 +376,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 18, 2026 11:01 AM CT",
-  "gen": "2026-11-18T11:01:23.915588-06:00",
+  "asof": "Nov 18, 2026 11:20 AM CT",
+  "gen": "2026-11-18T11:20:25.529517-06:00",
   "today": "2026-11-18",
   "cfg": {
    "h": {
@@ -686,7 +686,7 @@
     {
      "n": "D5627",
      "u": 84,
-     "age": 29,
+     "age": 30,
      "eta": null,
      "eta_past": false,
      "kind": "draft",
@@ -738,7 +738,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "11:01 AM CT",
+  "asof_short": "11:20 AM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -834,10 +834,10 @@
    {
     "k": "heritage",
     "n": "HERITAGE",
-    "u": 24
+    "u": 25
    }
   ],
-  "queue_types_total": 662,
+  "queue_types_total": 663,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -913,8 +913,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-18T10:19:26.673827-06:00",
-  "last_attempt": "2026-11-18T10:19:26.673827-06:00",
+  "fetched_at": "2026-11-18T11:20:24.428395-06:00",
+  "last_attempt": "2026-11-18T11:20:24.428395-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -960,7 +960,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-18T17:01:23.152728+00:00",
+  "fetched_at": "2026-11-18T17:20:24.083317+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
