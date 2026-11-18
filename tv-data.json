@@ -377,7 +377,7 @@
  },
  "tv": {
   "asof": "Nov 18, 2026 12:20 PM CT",
-  "gen": "2026-11-18T12:20:02.109732-06:00",
+  "gen": "2026-11-18T12:20:46.925315-06:00",
   "today": "2026-11-18",
   "cfg": {
    "h": {
@@ -891,8 +891,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-18T11:20:24.428395-06:00",
-  "last_attempt": "2026-11-18T11:20:24.428395-06:00",
+  "fetched_at": "2026-11-18T12:20:36.613374-06:00",
+  "last_attempt": "2026-11-18T12:20:36.613374-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -938,7 +938,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-18T18:20:01.353924+00:00",
+  "fetched_at": "2026-11-18T18:20:46.109208+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
