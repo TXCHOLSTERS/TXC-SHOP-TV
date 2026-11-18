@@ -3,23 +3,23 @@
   "scope": "made-to-order units (line has a LEAD TIME AGREEMENT)",
   "hist_start": "2026-08-03",
   "full_start": "2026-08-09",
-  "done_today": 77,
+  "done_today": 0,
   "done_week": 156,
-  "in_today": 50,
-  "in_week": 135,
-  "wd_week": 2,
+  "in_today": 4,
+  "in_week": 147,
+  "wd_week": 3,
   "pace_week": 78.0,
   "wd_finished": 2,
   "done_finished": 156,
   "week_start": "2026-11-15",
-  "shipped_28d": 662,
+  "shipped_28d": 575,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "pace_4wk": 33.1,
   "shipped_4wk": 662,
-  "lead_now": 3.66,
-  "lead_median": 2.72,
-  "lead_n": 662,
+  "lead_now": 3.79,
+  "lead_median": 2.73,
+  "lead_n": 575,
   "lead_trend": [
    [
     "2026-08-30",
@@ -94,20 +94,20 @@
     156
    ]
   ],
-  "lead_fwd": 3.85,
+  "lead_fwd": 3.93,
   "ontime_week": 88,
-  "intake_wd": 36.6,
-  "backlog": 638,
+  "intake_wd": 36.5,
+  "backlog": 650,
   "glide_weeks": 6,
-  "need_promise": 21,
-  "need_glide": 21,
+  "need_promise": 22,
+  "need_glide": 22,
   "target": 50,
   "target_source": "config",
   "goal_rate": 40,
   "goal_extra": 7,
-  "goal_backlog": 366,
+  "goal_backlog": 365,
   "goal_date": "2027-03-31",
-  "wd_to_goal": 96,
+  "wd_to_goal": 95,
   "pace_window": [
    "2026-10-21",
    "2026-11-17"
@@ -120,19 +120,19 @@
    ],
    [
     40,
-    16.2
+    16.3
    ],
    [
     42,
-    10.1
+    10.4
    ],
    [
     47,
-    5.2
+    5.4
    ],
    [
     52,
-    3.5
+    3.7
    ]
   ],
   "last_wd": "2026-11-17",
@@ -194,28 +194,28 @@
   "waiting": [
    {
     "st": "Delta",
-    "units": 223,
-    "days": 56.5
+    "units": 224,
+    "days": 56.7
    },
    {
     "st": "CVRT Holster",
-    "units": 161,
-    "days": 20.1
+    "units": 165,
+    "days": 20.6
    },
    {
     "st": "CVRT Complete Set",
-    "units": 96,
-    "days": 17.9
+    "units": 100,
+    "days": 18.7
    },
    {
     "st": "CVRT Mag Carrier",
-    "units": 64,
-    "days": 22.1
+    "units": 66,
+    "days": 22.8
    },
    {
     "st": "OVRT Holster",
-    "units": 26,
-    "days": 8.3
+    "units": 27,
+    "days": 8.6
    },
    {
     "st": "OVRT Mag Carriers",
@@ -238,10 +238,6 @@
   "returns": null,
   "unknown_active": 0,
   "daily_recent": [
-   [
-    "2026-10-27",
-    177
-   ],
    [
     "2026-10-28",
     53
@@ -375,14 +371,14 @@
    "stale_draft_units_over_max_age": 0,
    "last_wd": "2026-11-17",
    "last_wd_shipped": 15,
-   "today_shipped": 15,
+   "today_shipped": 0,
    "rule": "build line, no LEAD TIME AGREEMENT, and DEALER/WHOLESALE/dealer part no. in title/SKU or PO# in note or DEALER/WHOLESALE tag; drafts also count with customer tag b2b/DEALER/WHOLESALE, B2B purchasing company, or an internal known-dealer name match. Completed drafts are excluded. Same 90-day cap as open orders. Dealer units never count toward the 50/day web goal."
   }
  },
  "tv": {
-  "asof": "Nov 17, 2026 5:44 PM CT",
-  "gen": "2026-11-17T17:44:05.475837-06:00",
-  "today": "2026-11-17",
+  "asof": "Nov 18, 2026 5:38 AM CT",
+  "gen": "2026-11-18T05:38:52.572743-06:00",
+  "today": "2026-11-18",
   "cfg": {
    "h": {
     "start": "08:00",
@@ -415,13 +411,13 @@
    "fresh": 60
   },
   "target": 50,
-  "done_today": 77,
-  "in_today": 50,
+  "done_today": 0,
+  "in_today": 4,
   "last_wd": "2026-11-17",
   "last_wd_name": "TUESDAY",
   "last_wd_done": 77,
   "done_week": 156,
-  "in_week": 135,
+  "in_week": 147,
   "week_goal": 250,
   "weekly_target": 250,
   "streak": 2,
@@ -481,28 +477,28 @@
   "waiting": [
    {
     "n": "DELTA",
-    "u": 223,
-    "d": 56.5
+    "u": 224,
+    "d": 56.7
    },
    {
     "n": "CVRT",
-    "u": 161,
-    "d": 20.1
+    "u": 165,
+    "d": 20.6
    },
    {
     "n": "CVRT SET",
-    "u": 96,
-    "d": 17.9
+    "u": 100,
+    "d": 18.7
    },
    {
     "n": "CVRT MAG",
-    "u": 64,
-    "d": 22.1
+    "u": 66,
+    "d": 22.8
    },
    {
     "n": "OVRT",
-    "u": 26,
-    "d": 8.3
+    "u": 27,
+    "d": 8.6
    },
    {
     "n": "OVRT MAG",
@@ -571,12 +567,13 @@
     ]
    ],
    "ok": true,
-   "asof": "NOV 17",
+   "asof": "NOV 18",
    "since": "OCT 25"
   },
   "rush": [],
   "check": [
-   "80792"
+   "80792",
+   "81546"
   ],
   "done_label": "SHIPPED",
   "overdue42": 0,
@@ -615,7 +612,7 @@
   ],
   "wd_finished": 2,
   "done_finished": 156,
-  "shipped_28d": 662,
+  "shipped_28d": 575,
   "days_at_goal": 6,
   "days_at_goal_of": 20,
   "week_label": "NOV 15",
@@ -626,7 +623,7 @@
    "queue_draft_n": 6,
    "queue_draft_inv_sent": 0,
    "last_wd_shipped": 15,
-   "today_shipped": 15,
+   "today_shipped": 0,
    "eta_weeks": 6,
    "eta_method": "order date + current shop promise (glide path)",
    "orders": [],
@@ -731,17 +728,17 @@
    "partial": true
   },
   "best_day": [
-   "OCT 27",
-   177
+   "NOV 16",
+   79
   ],
   "best_week": [
-   "WK OCT 25",
-   297
+   "WK NOV 15",
+   156
   ],
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "5:44 PM CT",
+  "asof_short": "5:38 AM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -751,6 +748,13 @@
      "u": 2,
      "tag": "CHECK",
      "why": "NO HAND SELECTED \u00b7 NOTE SAYS RH"
+    },
+    {
+     "n": "81546",
+     "age": 0,
+     "u": 1,
+     "tag": "CHECK",
+     "why": "UPCHARGE NOT PAID \u00b7 COLOR"
     }
    ],
    "notes": [
@@ -758,6 +762,11 @@
      "n": "80792",
      "age": 25,
      "why": "CVRT HOLSTER - STACCATO HD P4 - RH - BLK - DUAL DCC CLIPS"
+    },
+    {
+     "n": "81553",
+     "age": 0,
+     "why": "I AM AN E.M.T. IN ISRAEL AND AN IDF VET. I DON\u2019T QUALIFY FOR YOUR DISCOUNTS TO\u2026"
     }
    ],
    "held": [
@@ -777,7 +786,7 @@
     },
     {
      "n": "80868",
-     "age": 23,
+     "age": 24,
      "u": 1,
      "tag": "HELD",
      "why": "ON HOLD \u00b7 PAYMENT VOIDED"
@@ -790,22 +799,22 @@
    {
     "k": "cvrt",
     "n": "CVRT",
-    "u": 162
+    "u": 166
    },
    {
     "k": "cvrt_sets",
     "n": "CVRT SETS",
-    "u": 96
+    "u": 100
    },
    {
     "k": "cvrt_mags",
     "n": "CVRT MAG CARRIERS",
-    "u": 64
+    "u": 66
    },
    {
     "k": "ovrt",
     "n": "OVRT HOLSTER",
-    "u": 26
+    "u": 27
    },
    {
     "k": "ovrt_sets",
@@ -820,7 +829,7 @@
    {
     "k": "delta",
     "n": "DELTA",
-    "u": 223
+    "u": 224
    },
    {
     "k": "heritage",
@@ -828,7 +837,7 @@
     "u": 23
    }
   ],
-  "queue_types_total": 641,
+  "queue_types_total": 653,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -904,8 +913,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-17T17:08:38.835122-06:00",
-  "last_attempt": "2026-11-17T17:08:38.835122-06:00",
+  "fetched_at": "2026-11-18T05:38:51.259514-06:00",
+  "last_attempt": "2026-11-18T05:38:51.259514-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -951,7 +960,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-17T23:44:04.687552+00:00",
+  "fetched_at": "2026-11-18T11:38:50.977460+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
