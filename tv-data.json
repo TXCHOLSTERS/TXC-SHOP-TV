@@ -376,8 +376,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 18, 2026 11:40 AM CT",
-  "gen": "2026-11-18T11:40:47.269123-06:00",
+  "asof": "Nov 18, 2026 11:53 AM CT",
+  "gen": "2026-11-18T11:53:32.765782-06:00",
   "today": "2026-11-18",
   "cfg": {
    "h": {
@@ -738,7 +738,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "11:40 AM CT",
+  "asof_short": "11:53 AM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -814,7 +814,7 @@
    {
     "k": "ovrt",
     "n": "OVRT HOLSTER",
-    "u": 27
+    "u": 28
    },
    {
     "k": "ovrt_sets",
@@ -824,7 +824,7 @@
    {
     "k": "ovrt_mags",
     "n": "OVRT MAGS",
-    "u": 45
+    "u": 47
    },
    {
     "k": "delta",
@@ -837,7 +837,7 @@
     "u": 25
    }
   ],
-  "queue_types_total": 663,
+  "queue_types_total": 666,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -960,7 +960,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-18T17:40:46.528593+00:00",
+  "fetched_at": "2026-11-18T17:53:32.014512+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
