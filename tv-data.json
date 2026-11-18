@@ -342,7 +342,7 @@
      "n": "D5613",
      "u": 115,
      "created": "2026-10-13",
-     "age": 35,
+     "age": 36,
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
@@ -376,8 +376,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 18, 2026 11:53 AM CT",
-  "gen": "2026-11-18T11:53:32.765782-06:00",
+  "asof": "Nov 18, 2026 12:14 PM CT",
+  "gen": "2026-11-18T12:14:26.819353-06:00",
   "today": "2026-11-18",
   "cfg": {
    "h": {
@@ -675,7 +675,7 @@
     {
      "n": "D5613",
      "u": 115,
-     "age": 35,
+     "age": 36,
      "eta": null,
      "eta_past": false,
      "kind": "draft",
@@ -738,7 +738,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "11:53 AM CT",
+  "asof_short": "12:14 PM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -960,7 +960,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-18T17:53:32.014512+00:00",
+  "fetched_at": "2026-11-18T18:14:26.073718+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
