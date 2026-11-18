@@ -376,8 +376,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 18, 2026 9:02 AM CT",
-  "gen": "2026-11-18T09:02:34.974045-06:00",
+  "asof": "Nov 18, 2026 9:34 AM CT",
+  "gen": "2026-11-18T09:34:29.329283-06:00",
   "today": "2026-11-18",
   "cfg": {
    "h": {
@@ -738,13 +738,13 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "9:02 AM CT",
+  "asof_short": "9:34 AM CT",
   "attention": {
    "rush": [],
    "check": [
     {
      "n": "80792",
-     "age": 25,
+     "age": 26,
      "u": 2,
      "tag": "CHECK",
      "why": "NO HAND SELECTED \u00b7 NOTE SAYS RH"
@@ -760,7 +760,7 @@
    "notes": [
     {
      "n": "80792",
-     "age": 25,
+     "age": 26,
      "why": "CVRT HOLSTER - STACCATO HD P4 - RH - BLK - DUAL DCC CLIPS"
     },
     {
@@ -913,8 +913,8 @@
  "redo": {
   "source": "Redo API v2.2 GET /stores/{id}/returns (read-only)",
   "ok": true,
-  "fetched_at": "2026-11-18T08:10:49.344850-06:00",
-  "last_attempt": "2026-11-18T08:10:49.344850-06:00",
+  "fetched_at": "2026-11-18T09:11:49.217281-06:00",
+  "last_attempt": "2026-11-18T09:11:49.217281-06:00",
   "last_error": null,
   "total_in_lookback": 2,
   "lookback_days": 90,
@@ -960,7 +960,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-18T15:02:34.264883+00:00",
+  "fetched_at": "2026-11-18T15:34:28.580491+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
