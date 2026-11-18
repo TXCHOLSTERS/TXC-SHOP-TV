@@ -94,10 +94,10 @@
     156
    ]
   ],
-  "lead_fwd": 3.98,
+  "lead_fwd": 3.96,
   "ontime_week": 88,
-  "intake_wd": 37.0,
-  "backlog": 659,
+  "intake_wd": 36.9,
+  "backlog": 656,
   "glide_weeks": 6,
   "need_promise": 22,
   "need_glide": 22,
@@ -105,7 +105,7 @@
   "target_source": "config",
   "goal_rate": 40,
   "goal_extra": 7,
-  "goal_backlog": 370,
+  "goal_backlog": 369,
   "goal_date": "2027-03-31",
   "wd_to_goal": 95,
   "pace_window": [
@@ -120,15 +120,15 @@
    ],
    [
     40,
-    19.0
+    18.5
    ],
    [
     42,
-    11.5
+    11.3
    ],
    [
     47,
-    5.8
+    5.7
    ],
    [
     52,
@@ -209,8 +209,8 @@
    },
    {
     "st": "CVRT Mag Carrier",
-    "units": 66,
-    "days": 22.8
+    "units": 65,
+    "days": 22.4
    },
    {
     "st": "OVRT Holster",
@@ -219,8 +219,8 @@
    },
    {
     "st": "OVRT Mag Carriers",
-    "units": 43,
-    "days": 8.4
+    "units": 41,
+    "days": 8.0
    },
    {
     "st": "X1 line",
@@ -376,8 +376,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 18, 2026 12:14 PM CT",
-  "gen": "2026-11-18T12:14:26.819353-06:00",
+  "asof": "Nov 18, 2026 12:20 PM CT",
+  "gen": "2026-11-18T12:20:02.109732-06:00",
   "today": "2026-11-18",
   "cfg": {
    "h": {
@@ -492,8 +492,8 @@
    },
    {
     "n": "CVRT MAG",
-    "u": 66,
-    "d": 22.8
+    "u": 65,
+    "d": 22.4
    },
    {
     "n": "OVRT",
@@ -502,8 +502,8 @@
    },
    {
     "n": "OVRT MAG",
-    "u": 43,
-    "d": 8.4
+    "u": 41,
+    "d": 8.0
    },
    {
     "n": "X1",
@@ -518,14 +518,8 @@
   ],
   "unknown": 0,
   "overdue": 0,
-  "oldest": 37,
+  "oldest": 31,
   "oldest_weeks": [
-   [
-    "OCT 11",
-    "#F5E400",
-    "YELLOW",
-    2
-   ],
    [
     "OCT 18",
     "#FF5FA2",
@@ -536,7 +530,13 @@
     "OCT 25",
     "#6CCB4A",
     "GREEN",
-    142
+    141
+   ],
+   [
+    "NOV 1",
+    "#8E44D8",
+    "PURPLE",
+    104
    ]
   ],
   "remakes": 2,
@@ -577,18 +577,8 @@
   ],
   "done_label": "SHIPPED",
   "overdue42": 0,
-  "oldest_days": 37,
+  "oldest_days": 31,
   "oldest_orders": [
-   {
-    "n": "80489",
-    "age": 37,
-    "u": 1
-   },
-   {
-    "n": "80490",
-    "age": 37,
-    "u": 1
-   },
    {
     "n": "80670",
     "age": 31,
@@ -606,6 +596,16 @@
    },
    {
     "n": "80674",
+    "age": 30,
+    "u": 1
+   },
+   {
+    "n": "80675",
+    "age": 30,
+    "u": 1
+   },
+   {
+    "n": "80679",
     "age": 30,
     "u": 1
    }
@@ -738,7 +738,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "12:14 PM CT",
+  "asof_short": "12:20 PM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -769,29 +769,7 @@
      "why": "I AM AN E.M.T. IN ISRAEL AND AN IDF VET. I DON\u2019T QUALIFY FOR YOUR DISCOUNTS TO\u2026"
     }
    ],
-   "held": [
-    {
-     "n": "80489",
-     "age": 37,
-     "u": 1,
-     "tag": "HELD",
-     "why": "ON HOLD \u00b7 PAYMENT VOIDED"
-    },
-    {
-     "n": "80490",
-     "age": 37,
-     "u": 1,
-     "tag": "HELD",
-     "why": "ON HOLD \u00b7 PAYMENT VOIDED"
-    },
-    {
-     "n": "80868",
-     "age": 24,
-     "u": 1,
-     "tag": "HELD",
-     "why": "ON HOLD \u00b7 PAYMENT VOIDED"
-    }
-   ],
+   "held": [],
    "unknown": [],
    "overdue": []
   },
@@ -809,7 +787,7 @@
    {
     "k": "cvrt_mags",
     "n": "CVRT MAG CARRIERS",
-    "u": 66
+    "u": 65
    },
    {
     "k": "ovrt",
@@ -824,7 +802,7 @@
    {
     "k": "ovrt_mags",
     "n": "OVRT MAGS",
-    "u": 47
+    "u": 45
    },
    {
     "k": "delta",
@@ -837,7 +815,7 @@
     "u": 25
    }
   ],
-  "queue_types_total": 666,
+  "queue_types_total": 663,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -960,7 +938,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-18T18:14:26.073718+00:00",
+  "fetched_at": "2026-11-18T18:20:01.353924+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
