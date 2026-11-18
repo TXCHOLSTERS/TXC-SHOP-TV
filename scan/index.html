@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,interactive-widget=resizes-content">
 <meta name="robots" content="noindex,nofollow">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -89,7 +89,13 @@ body.flashing #main{top:0;bottom:0;z-index:8;padding-top:8vh}
 #admin p{font-size:18px;font-weight:normal;color:#bbb;margin-bottom:24px}
 #admin button{display:block;width:80%;max-width:480px;margin:12px auto;font-size:28px;font-weight:bold;padding:18px;border:0;border-radius:14px;background:#3a3a3a;color:#fff;-webkit-appearance:none}
 #admin #a_close{background:#222}
-#setup{display:none;text-align:left;overflow:auto;-webkit-overflow-scrolling:touch;padding:40px;z-index:21}
+#setup{display:none;background:#0c0c0c;text-align:left;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:24px 28px 60vh;z-index:21;position:fixed;max-height:100%;max-height:100dvh;overscroll-behavior:contain}
+#setup .kchk{font-size:18px;font-weight:normal;margin-top:6px;color:#bbb}
+#setup #s_savetest{background:#1E8E3E}
+#slb{display:none;position:fixed;left:0;right:0;top:0;bottom:0;z-index:60;text-align:center;padding:8vh 6vw;font-family:"TXC Display","Arial Narrow",sans-serif}
+#slb.ok{display:block;background:#1E8E3E}#slb.bad{display:block;background:#C1121F}#slb.wait{display:block;background:#333}
+#slb b{display:block;font-size:72px;line-height:1.05;margin-bottom:18px}#slb span{display:block;font-size:30px;font-family:Inter,Arial,sans-serif;font-weight:normal;line-height:1.35}
+#slb button{margin-top:30px;font-size:32px;font-weight:bold;padding:18px 40px;border:0;border-radius:14px;background:#fff;color:#000;-webkit-appearance:none}
 #setup h2{font-size:36px;margin-bottom:20px;color:#AF9061}
 #setup label{display:block;font-size:22px;margin:18px 0 6px}
 #setup input,#setup select{width:100%;font-size:24px;padding:12px;border-radius:8px;border:0;-webkit-appearance:none;background:#fff;color:#000}
@@ -169,12 +175,14 @@ body.flashing #main{z-index:15;bottom:0}
  <select id="f_lock"></select>
  <label>Device name (for the log, not the TV)</label><input id="f_dev" value="Scan-iPad">
  <label>Scan log (GitHub owner/repo)</label><input id="f_repo" value="TXCHOLSTERS/txc-qc-scans">
- <label>Upload key (GitHub token) - paste it here</label><input id="f_tok" type="password" placeholder="github_pat_...">
+ <label>Upload key (GitHub token) - paste it here</label><input id="f_tok" type="password" placeholder="github_pat_..." autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"><div class="kchk" id="f_tokchk">Easiest: make a one-tap setup link at /scan/setup-link.html instead of pasting here.</div>
+ <button id="s_savetest" type="button">SAVE + TEST</button>
  <label class="chk"><input id="f_qc" type="checkbox"> Show a QC / SHIP button (only if the Redo packing-slip scan is not being used)</label>
  <button id="s_save" type="button">SAVE</button><button id="s_test" type="button">TEST CONNECTION</button><button id="s_csv" type="button">EMAIL/SAVE A COPY (CSV)</button><button id="s_close" type="button">CLOSE</button>
  <div class="msg" id="s_msg"></div>
- <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan11-20261116. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
+ <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan12-20261118. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
 </div>
+<div id="slb"><b id="slbh"></b><span id="slbt"></span><button id="slbx" type="button">OK</button></div>
 <div id="pick"><h2 id="pickh">WHICH UNIT?</h2><div class="pmsg" id="pickm"></div><div class="row" id="pickbtns"></div>
 <button type="button" class="all" id="pickall">ALL UNITS</button>
 <button type="button" class="cancel" id="pickx">CANCEL</button></div>
@@ -185,7 +193,7 @@ body.flashing #main{z-index:15;bottom:0}
 <script>
 (function(){
 'use strict';
-var VER='scan11-20261116';
+var VER='scan12-20261118';
 var DEF={api:'https://api.github.com',repo:'TXCHOLSTERS/txc-qc-scans',branch:'main',dev:'Scan-iPad',tok:'',lockStation:'',showQc:false};
 var HEADER='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app,batch_id,batch_size';
 var HEADER_OLD='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app';
@@ -219,8 +227,29 @@ if(window.TXCQC_TEST_CFG){for(var k2 in window.TXCQC_TEST_CFG)cfg[k2]=window.TXC
 if(cfg.showQc===undefined)cfg.showQc=false;
 if(cfg.lockStation===undefined)cfg.lockStation='';
 if(cfg.units)UNITS=cfg.units;
+/* One-tap setup link (Nov 18 2026): /scan/?station=buff#setup=<base64url JSON {key,station,device,repo}>. The key lives only in the
+   #fragment (never sent to GitHub Pages), is saved to this device like SETUP does, then the fragment is wiped from the address bar. */
+function keyCheck(k){k=String(k||'').replace(/\s/g,'');if(!k)return {ok:false,len:0,msg:'No key'};
+ var pre=k.indexOf('github_pat_')===0?'github_pat_':(k.indexOf('ghp_')===0?'ghp_':'');
+ if(!pre)return {ok:false,len:k.length,msg:k.length+' characters - does not start with github_pat_ (wrong or partial copy)'};
+ if(pre==='github_pat_'&&k.length<80)return {ok:false,len:k.length,msg:k.length+' characters - too short, a github_pat_ key is about 93 (partial copy)'};
+ if(pre==='ghp_'&&k.length!==40)return {ok:false,len:k.length,msg:k.length+' characters - a ghp_ key is 40 (partial copy?)'};
+ return {ok:true,len:k.length,msg:k.length+' characters, starts with '+pre+' - looks complete'};}
+var SETUP_LINK=null;
+(function readSetupHash(){var h=location.hash||'',m=/^#setup=([A-Za-z0-9_\-]+)=*$/.exec(h.replace(/\s/g,''));if(h.indexOf('#setup=')!==0)return;
+ try{if(history.replaceState)history.replaceState(null,'',location.pathname+location.search);else location.hash='';}catch(e){}
+ if(!m){SETUP_LINK={err:'The setup link is damaged (cut off). Make a new one.'};return;}
+ var j=null;try{var b=m[1].replace(/-/g,'+').replace(/_/g,'/');while(b.length%4)b+='=';j=JSON.parse(b64d(b));}catch(e){j=null;}
+ if(!j||!j.key){SETUP_LINK={err:'The setup link is damaged (cut off). Make a new one.'};return;}
+ var key=String(j.key).replace(/\s/g,''),kc=keyCheck(key);
+ var st=String(j.station||'').toLowerCase().replace(/[_\s]+/g,'-'),sm={'press-trim':'PRESS_TRIM','presstrim':'PRESS_TRIM','buff':'BUFF','assembly':'ASSEMBLY'};
+ var sid=sm[st]||'';var repo=String(j.repo||'').replace(/\s/g,'');if(!/^[A-Za-z0-9_.\-]+\/[A-Za-z0-9_.\-]+$/.test(repo))repo=DEF.repo;
+ cfg.tok=key;cfg.repo=repo;if(sid)cfg.lockStation=sid;var dv=clean(j.device);if(dv)cfg.dev=dv;
+ ss('cfg',{dev:cfg.dev,repo:cfg.repo,tok:cfg.tok,branch:cfg.branch,api:cfg.api,lockStation:cfg.lockStation,showQc:cfg.showQc});
+ SETUP_LINK={ok:true,kc:kc,sid:sid};})();
 function stationFromUrl(){
- var raw=((location.search||'')+'&'+(location.hash||'').replace(/^#/, 'station=')).toLowerCase();
+ var hs=(location.hash||'').indexOf('#setup')===0?'':(location.hash||'');
+ var raw=((location.search||'')+'&'+hs.replace(/^#/, 'station=')).toLowerCase();
  var m=/[?&#]station=([^&]+)/.exec(raw); if(!m)return '';
  var v=decodeURIComponent(m[1]).replace(/^\s+|\s+$/g,'').replace(/[_\s]+/g,'-');
  var map={'press-trim':'PRESS_TRIM','press/trim':'PRESS_TRIM','presstrim':'PRESS_TRIM','press':'PRESS_TRIM','start':'PRESS_TRIM','trim':'PRESS_TRIM',
@@ -637,15 +666,34 @@ $('s_snd').addEventListener('click',function(){setAudioSession();$('s_msg').inne
   if(ok){window.TXCQC_SOUND='html';$('s_msg').innerHTML='<span class="okc">Sound is on.</span> If you did not hear 2 beeps, raise the volume with the side buttons.';return;}
   if(AC&&AC.state==='running'){wOk();window.TXCQC_SOUND='webaudio';$('s_msg').innerHTML='<span class="wc">Sound is on (backup mode). If you did not hear 2 beeps, turn off Silent Mode and raise the volume.</span>';return;}
   window.TXCQC_SOUND='blocked';$('s_msg').innerHTML=blocked;});},false);
-$('s_save').addEventListener('click',function(){cfg.dev=clean($('f_dev').value)||'Scan-iPad';cfg.repo=$('f_repo').value.replace(/\s/g,'')||DEF.repo;var tk=$('f_tok').value.replace(/\s/g,'');if(tk)cfg.tok=tk;$('f_tok').value='';
+$('s_save').addEventListener('click',function(){cfg.dev=clean($('f_dev').value)||'Scan-iPad';cfg.repo=$('f_repo').value.replace(/\s/g,'')||DEF.repo;var tk=$('f_tok').value.replace(/\s/g,'');if(tk){cfg.tok=tk;$('f_tokchk').innerHTML=(keyCheck(tk).ok?'<span class="okc">':'<span class="ec">')+keyCheck(tk).msg+'</span>';}$('f_tok').value='';
  cfg.showQc=!!$('f_qc').checked;cfg.lockStation=$('f_lock').value||'';
  if(cfg.lockStation){var s=stationById(cfg.lockStation);if(s&&(cfg.dev==='Scan-iPad'||cfg.dev==='QC-iPad'))cfg.dev=s.short.replace(/\W+/g,'')+'-iPad';$('f_dev').value=cfg.dev;}
  ss('cfg',{dev:cfg.dev,repo:cfg.repo,tok:cfg.tok,branch:cfg.branch,api:cfg.api,lockStation:cfg.lockStation,showQc:cfg.showQc});
  $('s_msg').innerHTML='Saved.';applyLock();buildStepButtons();if(isLocked())setStep(lockedTo());loadRemote();sync();},false);
-$('s_test').addEventListener('click',function(){$('s_msg').innerHTML='Testing...';api('GET','/repos/'+cfg.repo,null,function(st,j){
- if(st===200&&j&&j.permissions&&j.permissions.push)$('s_msg').innerHTML='<span class="okc">CONNECTED. Uploads will work.</span>';
- else if(st===200)$('s_msg').innerHTML='<span class="okc">CONNECTED</span> (repo found).';
- else $('s_msg').innerHTML='<span class="ec">NOT CONNECTED (code '+st+'). Check the key and the repo name.</span>';});},false);
+function testConn(cb){if(!cfg.tok){cb(-1,null);return;}api('GET','/repos/'+cfg.repo,null,cb);}
+function connText(st,j){if(st===200&&j&&j.permissions&&j.permissions.push)return {ok:true,t:'CONNECTED. Uploads will work.'};
+ if(st===200)return {ok:true,t:'CONNECTED (repo found, but this key may not be allowed to write).'};
+ if(st===-1)return {ok:false,t:'NOT CONNECTED - no key saved on this device.'};
+ if(st===0)return {ok:false,t:'NOT CONNECTED - no internet. Check Wi-Fi and try again.'};
+ if(st===401)return {ok:false,t:'NOT CONNECTED (code 401) - GitHub did not accept the key (wrong, partial or expired).'};
+ if(st===404||st===403)return {ok:false,t:'NOT CONNECTED (code '+st+') - the key works but cannot see '+cfg.repo+'. Give it access to that repo.'};
+ return {ok:false,t:'NOT CONNECTED (code '+st+'). Check the key and the repo name.'};}
+function runTest(){$('s_msg').innerHTML='Testing...';testConn(function(st,j){var c=connText(st,j);$('s_msg').innerHTML='<span class="'+(c.ok?'okc':'ec')+'">'+c.t+'</span>';});}
+$('s_test').addEventListener('click',runTest,false);
+$('s_savetest').addEventListener('click',function(){$('s_save').click();runTest();},false);
+$('f_tok').addEventListener('input',function(){var v=$('f_tok').value;if(!v){$('f_tokchk').innerHTML='';return;}var c=keyCheck(v),sp=/^\s|\s$/.test(v)?' (extra spaces will be removed)':'';
+ $('f_tokchk').innerHTML='<span class="'+(c.ok?'okc':'ec')+'">'+c.msg+sp+'</span>';},false);
+(function(){var ins=$('setup').getElementsByTagName('input'),sl=$('setup').getElementsByTagName('select'),all=[],i;for(i=0;i<ins.length;i++)all.push(ins[i]);for(i=0;i<sl.length;i++)all.push(sl[i]);
+ for(i=0;i<all.length;i++)all[i].addEventListener('focus',function(e){var el=e.target;setTimeout(function(){try{el.scrollIntoView({block:'center'});}catch(x){try{el.scrollIntoView();}catch(y){}}},350);},false);
+ if(window.visualViewport)window.visualViewport.addEventListener('resize',function(){$('setup').style.maxHeight=window.visualViewport.height+'px';},false);})();
+function showSetupBanner(){if(!SETUP_LINK)return;var b=$('slb');
+ $('slbx').onclick=function(){b.className='';try{unlockAudio();beepOk();hideStart();}catch(e){}focusInp();};
+ if(SETUP_LINK.err){b.className='bad';$('slbh').innerHTML='NOT CONNECTED';$('slbt').innerHTML=SETUP_LINK.err;return;}
+ var where=(SETUP_LINK.sid?labelOf(SETUP_LINK.sid):labelOf(step))+' · '+clean(cfg.dev);
+ b.className='wait';$('slbh').innerHTML='CHECKING…';$('slbt').innerHTML='Setup saved: '+where;
+ testConn(function(st,j){var c=connText(st,j);b.className=c.ok?'ok':'bad';$('slbh').innerHTML=c.ok?'CONNECTED':'NOT CONNECTED'+(st>0?' ('+st+')':'');
+  $('slbt').innerHTML=where+'<br>'+c.t+(c.ok?'<br>Tap OK, then scan TXC-TEST.':(SETUP_LINK.kc&&!SETUP_LINK.kc.ok?'<br>Key: '+SETUP_LINK.kc.msg:'')+'<br>Make a new link at /scan/setup-link.html');});}
 $('s_csv').addEventListener('click',function(){var t=HEADER+'\n';for(var i=0;i<rows.length;i++)t+=csvLine(rows[i])+'\n';
  var a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(t);a.download='txc-scans-'+dLocal(new Date().getTime())+'.csv';a.target='_blank';document.body.appendChild(a);a.click();},false);
 if($('startb'))$('startb').addEventListener('click',function(){unlockAudio();beepOk();hideStart();focusInp();},false);
@@ -657,7 +705,8 @@ window.TXCQC={handle:handle,handleMany:handleMany,sync:sync,setStep:setStep,extr
  loadRemote:loadRemote,normStep:normStep,closePick:closePick};
 if(cfg.lockStation){step=lockedTo()||step;ss('step',step);}
 else if(pageStations().filter(function(s){return s.id===step;}).length===0){step=defaultStep();ss('step',step);}
-buildStepButtons();applyLock();drawHist();drawStatus();drawUndo();loadStationsCfg();loadUnits();loadRemote();sync();focusInp();
+buildStepButtons();applyLock();drawHist();drawStatus();drawUndo();loadStationsCfg();loadUnits();loadRemote();sync();focusInp();showSetupBanner();
+window.addEventListener('hashchange',function(){if((location.hash||'').indexOf('#setup=')===0)location.reload();},false);
 
 var C128=['212222','222122','222221','121223','121322','131222','122213','122312','132212','221213','221312','231212','112232','122132','122231','113222','123122','123221','223211','221132','221231','213212','223112','312131','311222','321122','321221','312212','322112','322211','212123','212321','232121','111323','131123','131321','112313','132113','132311','211313','231113','231311','112133','112331','132131','113123','113321','133121','313121','211331','231131','213113','213311','213131','311123','311321','331121','312113','312311','332111','314111','221411','431111','111224','111422','121124','121421','141122','141221','112214','112412','122114','122411','142112','142211','241211','221114','413111','241112','134111','111242','121142','121241','114212','124112','124211','411212','421112','421211','212141','214121','412121','111143','111341','131141','114113','114311','411113','411311','113141','114131','311141','411131','211412','211214','211232'];
 var C128M={};for(var ci=0;ci<C128.length;ci++)C128M[C128[ci]]=ci;

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>TXC Scan - one-tap setup links</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0c0c0c;color:#fff;font:17px/1.45 -apple-system,Helvetica,Arial,sans-serif;padding:18px;max-width:760px;margin:0 auto}
+h1{font-size:26px;color:#AF9061;margin:6px 0 4px}
+p{margin:8px 0}
+.warn{background:#3a2a00;border:1px solid #AF9061;border-radius:10px;padding:10px 12px;font-size:15px}
+textarea{width:100%;font:16px monospace;padding:12px;border-radius:10px;border:0;min-height:86px;background:#fff;color:#000}
+input[type=text]{width:100%;font-size:16px;padding:10px;border-radius:8px;border:0}
+button{font-size:18px;font-weight:bold;padding:14px 16px;border-radius:10px;border:0;background:#3a3a3a;color:#fff;margin:8px 8px 0 0}
+button.go{background:#1E8E3E;width:100%;margin-right:0;font-size:20px}
+#chk,#api{font-weight:bold;margin-top:8px}
+.okc{color:#5BD17A}.ec{color:#FF6B6B}.wc{color:#FFB627}
+.st{background:#1a1a1a;border-radius:12px;padding:12px;margin-top:12px}
+.st h3{margin:0 0 6px;font-size:20px}
+.st code{display:block;word-break:break-all;font-size:12px;color:#999;max-height:3.2em;overflow:hidden}
+.st a{color:#AF9061}
+#out{display:none}
+small{color:#999}
+</style></head>
+<body>
+<h1>TXC Scan · one-tap setup links</h1>
+<p>Do this on your phone or Mac. Paste the upload key once, tap <b>MAKE LINKS</b>, then email the links to yourself and open one on each Fire.</p>
+<div class="warn">Keep these links private: each one contains the upload key. Do not text or forward them to anyone. Delete the email after the Fires show CONNECTED. Nothing here is sent anywhere except GitHub (api.github.com) to test the key.</div>
+<p><b>1. Paste the upload key</b> <small>(github_pat_…)</small></p>
+<textarea id="k" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Long-press here → Paste"></textarea>
+<div id="chk"></div>
+<details><summary><small>Advanced (scan log repo)</small></summary><input id="repo" type="text" value="TXCHOLSTERS/txc-qc-scans" autocapitalize="off"></details>
+<button class="go" id="make" type="button">2. TEST KEY + MAKE LINKS</button>
+<div id="api"></div>
+<div id="out">
+ <p><b>3. Send the links to yourself</b></p>
+ <input id="me" type="text" placeholder="your email (optional)" autocapitalize="off" inputmode="email">
+ <button id="mail" type="button">EMAIL ME THE 3 LINKS</button><button id="all" type="button">COPY ALL</button>
+ <div id="list"></div>
+ <p><small>On each Fire: open the email in Silk, tap that station's link, wait for the green CONNECTED screen, tap OK, scan TXC-TEST. Use the page in Silk (bookmark it). Then delete the email.</small></p>
+</div>
+<script>
+(function(){'use strict';
+var BASE='https://txcholsters.github.io/TXC-SHOP-TV/scan/';
+var ST=[{s:'press-trim',name:'PRESS / TRIM',dev:'PRESSTRIM-Fire'},{s:'buff',name:'BUFF',dev:'BUFF-Fire'},{s:'assembly',name:'ASSEMBLY',dev:'ASSEMBLY-Fire'}];
+function $(i){return document.getElementById(i);}
+function clean(k){return String(k||'').replace(/\s/g,'');}
+function check(k){if(!k)return {ok:false,msg:''};
+ var pre=k.indexOf('github_pat_')===0?'github_pat_':(k.indexOf('ghp_')===0?'ghp_':'');
+ if(!pre)return {ok:false,msg:k.length+' characters. Does not start with github_pat_ — wrong or partial copy.'};
+ if(pre==='github_pat_'&&k.length<80)return {ok:false,msg:k.length+' characters. Too short — a github_pat_ key is about 93. Copy it again.'};
+ if(pre==='ghp_'&&k.length!==40)return {ok:false,msg:k.length+' characters. A ghp_ key is 40. Copy it again.'};
+ if(!/^[A-Za-z0-9_]+$/.test(k))return {ok:false,msg:'Has characters a key never has (quotes, dots, etc.). Copy it again.'};
+ return {ok:true,msg:k.length+' characters, starts with '+pre+' — looks complete.'};}
+function b64url(s){return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+function linkFor(st,key,repo){return BASE+'?station='+st.s+'#setup='+b64url(JSON.stringify({key:key,station:st.s,device:st.dev,repo:repo}));}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function copy(t,btn){var done=function(){var o=btn.innerHTML;btn.innerHTML='COPIED ✓';setTimeout(function(){btn.innerHTML=o;},1500);};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fb();});}else fb();
+ function fb(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}}
+var links=[];
+$('k').addEventListener('input',function(){var raw=$('k').value,k=clean(raw),c=check(k);
+ $('chk').innerHTML=k?'<span class="'+(c.ok?'okc':'ec')+'">'+esc(c.msg)+(raw!==k?' (spaces/line breaks removed)':'')+'</span>':'';
+ $('out').style.display='none';$('api').innerHTML='';},false);
+$('make').addEventListener('click',function(){var k=clean($('k').value),repo=clean($('repo').value)||'TXCHOLSTERS/txc-qc-scans',c=check(k);
+ $('out').style.display='none';
+ if(!k){$('api').innerHTML='<span class="ec">Paste the key first.</span>';return;}
+ if(!c.ok){$('api').innerHTML='<span class="ec">'+esc(c.msg)+'</span>';return;}
+ $('api').innerHTML='Testing the key with GitHub…';
+ var x=new XMLHttpRequest();x.open('GET','https://api.github.com/repos/'+repo+'?t='+Date.now(),true);
+ x.setRequestHeader('Accept','application/vnd.github+json');x.setRequestHeader('Authorization','Bearer '+k);x.timeout=20000;
+ x.onreadystatechange=function(){if(x.readyState!==4)return;var j=null;try{j=JSON.parse(x.responseText);}catch(e){}var s=x.status;
+  if(s===200&&j&&j.permissions&&j.permissions.push){$('api').innerHTML='<span class="okc">OK — GitHub accepted the key and it can upload to '+esc(repo)+'.</span>';build(k,repo);}
+  else if(s===200){$('api').innerHTML='<span class="wc">Key works and can see '+esc(repo)+', but it may not be allowed to upload (needs Contents: Read and write). Links made anyway.</span>';build(k,repo);}
+  else if(s===401)$('api').innerHTML='<span class="ec">401 — GitHub did not accept this key (wrong, cut off, or expired). Make a new key. No links made.</span>';
+  else if(s===404||s===403)$('api').innerHTML='<span class="ec">'+s+' — the key is real but cannot see '+esc(repo)+'. Edit the key: Repository access → txc-qc-scans, Contents → Read and write. No links made.</span>';
+  else if(s===0)$('api').innerHTML='<span class="ec">Could not reach GitHub (no internet?). Try again.</span>';
+  else $('api').innerHTML='<span class="ec">GitHub said '+s+'. No links made.</span>';};
+ x.ontimeout=function(){};x.send(null);},false);
+function build(k,repo){links=[];var h='';for(var i=0;i<ST.length;i++){var u=linkFor(ST[i],k,repo);links.push({st:ST[i],u:u});
+  h+='<div class="st"><h3>'+ST[i].name+' <small>('+ST[i].dev+')</small></h3><code>'+esc(u.split('#')[0])+'#setup=…</code><a href="'+esc(u)+'" target="_blank" rel="noreferrer">open on this device</a> <button type="button" data-i="'+i+'">COPY LINK</button></div>';}
+ $('list').innerHTML=h;var bs=$('list').getElementsByTagName('button');
+ for(var b=0;b<bs.length;b++)bs[b].addEventListener('click',function(e){copy(links[+e.target.getAttribute('data-i')].u,e.target);},false);
+ $('out').style.display='block';$('out').scrollIntoView({behavior:'smooth'});}
+function allText(){var t='TXC scan setup links. PRIVATE (contains the upload key). Delete this email after the Fires show CONNECTED.\n\n';
+ for(var i=0;i<links.length;i++)t+=links[i].st.name+':\n'+links[i].u+'\n\n';return t;}
+$('all').addEventListener('click',function(e){copy(allText(),e.target);},false);
+$('mail').addEventListener('click',function(){var to=clean($('me').value);
+ location.href='mailto:'+encodeURIComponent(to)+'?subject='+encodeURIComponent('TXC scan setup links (private - delete after setup)')+'&body='+encodeURIComponent(allText());},false);
+})();
+</script>
+</body></html>
