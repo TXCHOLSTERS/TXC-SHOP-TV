@@ -328,7 +328,7 @@
      "n": "D5554",
      "u": 7,
      "created": "2026-09-15",
-     "age": 63,
+     "age": 64,
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
@@ -376,8 +376,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 18, 2026 8:10 AM CT",
-  "gen": "2026-11-18T08:10:50.665768-06:00",
+  "asof": "Nov 18, 2026 8:22 AM CT",
+  "gen": "2026-11-18T08:22:23.310607-06:00",
   "today": "2026-11-18",
   "cfg": {
    "h": {
@@ -664,7 +664,7 @@
     {
      "n": "D5554",
      "u": 7,
-     "age": 63,
+     "age": 64,
      "eta": null,
      "eta_past": false,
      "kind": "draft",
@@ -738,7 +738,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "8:10 AM CT",
+  "asof_short": "8:22 AM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -960,7 +960,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-18T14:10:49.041347+00:00",
+  "fetched_at": "2026-11-18T14:22:22.520629+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
