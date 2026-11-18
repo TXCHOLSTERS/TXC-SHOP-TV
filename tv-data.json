@@ -286,7 +286,7 @@
      "n": "D5520",
      "u": 12,
      "created": "2026-08-27",
-     "age": 82,
+     "age": 83,
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
@@ -300,7 +300,7 @@
      "n": "D5521",
      "u": 12,
      "created": "2026-08-27",
-     "age": 82,
+     "age": 83,
      "kind": "draft",
      "mark": "DRAFT",
      "net30": false,
@@ -376,8 +376,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 18, 2026 9:51 AM CT",
-  "gen": "2026-11-18T09:51:01.098037-06:00",
+  "asof": "Nov 18, 2026 10:07 AM CT",
+  "gen": "2026-11-18T10:07:08.346952-06:00",
   "today": "2026-11-18",
   "cfg": {
    "h": {
@@ -596,7 +596,7 @@
    },
    {
     "n": "80671",
-    "age": 30,
+    "age": 31,
     "u": 1
    },
    {
@@ -631,7 +631,7 @@
     {
      "n": "D5520",
      "u": 12,
-     "age": 82,
+     "age": 83,
      "eta": null,
      "eta_past": false,
      "kind": "draft",
@@ -642,7 +642,7 @@
     {
      "n": "D5521",
      "u": 12,
-     "age": 82,
+     "age": 83,
      "eta": null,
      "eta_past": false,
      "kind": "draft",
@@ -738,7 +738,7 @@
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "9:51 AM CT",
+  "asof_short": "10:07 AM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -960,7 +960,7 @@
   "ok": true,
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-18T15:51:00.318057+00:00",
+  "fetched_at": "2026-11-18T16:07:07.576987+00:00",
   "rows": 239,
   "files": 16,
   "today": 0,
