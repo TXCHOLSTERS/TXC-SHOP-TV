@@ -180,7 +180,7 @@ body.flashing #main{z-index:15;bottom:0}
  <label class="chk"><input id="f_qc" type="checkbox"> Show a QC / SHIP button (only if the Redo packing-slip scan is not being used)</label>
  <button id="s_save" type="button">SAVE</button><button id="s_test" type="button">TEST CONNECTION</button><button id="s_csv" type="button">EMAIL/SAVE A COPY (CSV)</button><button id="s_close" type="button">CLOSE</button>
  <div class="msg" id="s_msg"></div>
- <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan12-20261118. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
+ <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan13-20261118. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
 </div>
 <div id="slb"><b id="slbh"></b><span id="slbt"></span><button id="slbx" type="button">OK</button></div>
 <div id="pick"><h2 id="pickh">WHICH UNIT?</h2><div class="pmsg" id="pickm"></div><div class="row" id="pickbtns"></div>
@@ -193,12 +193,15 @@ body.flashing #main{z-index:15;bottom:0}
 <script>
 (function(){
 'use strict';
-var VER='scan12-20261118';
+var VER='scan13-20261118';
 var DEF={api:'https://api.github.com',repo:'TXCHOLSTERS/txc-qc-scans',branch:'main',dev:'Scan-iPad',tok:'',lockStation:'',showQc:false};
 var HEADER='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app,batch_id,batch_size';
 var HEADER_OLD='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app';
 var RE_UNIT=/^(TXC\d{3,7})-(\d{1,3})$/, RE_ORDER=/^(TXC\d{3,7})$/;
 var RE_BATCH=/^TXC-BATCH-(PRESS-TRIM|PRESS_TRIM|PRESSTRIM|BUFF|ASSEMBLY)$/;
+/* DEALER batch barcode (Nov 18 2026): TXC81500-B1OF2-100 = order, batch 1 of 2, 100 units. One scan counts every unit in the batch
+   at this station (txc_qc expands it from the build-sheet batch index). Logged as ONE row, result OK_BATCH, batch_id=code, batch_size=units. */
+var RE_DBATCH=/^(TXC\d{3,7})-B(\d{1,2})OF(\d{1,2})-(\d{1,4})$/, DBATCH_MS=2500;
 var KEEP_DAYS=45, LOAD_DAYS=14, SILENT_MS=2500, UNDO_MS=60000, BURST_IDLE=120, FLASH_MS=600, BATCH_IDLE_MS=30*60*1000;
 var STATIONS=[
  {id:'PRESS',label:'PRESS',done_label:'PRESSED',short:'PRESS',enabled:false,scan_page:false,source:'scan',maps_from:[]},
@@ -334,7 +337,7 @@ setAudioSession();sndPreload();
 function buzz(pat){try{if(navigator.vibrate)navigator.vibrate(pat);}catch(e){}}
 function pendingBatch(){return (batch&&batch.items)?batch.items.length:0;}
 function todayCount(st){var td=dLocal(new Date().getTime()),n=0,k;
- for(k in seen){if(k.indexOf(st+'|')===0&&dLocal(seen[k])===td)n++;}
+ for(k in seen){if(k.indexOf(st+'|')===0&&dLocal(seen[k])===td){var dbm=RE_DBATCH.exec(k.substring(st.length+1));n+=dbm?(+dbm[4]||1):1;}}
  for(var i=0;i<rows.length;i++){if(rows[i].result==='OK_ORDER_ONLY'&&normStep(rows[i].step||'')===st&&rows[i].date_local===td)n++;}
  if(batch&&step===st)n+=pendingBatch();
  return n;}
@@ -358,9 +361,9 @@ function bodyClass(){
  if(batch)cls.push('batch');
  if($('main')&&$('main').className&&$('main').className!=='idle')cls.push('flashing');
  document.body.className=cls.join(' ');}
-function show(cls,big,code,sub){var m=$('main');m.className=cls;$('big').innerHTML=big;$('code').innerHTML=code||'';$('sub').innerHTML=sub||'';$('today').innerHTML=todayLine();
+function show(cls,big,code,sub,ms){var m=$('main');m.className=cls;$('big').innerHTML=big;$('code').innerHTML=code||'';$('sub').innerHTML=sub||'';$('today').innerHTML=todayLine();
  bodyClass();
- clearTimeout(resetT);resetT=setTimeout(function(){m.className='idle';bodyClass();drawCount();drawHist();drawUndo();},cls==='idle'?0:FLASH_MS);drawHist();drawUndo();drawCount();}
+ clearTimeout(resetT);resetT=setTimeout(function(){m.className='idle';bodyClass();drawCount();drawHist();drawUndo();},cls==='idle'?0:(ms||FLASH_MS));drawHist();drawUndo();drawCount();}
 function status(msg,c){var e=$('st');e.innerHTML=msg;e.className=c||'';}
 function drawCount(){
  if($('todn'))$('todn').innerHTML=String(todayCount(step));
@@ -424,9 +427,10 @@ function extract(raw){
  if(/TXC-TEST/.test(s))return "TXC-TEST";
  var su=s.match(/TXCSETUP:[A-Z0-9_\-]+/); if(su)return su[0];
  var b=s.match(/TXC-BATCH-[A-Z0-9\-]+/); if(b)return b[0];
+ var db=s.match(/TXC\d{3,7}-B\d{1,2}OF\d{1,2}-\d{1,4}/); if(db)return db[0];
  var all=s.match(/TXC\d{3,7}(?:-\d{1,3})?/g); return (all&&all.length)?all[all.length-1]:s;}
 function extractAll(raw){
- var s=normalizeRaw(raw), out=[], re=/TXCSETUP:[A-Z0-9_\-]+|TXC-BATCH-[A-Z0-9\-]+|TXC-TEST|TXC\d{3,7}(?:-\d{1,3})?/g, m;
+ var s=normalizeRaw(raw), out=[], re=/TXCSETUP:[A-Z0-9_\-]+|TXC-BATCH-[A-Z0-9\-]+|TXC-TEST|TXC\d{3,7}-B\d{1,2}OF\d{1,2}-\d{1,4}|TXC\d{3,7}(?:-\d{1,3})?/g, m;
  while((m=re.exec(s))) out.push(m[0]);
  if(!out.length&&s) out.push(s);
  return out;}
@@ -467,6 +471,11 @@ function logUnit(code,order,unit,t){
  if(batch){return addToBatch(code,order,unit,t);}
  seen[key]=t;ss('seen',seen);addRow(t,code,order,unit,'OK');lastOk={code:code,step:step,t:t};ss('lastok',lastOk);
  show('ok','&#10003; '+code,doneOf(step),'');beepOk();buzz(80);return 'ok';}
+function logDealerBatch(code,m,t){
+ var key=sk(step,code),q=+m[4],ex={batch_id:code,batch_size:q},bl='BATCH '+(+m[2])+' OF '+(+m[3]);
+ if(seen[key]){addRow(t,code,m[1],'','DUPLICATE',ex);show('dup','ALREADY<br>COUNTED',bl+' &middot; '+m[1],labelOf(step)+' &middot; '+dayName(seen[key])+' '+hm(seen[key]),DBATCH_MS);beepDup();buzz([40,80,40]);return 'dup';}
+ seen[key]=t;ss('seen',seen);addRow(t,code,m[1],'','OK_BATCH',ex);lastOk={code:code,step:step,t:t};ss('lastok',lastOk);
+ show('ok','&#10003; '+bl,q+' UNIT'+(q===1?'':'S')+' &middot; '+doneOf(step),m[1]+' &middot; dealer batch',DBATCH_MS);beepBatch();buzz(80);return 'ok';}
 function showPick(order, units){
  pickOrder=order; $('pickh').innerHTML=order; $('pickm').innerHTML=units.length?(units.length+' units on this order — tap one, or all'):'Which unit?';
  var h='',i,list=units.length?units:[1,2,3];
@@ -491,6 +500,9 @@ function handle(raw, opts){
  }
  if(s===lastHandled.code&&lastHandled.step===step&&(t-lastHandled.t)<SILENT_MS){return;}
  if(s==='TXC-TEST'){ lastHandled={code:s,step:step,t:t};addRow(t,s,'','','TEST');show('test','SCANNER<br>WORKS','TXC-TEST','Test only — nothing was saved.');beepOk();buzz(40);return;}
+ if((m=RE_DBATCH.exec(s))){
+  lastHandled={code:s,step:step,t:t};logDealerBatch(s,m,t);sync();return;
+ }
  if((m=RE_UNIT.exec(s))){
   lastHandled={code:s,step:step,t:t};logUnit(s,m[1],m[2],t);sync();return;
  }
@@ -516,11 +528,11 @@ function undo(){
  }
  var info=lastInfo();
  if(!info||!undoArmed()){show('warn','NOTHING<br>TO UNDO','','Undo is only good for 60 seconds.');return;}
- var t=new Date().getTime(),raw=info.code,code=raw.charAt(0)==='~'?raw.substring(1):raw,m=RE_UNIT.exec(code)||RE_ORDER.exec(code);
+ var t=new Date().getTime(),raw=info.code,code=raw.charAt(0)==='~'?raw.substring(1):raw,dbu=RE_DBATCH.exec(code),m=dbu?[code,dbu[1],'']:(RE_UNIT.exec(code)||RE_ORDER.exec(code));
  var prev=step;step=normStep(info.step||step);
  if(isLocked()&&step!==lockedTo()){step=prev;show('warn','LOCKED<br>STATION','','This device is locked to '+labelOf(lockedTo())+'.');return;}
  if(raw.charAt(0)!=='~')delete seen[sk(step,code)];ss('seen',seen);
- addRow(t,code,m?m[1]:'',m&&m[2]?m[2]:'','UNDO');step=prev;
+ addRow(t,code,m?m[1]:'',m&&m[2]?m[2]:'','UNDO',dbu?{batch_id:code,batch_size:+dbu[4]}:null);step=prev;
  lastOk=null;ss('lastok',null);lastHandled={code:'',step:'',t:0};show('warn','UNDONE',code,'That '+labelOf(info.step||'')+' scan no longer counts.');beepSoft();sync();}
 $('pickbtns').addEventListener('click',function(e){var b=e.target;if(!b||!b.getAttribute)return;var u=b.getAttribute('data-u');if(!u||!pickOrder)return;var o=pickOrder;closePick();handle(o+'-'+u,{fromPick:true});},false);
 $('pickall').addEventListener('click',function(){if(!pickOrder)return;var o=pickOrder,us=unitsOf(o),t=new Date().getTime(),n=0,i;closePick();
@@ -533,7 +545,7 @@ $('pickall').addEventListener('click',function(){if(!pickOrder)return;var o=pick
  else{show('dup','ALREADY<br>COUNTED',o,labelOf(step));beepDup();}},false);
 $('pickx').addEventListener('click',function(){closePick();},false);
 var buf='',bufT=0,burstT=null,inp=$('scan');
-function isCompleteToken(s){s=String(s||'');return !!(RE_UNIT.test(s)||RE_ORDER.test(s)||s==='TXC-TEST'||parseBatch(s)||s.indexOf('TXCSETUP:')===0);}
+function isCompleteToken(s){s=String(s||'');return !!(RE_DBATCH.test(s)||RE_UNIT.test(s)||RE_ORDER.test(s)||s==='TXC-TEST'||parseBatch(s)||s.indexOf('TXCSETUP:')===0);}
 function flushBurst(force){clearTimeout(burstT);burstT=null;var v=buf;if(!v){try{inp.value='';}catch(e){}return;}
  var parts=extractAll(v),i,ok=parts.length>0;
  for(i=0;i<parts.length;i++){if(!isCompleteToken(parts[i]))ok=false;}
@@ -541,7 +553,7 @@ function flushBurst(force){clearTimeout(burstT);burstT=null;var v=buf;if(!v){try
  buf='';try{inp.value='';}catch(e){}
  handleMany(v);}
 function splitReady(v){
- var s=normalizeRaw(v), re=/TXCSETUP:[A-Z0-9_\-]+|TXC-BATCH-[A-Z0-9\-]+|TXC-TEST|TXC\d{3,7}(?:-\d{1,3})?/g, last=0, m, ready=[];
+ var s=normalizeRaw(v), re=/TXCSETUP:[A-Z0-9_\-]+|TXC-BATCH-[A-Z0-9\-]+|TXC-TEST|TXC\d{3,7}-B\d{1,2}OF\d{1,2}-\d{1,4}|TXC\d{3,7}(?:-\d{1,3})?/g, last=0, m, ready=[];
  while((m=re.exec(s))){ last=m.index+m[0].length; ready.push(m[0]); }
  if(ready.length>=2){ var rest=s.substring(last); return {ready:ready.slice(0,-1), rest:ready[ready.length-1]+rest}; }
  return null;}
