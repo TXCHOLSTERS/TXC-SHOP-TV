@@ -180,7 +180,7 @@ body.flashing #main{z-index:15;bottom:0}
  <label class="chk"><input id="f_qc" type="checkbox"> Show a QC / SHIP button (only if the Redo packing-slip scan is not being used)</label>
  <button id="s_save" type="button">SAVE</button><button id="s_test" type="button">TEST CONNECTION</button><button id="s_csv" type="button">EMAIL/SAVE A COPY (CSV)</button><button id="s_close" type="button">CLOSE</button>
  <div class="msg" id="s_msg"></div>
- <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan14-20261118. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
+ <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan15-20261119. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
 </div>
 <div id="slb"><b id="slbh"></b><span id="slbt"></span><button id="slbx" type="button">OK</button></div>
 <div id="pick"><h2 id="pickh">WHICH UNIT?</h2><div class="pmsg" id="pickm"></div><div class="row" id="pickbtns"></div>
@@ -193,7 +193,7 @@ body.flashing #main{z-index:15;bottom:0}
 <script>
 (function(){
 'use strict';
-var VER='scan14-20261118';
+var VER='scan15-20261119';
 var DEF={api:'https://api.github.com',repo:'TXCHOLSTERS/txc-qc-scans',branch:'main',dev:'Scan-iPad',tok:'',lockStation:'',showQc:false};
 var HEADER='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app,batch_id,batch_size';
 var HEADER_OLD='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app';
@@ -734,6 +734,24 @@ if($('startb'))$('startb').addEventListener('click',function(){unlockAudio();bee
 if($('ahs'))$('ahs').addEventListener('click',function(){$('ahs').className='';ss('ahsDismissed',true);},false);
 if(location.hash==='#setup')openSetup();
 if('serviceWorker' in navigator&&location.protocol==='https:'){try{navigator.serviceWorker.register('sw.js');}catch(e){}}
+/* AUTO-UPDATE (Nov 19 2026): tablets left open all night kept running yesterday's page (PRESS/TRIM + BUFF were on scan12 and
+   rejected QS batch codes). Every 5 min (and when the screen wakes) read version.json; if a newer page is published and the
+   station is idle (no scan in 90 s, no batch / unit pick / admin / setup open, nothing half-typed), reload once. Waiting
+   scans are saved in localStorage first, so nothing is lost. Max one try per version per 30 min (no reload loops). */
+var UPD_MS=5*60000, UPD_IDLE=(window.TXCQC_TEST_CFG&&window.TXCQC_TEST_CFG.updIdle)||90000;
+function updIdle(){var now=new Date().getTime();if(batch||pickOrder)return false;
+ if(($('admin')&&$('admin').style.display==='block')||($('setup')&&$('setup').style.display==='block'))return false;
+ if($('scan')&&$('scan').value)return false;var lt=Math.max(lastHandled&&lastHandled.t||0,lastOk&&lastOk.t||0);return now-lt>=UPD_IDLE;}
+function checkUpdate(){if(location.protocol==='file:')return;try{var x=new XMLHttpRequest();x.open('GET','version.json?t='+new Date().getTime(),true);x.timeout=6000;
+ x.onload=function(){if(x.status!==200)return;var j;try{j=JSON.parse(x.responseText);}catch(e){return;}var v=j&&j.ver;
+  if(!v||typeof v!=='string'||v===VER||!/^scan\d+-\d{8}$/.test(v))return;
+  var tr=ls('updTried',{}),now=new Date().getTime();if(tr.v===v&&now-tr.t<30*60000)return;
+  if(!updIdle()){setTimeout(checkUpdate,30000);return;}
+  ss('queue',queue);ss('rows',rows);ss('updTried',{v:v,t:now});status('Updating page...','');location.reload();};
+ x.send();}catch(e){}}
+window.TXCQC_checkUpdate=checkUpdate;
+setInterval(checkUpdate,UPD_MS);setTimeout(checkUpdate,20000);
+document.addEventListener('visibilitychange',function(){if(!document.hidden)setTimeout(checkUpdate,3000);},false);
 window.TXCQC={handle:handle,handleMany:handleMany,sync:sync,setStep:setStep,extract:extract,extractAll:extractAll,undo:undo,openBatch:openBatch,closeBatch:function(){closeBatch('card');},
  state:function(){return {seen:seen,queue:queue,rows:rows,step:step,cfg:{repo:cfg.repo,dev:cfg.dev,hasTok:!!cfg.tok,lockStation:cfg.lockStation||'',showQc:!!cfg.showQc},locked:isLocked(),lastOk:lastOk,undoArmed:undoArmed(),pick:pickOrder,today:todayCount(step),batch:batch?{id:batch.id,count:batch.items.length,items:batch.items.slice()}:null};},
  loadRemote:loadRemote,normStep:normStep,closePick:closePick};
