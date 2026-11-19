@@ -105,6 +105,19 @@ body.flashing #main{top:0;bottom:0;z-index:8;padding-top:8vh}
 #setup .chk input{width:auto;margin-right:10px}
 #s_snd{background:#1E8E3E;font-size:28px;padding:18px 28px}
 #pick{display:none;z-index:22}
+#qty{display:none;position:fixed;left:0;right:0;top:0;bottom:0;background:#0b0b0b;z-index:24;padding:14px 20px;box-sizing:border-box;color:#fff;font-family:"TXC Display","Arial Narrow",sans-serif;text-align:center;overflow:hidden}
+#qty .qh{font-size:40px;color:#AF9061;font-weight:bold;letter-spacing:1px}#qty .qst{color:#2AD4E8;margin-left:14px}
+#qty .qinfo{display:flex;gap:14px;justify-content:center;margin:8px 0}#qty .qinfo div{flex:1;max-width:300px;background:#1c1c1c;border-radius:14px;padding:4px 0}
+#qty .qinfo small{display:block;font-size:22px;color:#aaa}#qty .qinfo b{font-size:52px}#qty .qinfo .ql b{color:#FFD400}
+#qty .qbody{display:flex;gap:22px;justify-content:center;align-items:flex-start}
+#qty .qleftcol{flex:1;max-width:560px}#qty .qlab{font-size:24px;color:#aaa}#qty .qval{font-size:120px;line-height:1;font-weight:bold;color:#fff;background:#222;border:4px solid #1E8E3E;border-radius:16px;padding:6px 0}
+#qty .qafter{font-size:24px;color:#5BD17A;min-height:30px;margin:4px 0}
+#qty .qrow{display:flex;gap:10px;margin-top:8px}#qty .qrow button{flex:1;font-size:36px;min-height:72px;border:0;border-radius:14px;background:#333;color:#fff;font-weight:bold;-webkit-appearance:none}
+#qty .qpre button{background:#AF9061;color:#000}#qty .qpre button[data-qp="ALL"]{font-size:28px}
+#qty .qpad{display:grid;grid-template-columns:repeat(3,110px);gap:10px}#qty .qpad button{font-size:48px;height:78px;border:0;border-radius:14px;background:#2a2a2a;color:#fff;font-weight:bold;-webkit-appearance:none}#qty .qpad .qc{font-size:26px;background:#444}
+#qty .qmsg{font-size:26px;color:#ddd;margin:10px 0 6px;min-height:34px}#qty .qmsg.err{color:#fff;background:#C1121F;border-radius:10px;padding:4px 10px}
+#qty .qbot{display:flex;gap:16px;justify-content:center}#qty .qok{flex:2;max-width:640px;font-size:56px;min-height:96px;border:0;border-radius:16px;background:#1E8E3E;color:#fff;font-weight:bold;-webkit-appearance:none}#qty .qok.dim{opacity:.45}
+#qty .qx{flex:1;max-width:260px;font-size:32px;min-height:96px;border:0;border-radius:16px;background:#333;color:#fff;font-weight:bold;-webkit-appearance:none}
 #pick h2{font-size:64px;margin-top:40px;color:#AF9061}
 #pick .pmsg{font-size:36px;font-weight:normal;margin:20px 0 36px;color:#eee}
 #pick .row{display:-webkit-box;display:-webkit-flex;display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
@@ -180,12 +193,20 @@ body.flashing #main{z-index:15;bottom:0}
  <label class="chk"><input id="f_qc" type="checkbox"> Show a QC / SHIP button (only if the Redo packing-slip scan is not being used)</label>
  <button id="s_save" type="button">SAVE</button><button id="s_test" type="button">TEST CONNECTION</button><button id="s_csv" type="button">EMAIL/SAVE A COPY (CSV)</button><button id="s_close" type="button">CLOSE</button>
  <div class="msg" id="s_msg"></div>
- <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan15-20261119. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
+ <div class="msg" style="margin-top:30px;color:#999">Scans waiting to upload: <span id="s_q">0</span>. Version scan16-20261119. Open a station with /scan/?station=buff (or press-trim, assembly). After Add to Home Screen, just scan. A printable optional batch card is at /scan/cards.html.</div>
 </div>
 <div id="slb"><b id="slbh"></b><span id="slbt"></span><button id="slbx" type="button">OK</button></div>
 <div id="pick"><h2 id="pickh">WHICH UNIT?</h2><div class="pmsg" id="pickm"></div><div class="row" id="pickbtns"></div>
 <button type="button" class="all" id="pickall">ALL UNITS</button>
 <button type="button" class="cancel" id="pickx">CANCEL</button></div>
+<div id="qty"><div class="qh"><span id="qtyh">DEALER BATCH</span> <span id="qtyst" class="qst"></span></div>
+<div class="qinfo"><div><small>IN BATCH</small><b id="qtot">0</b></div><div><small id="qdonel">DONE HERE</small><b id="qdone">0</b></div><div class="ql"><small>LEFT</small><b id="qleft">0</b></div></div>
+<div class="qbody"><div class="qleftcol"><div class="qlab">FINISHED NOW</div><div id="qval" class="qval">0</div><div id="qafter" class="qafter">&nbsp;</div>
+<div class="qrow"><button type="button" data-qd="-10">&minus;10</button><button type="button" data-qd="-1">&minus;1</button><button type="button" data-qd="1">+1</button><button type="button" data-qd="10">+10</button></div>
+<div class="qrow qpre"><button type="button" data-qp="25">25</button><button type="button" data-qp="50">50</button><button type="button" data-qp="75">75</button><button type="button" data-qp="ALL">ALL LEFT</button></div></div>
+<div class="qpad"><button type="button" data-qk="1">1</button><button type="button" data-qk="2">2</button><button type="button" data-qk="3">3</button><button type="button" data-qk="4">4</button><button type="button" data-qk="5">5</button><button type="button" data-qk="6">6</button><button type="button" data-qk="7">7</button><button type="button" data-qk="8">8</button><button type="button" data-qk="9">9</button><button type="button" data-qk="C" class="qc">CLEAR</button><button type="button" data-qk="0">0</button><button type="button" data-qk="B" class="qc">&#9003;</button></div></div>
+<div id="qmsg" class="qmsg"></div>
+<div class="qbot"><button type="button" id="qx" class="qx">CANCEL</button><button type="button" id="qok" class="qok">CONFIRM</button></div></div>
 <div class="cam" id="cam"><video id="camv" playsinline muted autoplay></video><div class="aim"></div>
 <div class="chint">Hold the sheet barcode in the box</div><div class="cmsg" id="cmsg">Starting camera…</div>
 <button class="ccancel" type="button" id="camcancel">CANCEL</button></div>
@@ -193,9 +214,10 @@ body.flashing #main{z-index:15;bottom:0}
 <script>
 (function(){
 'use strict';
-var VER='scan15-20261119';
+var VER='scan16-20261119';
 var DEF={api:'https://api.github.com',repo:'TXCHOLSTERS/txc-qc-scans',branch:'main',dev:'Scan-iPad',tok:'',lockStation:'',showQc:false};
-var HEADER='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app,batch_id,batch_size';
+var HEADER='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app,batch_id,batch_size,qty';
+var HEADER_13='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app,batch_id,batch_size';
 var HEADER_OLD='id,ts_utc,ts_local,date_local,code,order,unit,step,device,result,app';
 var RE_UNIT=/^(TXC\d{3,7})-(\d{1,3})$/, RE_ORDER=/^(TXC\d{3,7})$/;
 var RE_BATCH=/^TXC-BATCH-(PRESS-TRIM|PRESS_TRIM|PRESSTRIM|BUFF|ASSEMBLY)$/;
@@ -206,7 +228,7 @@ var RE_DBATCH=/^(TXC\d{3,7})-B(\d{1,2})OF(\d{1,2})-(\d{1,4})$/, DBATCH_MS=2500;
    QSK-<SKU> (one row OK_QS_CARD, pulled at PRESS/TRIM). Stock builds, never customer orders. QSMAP: sku -> [name, card qty]. */
 var RE_QSB=/^QS-([A-Z0-9]{2,12})-(\d{6})-(\d{1,4})$/, RE_QSK=/^QSK-([A-Z0-9]{2,12})$/, QSMAP={"CVG19L": ["CVRT · GLOCK 19 · TLR7A", 10], "CVG19": ["CVRT · GLOCK 19", 7], "CVG43L": ["CVRT · GLOCK 43X MOS · TLR7 SUB", 9], "CVSTHD": ["CVRT · STACCATO HD C3.6", 5], "CVMP425L": ["CVRT · S&W M&P M2.0 4.25\" · TLR7A", 4], "DLBG2": ["DELTA · S&W M&P BODYGUARD 2.0", 10], "DLG43": ["DELTA · GLOCK 43X", 6], "DLG19": ["DELTA · GLOCK 19", 5], "DLSTHD": ["DELTA · STACCATO HD C3.6", 3], "DLXM": ["DELTA · SIG P365 X MACRO", 3], "OVSTHDL": ["OVRT · STACCATO HD C4X · X300U", 3], "OVXCL": ["OVRT · STACCATO XC · X300U", 3], "OVSTHD": ["OVRT · STACCATO HD C4X", 3], "OVG17": ["OVRT · GLOCK 17", 3], "XPGDS": ["X1:PRO · GLOCK DOUBLE STACK 9MM (GEN3-6)", 5], "XPG43X": ["X1:PRO · GLOCK 43X (STANDARD + MOS)", 4], "XP365": ["X1:PRO · SIG P365", 3], "XPXM": ["X1:PRO · SIG P365 X MACRO", 3], "CMGFS": ["CVRT MAG CARRIER · GLOCK FULL SIZE (19", 10], "CMGSL": ["CVRT MAG CARRIER · GLOCK SLIM (43X", 8], "CMSTHD": ["CVRT MAG CARRIER · STACCATO HD (C3.6", 4], "CMMP2": ["CVRT MAG CARRIER · S&W M&P M2.0 COMPACT & FULL SIZE", 4], "OMGDS": ["OVRT PISTOL MAG CARRIER · GLOCK DOUBLESTACK 9MM", 10], "OMST": ["OVRT PISTOL MAG CARRIER · STACCATO 2011", 7], "X2P365": ["X2 · SIG P365X", 3], "X2XM": ["X2 · SIG P365 X MACRO", 3], "X2RXM": ["X2 · RUGER RXM", 3], "X2G19": ["X2 · GLOCK 19 (FITS 19", 3], "X2G43": ["X2 · GLOCK 43X", 4], "X2BG2": ["X2 · S&W BODYGUARD 2.0", 5], "X2ECH": ["X2 · SPRINGFIELD ECHELON 4.0", 3], "X2METE": ["X2 · CANIK METE MC9 PRIME", 3]};
 function qsName(k){var x=QSMAP[k];return x?x[0]:k;}
-var KEEP_DAYS=45, LOAD_DAYS=14, SILENT_MS=2500, UNDO_MS=60000, BURST_IDLE=120, FLASH_MS=600, BATCH_IDLE_MS=30*60*1000;
+var KEEP_DAYS=45, LOAD_DAYS=30, SILENT_MS=2500, UNDO_MS=60000, BURST_IDLE=120, FLASH_MS=600, BATCH_IDLE_MS=30*60*1000;
 var STATIONS=[
  {id:'PRESS',label:'PRESS',done_label:'PRESSED',short:'PRESS',enabled:false,scan_page:false,source:'scan',maps_from:[]},
  {id:'TRIM',label:'TRIM',done_label:'TRIMMED',short:'TRIM',enabled:false,scan_page:false,source:'scan',maps_from:[]},
@@ -302,7 +324,7 @@ function ruleText(){
  if(step==='ASSEMBLY')return 'SCAN EACH BUILD WHEN ASSEMBLY IS DONE';
  return 'SCAN EACH BUILD AT THE END OF THIS STAGE';}
 function unitsOf(order){var u=UNITS[order]||UNITS[String(order||'').toUpperCase()]; if(!u||!u.length)return []; var out=[],i; for(i=0;i<u.length;i++)out.push(+u[i]); return out;}
-function overlayUp(){return $('setup').style.display==='block'||$('cam').className.indexOf('show')>=0||$('pick').style.display==='block'||$('admin').style.display==='block';}
+function overlayUp(){return $('qty').style.display==='block'||$('setup').style.display==='block'||$('cam').className.indexOf('show')>=0||$('pick').style.display==='block'||$('admin').style.display==='block';}
 function parseBatch(s){var m=RE_BATCH.exec(String(s||'').toUpperCase()); if(!m)return '';
  var v=m[1].replace(/_/g,'-'); if(v==='PRESS-TRIM'||v==='PRESSTRIM')return 'PRESS_TRIM'; return v;}
 function batchCodeFor(id){return 'TXC-BATCH-'+(id==='PRESS_TRIM'?'PRESS-TRIM':id);}
@@ -343,6 +365,7 @@ function pendingBatch(){return (batch&&batch.items)?batch.items.length:0;}
 function todayCount(st){var td=dLocal(new Date().getTime()),n=0,k;
  for(k in seen){if(k.indexOf(st+'|')===0&&dLocal(seen[k])===td){var kc_=k.substring(st.length+1),dbm=RE_DBATCH.exec(kc_),qbm=RE_QSB.exec(kc_);if(RE_QSK.test(kc_))continue;n+=dbm?(+dbm[4]||1):(qbm?(+qbm[3]||1):1);}}
  for(var i=0;i<rows.length;i++){if(rows[i].result==='OK_ORDER_ONLY'&&normStep(rows[i].step||'')===st&&rows[i].date_local===td)n++;}
+ n+=dTodayQty(st,td);
  if(batch&&step===st)n+=pendingBatch();
  return n;}
 function todayLine(){return 'TODAY '+todayCount(step);}
@@ -420,7 +443,7 @@ function drawStatus(){
 function tick(){$('clock').innerHTML=hm(new Date().getTime());drawUndo();checkBatchIdle();}tick();setInterval(tick,500);
 function addRow(t,code,order,unit,result,extra){
  extra=extra||{};
- var r={id:clean(cfg.dev)+'-'+t+'-'+Math.floor(Math.random()*1e6),t:t,ts_utc:new Date(t).toISOString(),ts_local:tLocal(t),date_local:dLocal(t),code:code,order:order,unit:unit,step:step,device:clean(cfg.dev),result:result,app:VER,batch_id:extra.batch_id||'',batch_size:extra.batch_size===undefined||extra.batch_size===''?'':String(extra.batch_size)};
+ var r={id:clean(cfg.dev)+'-'+t+'-'+Math.floor(Math.random()*1e6),t:t,ts_utc:new Date(t).toISOString(),ts_local:tLocal(t),date_local:dLocal(t),code:code,order:order,unit:unit,step:step,device:clean(cfg.dev),result:result,app:VER,batch_id:extra.batch_id||'',batch_size:extra.batch_size===undefined||extra.batch_size===''?'':String(extra.batch_size),qty:extra.qty?String(extra.qty):''};
  rows.push(r);var cut=new Date().getTime()-KEEP_DAYS*864e5;while(rows.length&&rows[0].t<cut)rows.shift();
  if(result!=='TEST'){queue.push(r);ss('queue',queue);}ss('rows',rows);return r;}
 function normalizeRaw(raw){
@@ -477,11 +500,53 @@ function logUnit(code,order,unit,t){
  if(batch){return addToBatch(code,order,unit,t);}
  seen[key]=t;ss('seen',seen);addRow(t,code,order,unit,'OK');lastOk={code:code,step:step,t:t};ss('lastok',lastOk);
  show('ok','&#10003; '+code,doneOf(step),'');beepOk();buzz(80);return 'ok';}
+/* DEALER QUANTITY PROMPT (scan16, Tyler Nov 19 2026: "500 qty order, we trim 50-75 a day, then scan 50-75 with one scan").
+   A dealer batch scan opens a big number pad (pre-filled with what is left at THIS station) and records nothing until CONFIRM.
+   CONFIRM logs ONE row OK_BATCH_QTY (batch_id = code, batch_size = batch units, qty = units now). Progress per station adds up
+   across days and devices (local rows + the shared scan log). More than what is left is refused; Tyler / Billy / Isaac can hold
+   CONFIRM 3 s to override. UNDO LAST (60 s) logs UNDO_QTY (batch_id = the undone row id). Old OK_BATCH rows = whole batch. */
+var DREM={}, QP=null, QP_OVR_MS=3000;
+function dEntries(){var m={},i,r;for(var k in DREM)if(DREM.hasOwnProperty(k))m[k]=DREM[k];
+ for(i=0;i<rows.length;i++){r=rows[i];if(r&&r.id&&RE_DBATCH.test(r.code||''))m[r.id]={id:r.id,t:r.t,code:r.code,step:normStep(r.step||''),result:r.result,qty:+(r.qty||0)||0,batch_id:r.batch_id||''};}
+ var a=[];for(k in m)if(m.hasOwnProperty(k))a.push(m[k]);a.sort(function(x,y){return x.t-y.t;});return a;}
+function dDone(st,code,total){var a=dEntries(),full=false,part={},i,e,n=0;
+ for(i=0;i<a.length;i++){e=a[i];if(e.code!==code||e.step!==st)continue;
+  if(e.result==='OK_BATCH')full=true;else if(e.result==='UNDO')full=false;else if(e.result==='OK_BATCH_QTY')part[e.id]=e.qty;else if(e.result==='UNDO_QTY')delete part[e.batch_id];}
+ if(full)return total;for(var k in part)if(part.hasOwnProperty(k))n+=part[k];return Math.min(total,n);}
+function dTodayQty(st,td){var n=0,und={},i,r;for(i=0;i<rows.length;i++){r=rows[i];if(r.result==='UNDO_QTY')und[r.batch_id]=1;}
+ for(i=0;i<rows.length;i++){r=rows[i];if(r.result==='OK_BATCH_QTY'&&!und[r.id]&&normStep(r.step||'')===st&&r.date_local===td)n+=(+r.qty||0);}return n;}
 function logDealerBatch(code,m,t){
- var key=sk(step,code),q=+m[4],ex={batch_id:code,batch_size:q},bl='BATCH '+(+m[2])+' OF '+(+m[3]);
- if(seen[key]){addRow(t,code,m[1],'','DUPLICATE',ex);show('dup','ALREADY<br>COUNTED',bl+' &middot; '+m[1],labelOf(step)+' &middot; '+dayName(seen[key])+' '+hm(seen[key]),DBATCH_MS);beepDup();buzz([40,80,40]);return 'dup';}
- seen[key]=t;ss('seen',seen);addRow(t,code,m[1],'','OK_BATCH',ex);lastOk={code:code,step:step,t:t};ss('lastok',lastOk);
- show('ok','&#10003; '+bl,q+' UNIT'+(q===1?'':'S')+' &middot; '+doneOf(step),m[1]+' &middot; dealer batch',DBATCH_MS);beepBatch();buzz(80);return 'ok';}
+ var q=+m[4],bl='BATCH '+(+m[2])+' OF '+(+m[3]),done=dDone(step,code,q),left=Math.max(0,q-done);
+ if(left<=0){addRow(t,code,m[1],'','DUPLICATE',{batch_id:code,batch_size:q});show('dup','STATION<br>COMPLETE',bl+' &middot; '+m[1],fmtN(q)+' / '+fmtN(q)+' already done at '+labelOf(step),DBATCH_MS);beepDup();buzz([40,80,40]);return 'dup';}
+ openQty(code,m,q,done,left);return 'prompt';}
+function fmtN(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+function openQty(code,m,total,done,left){
+ QP={code:code,order:m[1],bl:'BATCH '+(+m[2])+' OF '+(+m[3]),total:total,done:done,left:left,val:left,fresh:true,ovr:null};
+ $('qtyh').innerHTML='DEALER '+QP.bl+' &middot; '+m[1];
+ $('qtyst').innerHTML=labelOf(step);
+ $('qtot').innerHTML=fmtN(total);$('qdone').innerHTML=fmtN(done);$('qleft').innerHTML=fmtN(left);$('qdonel').innerHTML='DONE AT '+(stationById(step)?stationById(step).short:step);
+ $('qmsg').innerHTML='How many did you finish now? Then CONFIRM.';$('qmsg').className='qmsg';
+ drawQty();$('qty').style.display='block';beepBatch();buzz(40);try{inp.blur();}catch(e){}}
+function drawQty(){if(!QP)return;$('qval').innerHTML=QP.val?fmtN(QP.val):'0';
+ var bad=QP.val<=0||QP.val>QP.left;$('qok').className='qok'+(bad?' dim':'');
+ $('qafter').innerHTML=(QP.val>0&&QP.val<=QP.left)?('AFTER: '+fmtN(QP.done+QP.val)+' / '+fmtN(QP.total)+(QP.done+QP.val>=QP.total?' &middot; STATION COMPLETE':'')):'&nbsp;';}
+function qSet(v){if(!QP)return;v=Math.max(0,Math.min(9999,Math.floor(+v||0)));QP.val=v;QP.fresh=false;
+ $('qmsg').innerHTML=v>QP.left?('Only '+fmtN(QP.left)+' left at '+labelOf(step)+'.'):'How many did you finish now? Then CONFIRM.';$('qmsg').className='qmsg'+(v>QP.left?' err':'');drawQty();}
+function qKey(k){if(!QP)return;
+ if(k==='C'){QP.val=0;QP.fresh=false;drawQty();return;}
+ if(k==='B'){qSet(Math.floor(QP.val/10));return;}
+ var d=+k;if(isNaN(d))return;var cur=QP.fresh?0:QP.val;if(String(cur).length>=4&&!QP.fresh)return;qSet(cur*10+d);}
+function closeQty(){QP=null;$('qty').style.display='none';focusInp();}
+function qConfirm(override){if(!QP)return;var v=QP.val;
+ if(v<=0){$('qmsg').innerHTML='Enter at least 1.';$('qmsg').className='qmsg err';beepBad();buzz([200,80,200]);return;}
+ if(v>QP.left&&!override){$('qmsg').innerHTML='Only '+fmtN(QP.left)+' left at '+labelOf(step)+'. Fix the number &mdash; or Tyler / Billy / Isaac: hold CONFIRM 3 seconds to override.';$('qmsg').className='qmsg err';beepBad();buzz([200,80,200]);return;}
+ var P=QP,t=new Date().getTime();closeQty();
+ var r=addRow(t,P.code,P.order,'','OK_BATCH_QTY',{batch_id:P.code,batch_size:P.total,qty:v});
+ lastOk={code:P.code,step:step,t:t,rid:r.id,qty:v};ss('lastok',lastOk);lastHandled={code:P.code,step:step,t:t};
+ var after=Math.min(P.total,P.done+v);
+ if(after>=P.total){show('ok','STATION<br>COMPLETE',P.bl+' &middot; '+fmtN(P.total)+' / '+fmtN(P.total),P.order+' &middot; '+doneOf(step)+' &middot; +'+fmtN(v)+(override&&v>P.left?' (override)':''),DBATCH_MS+1000);}
+ else{show('ok','&#10003; '+fmtN(v)+' UNIT'+(v===1?'':'S'),P.bl+' &middot; '+fmtN(after)+' / '+fmtN(P.total)+' &middot; '+doneOf(step),P.order+' &middot; '+fmtN(P.total-after)+' LEFT',DBATCH_MS);}
+ beepBatch();buzz(80);sync();}
 function logQsBatch(code,m,t){
  var key=sk(step,code),q=+m[3],ex={batch_id:code,batch_size:q},nm=qsName(m[1]);
  if(seen[key]){addRow(t,code,'','','DUPLICATE',ex);show('dup','ALREADY<br>COUNTED','QUICK SHIP &middot; '+m[1],labelOf(step)+' &middot; '+dayName(seen[key])+' '+hm(seen[key]),DBATCH_MS);beepDup();buzz([40,80,40]);return 'dup';}
@@ -550,6 +615,10 @@ function undo(){
  }
  var info=lastInfo();
  if(!info||!undoArmed()){show('warn','NOTHING<br>TO UNDO','','Undo is only good for 60 seconds.');return;}
+ if(info.rid){var tq=new Date().getTime(),prq=step;step=normStep(info.step||step);
+  if(isLocked()&&step!==lockedTo()){step=prq;show('warn','LOCKED<br>STATION','','This device is locked to '+labelOf(lockedTo())+'.');return;}
+  var dm=RE_DBATCH.exec(info.code);addRow(tq,info.code,dm?dm[1]:'','','UNDO_QTY',{batch_id:info.rid,batch_size:dm?+dm[4]:'',qty:info.qty});step=prq;
+  lastOk=null;ss('lastok',null);lastHandled={code:'',step:'',t:0};show('warn','UNDONE','&minus;'+fmtN(info.qty)+' &middot; '+info.code,'That '+labelOf(info.step||'')+' entry no longer counts.');beepSoft();sync();return;}
  var t=new Date().getTime(),raw=info.code,code=raw.charAt(0)==='~'?raw.substring(1):raw,dbu=RE_DBATCH.exec(code),qsu=RE_QSB.exec(code)||RE_QSK.exec(code),m=qsu?[code,'','']:dbu?[code,dbu[1],'']:(RE_UNIT.exec(code)||RE_ORDER.exec(code));
  var prev=step;step=normStep(info.step||step);
  if(isLocked()&&step!==lockedTo()){step=prev;show('warn','LOCKED<br>STATION','','This device is locked to '+labelOf(lockedTo())+'.');return;}
@@ -566,6 +635,14 @@ $('pickall').addEventListener('click',function(){if(!pickOrder)return;var o=pick
  if(n){if(!batch){lastOk={code:o+'-'+us[0],step:step,t:t};ss('lastok',lastOk);}show('ok','&#10003; '+n+' UNITS',doneOf(step),o);beepOk();buzz(80);sync();}
  else{show('dup','ALREADY<br>COUNTED',o,labelOf(step));beepDup();}},false);
 $('pickx').addEventListener('click',function(){closePick();},false);
+$('qty').addEventListener('click',function(e){var b=e.target;if(!b||!b.getAttribute||!QP)return;var k=b.getAttribute('data-qk'),d=b.getAttribute('data-qd'),p=b.getAttribute('data-qp');
+ if(k!=null){qKey(k);return;}if(d!=null){qSet((QP.fresh?QP.val:QP.val)+(+d));return;}if(p!=null){qSet(p==='ALL'?QP.left:+p);return;}},false);
+$('qx').addEventListener('click',function(){closeQty();show('warn','CANCELED','Nothing was saved.','');},false);
+(function(){var b=$('qok'),tm=null,fired=false;
+ function down(e){fired=false;clearTimeout(tm);tm=setTimeout(function(){tm=null;if(QP&&QP.val>QP.left&&QP.val>0){fired=true;qConfirm(true);}},QP_OVR_MS);}
+ function up(){clearTimeout(tm);tm=null;}
+ b.addEventListener('touchstart',down,{passive:true});b.addEventListener('mousedown',down,false);b.addEventListener('touchend',up,false);b.addEventListener('mouseup',up,false);b.addEventListener('mouseleave',up,false);
+ b.addEventListener('click',function(){if(fired){fired=false;return;}qConfirm(false);},false);})();
 var buf='',bufT=0,burstT=null,inp=$('scan');
 function isCompleteToken(s){s=String(s||'');return !!(RE_QSB.test(s)||RE_QSK.test(s)||RE_DBATCH.test(s)||RE_UNIT.test(s)||RE_ORDER.test(s)||s==='TXC-TEST'||parseBatch(s)||s.indexOf('TXCSETUP:')===0);}
 function flushBurst(force){clearTimeout(burstT);burstT=null;var v=buf;if(!v){try{inp.value='';}catch(e){}return;}
@@ -628,13 +705,14 @@ function api(method,path,body,cb){
  x.ontimeout=function(){cb(0,null);};x.send(body?JSON.stringify(body):null);}
 function b64d(s){return decodeURIComponent(escape(atob(String(s).replace(/\s/g,''))));}
 function b64e(s){return btoa(unescape(encodeURIComponent(s)));}
-function csvLine(r){return [r.id,r.ts_utc,r.ts_local,r.date_local,r.code,r.order,r.unit,r.step,r.device,r.result,r.app,r.batch_id||'',r.batch_size||''].join(',');}
+function csvLine(r){return [r.id,r.ts_utc,r.ts_local,r.date_local,r.code,r.order,r.unit,r.step,r.device,r.result,r.app,r.batch_id||'',r.batch_size||'',r.qty||''].join(',');}
 function filePath(day){return '/repos/'+cfg.repo+'/contents/scans/'+day+'.csv';}
 function upgradeCsv(text){
  if(!text)return HEADER+'\n';
  if(text.charAt(text.length-1)!=='\n')text+='\n';
  var first=text.split('\n')[0];
  if(first===HEADER_OLD)text=HEADER+text.substring(HEADER_OLD.length);
+ else if(first===HEADER_13)text=HEADER+text.substring(HEADER_13.length);
  else if(first!==HEADER&&first.indexOf('id,ts_utc')===0){ /* leave unknown headers; new rows still append */ }
  return text;}
 function sync(){
@@ -663,7 +741,8 @@ function loadRemote(){
    var lines=b64d(j.content).split('\n'),ch=false;
    for(var i=1;i<lines.length;i++){var f=lines[i].split(',');if(f.length<10)continue;var code=f[4],res=f[9],stpref=normStep(f[7]),t=Date.parse(f[1]),key=sk(stpref,code);if(isNaN(t))continue;
     if(res==='OK'&&RE_UNIT.test(code)&&(!seen[key]||seen[key]>t)){seen[key]=t;ch=true;}
-    if(res==='UNDO'&&seen[key]&&seen[key]<t){delete seen[key];ch=true;}}
+    if(res==='UNDO'&&seen[key]&&seen[key]<t){delete seen[key];ch=true;}
+    if(RE_DBATCH.test(code)&&(res==='OK_BATCH'||res==='OK_BATCH_QTY'||res==='UNDO'||res==='UNDO_QTY')&&!DREM[f[0]]){DREM[f[0]]={id:f[0],t:t,code:code,step:stpref,result:res,qty:+(f[13]||0)||0,batch_id:f[11]||''};ch=true;}}
    if(ch){ss('seen',seen);drawCount();}});})(dLocal(now-d*864e5));}}
 setInterval(loadRemote,10*60000);
 function fillLockSelect(){
@@ -740,7 +819,7 @@ if('serviceWorker' in navigator&&location.protocol==='https:'){try{navigator.ser
    scans are saved in localStorage first, so nothing is lost. Max one try per version per 30 min (no reload loops). */
 var UPD_MS=5*60000, UPD_IDLE=(window.TXCQC_TEST_CFG&&window.TXCQC_TEST_CFG.updIdle)||90000;
 function updIdle(){var now=new Date().getTime();if(batch||pickOrder)return false;
- if(($('admin')&&$('admin').style.display==='block')||($('setup')&&$('setup').style.display==='block'))return false;
+ if(QP||($('admin')&&$('admin').style.display==='block')||($('setup')&&$('setup').style.display==='block'))return false;
  if($('scan')&&$('scan').value)return false;var lt=Math.max(lastHandled&&lastHandled.t||0,lastOk&&lastOk.t||0);return now-lt>=UPD_IDLE;}
 function checkUpdate(){if(location.protocol==='file:')return;try{var x=new XMLHttpRequest();x.open('GET','version.json?t='+new Date().getTime(),true);x.timeout=6000;
  x.onload=function(){if(x.status!==200)return;var j;try{j=JSON.parse(x.responseText);}catch(e){return;}var v=j&&j.ver;
@@ -754,7 +833,7 @@ setInterval(checkUpdate,UPD_MS);setTimeout(checkUpdate,20000);
 document.addEventListener('visibilitychange',function(){if(!document.hidden)setTimeout(checkUpdate,3000);},false);
 window.TXCQC={handle:handle,handleMany:handleMany,sync:sync,setStep:setStep,extract:extract,extractAll:extractAll,undo:undo,openBatch:openBatch,closeBatch:function(){closeBatch('card');},
  state:function(){return {seen:seen,queue:queue,rows:rows,step:step,cfg:{repo:cfg.repo,dev:cfg.dev,hasTok:!!cfg.tok,lockStation:cfg.lockStation||'',showQc:!!cfg.showQc},locked:isLocked(),lastOk:lastOk,undoArmed:undoArmed(),pick:pickOrder,today:todayCount(step),batch:batch?{id:batch.id,count:batch.items.length,items:batch.items.slice()}:null};},
- loadRemote:loadRemote,normStep:normStep,closePick:closePick};
+ loadRemote:loadRemote,normStep:normStep,closePick:closePick,qty:function(){return QP?{code:QP.code,total:QP.total,done:QP.done,left:QP.left,val:QP.val}:null;},dDone:function(st,c,t){return dDone(st,c,t);}};
 if(cfg.lockStation){step=lockedTo()||step;ss('step',step);}
 else if(pageStations().filter(function(s){return s.id===step;}).length===0){step=defaultStep();ss('step',step);}
 buildStepButtons();applyLock();drawHist();drawStatus();drawUndo();loadStationsCfg();loadUnits();loadRemote();sync();focusInp();showSetupBanner();
