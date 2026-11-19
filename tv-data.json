@@ -3,8 +3,8 @@
   "scope": "made-to-order units (line has a LEAD TIME AGREEMENT)",
   "hist_start": "2026-08-03",
   "full_start": "2026-08-09",
-  "done_today": 18,
-  "done_week": 174,
+  "done_today": 29,
+  "done_week": 185,
   "in_today": 9,
   "in_week": 185,
   "wd_week": 4,
@@ -12,14 +12,14 @@
   "wd_finished": 3,
   "done_finished": 156,
   "week_start": "2026-11-15",
-  "shipped_28d": 593,
+  "shipped_28d": 604,
   "days_at_goal": 5,
   "days_at_goal_of": 20,
   "pace_4wk": 28.8,
   "shipped_4wk": 575,
   "lead_now": 3.8,
-  "lead_median": 2.79,
-  "lead_n": 593,
+  "lead_median": 2.81,
+  "lead_n": 604,
   "lead_trend": [
    [
     "2026-08-30",
@@ -90,14 +90,14 @@
    [
     "2026-11-15",
     "WK NOV 15",
-    6.17,
-    174
+    6.05,
+    185
    ]
   ],
-  "lead_fwd": 4.64,
+  "lead_fwd": 4.56,
   "ontime_week": 90,
   "intake_wd": 37.5,
-  "backlog": 667,
+  "backlog": 656,
   "glide_weeks": 6,
   "need_promise": 22,
   "need_glide": 22,
@@ -120,19 +120,19 @@
    ],
    [
     41,
-    16.9
+    16.3
    ],
    [
     43,
-    10.7
+    10.3
    ],
    [
     48,
-    5.6
+    5.4
    ],
    [
     53,
-    3.8
+    3.6
    ]
   ],
   "last_wd": "2026-11-18",
@@ -150,33 +150,33 @@
   "board": [
    {
     "st": "Delta",
-    "done": 38,
+    "done": 40,
     "target": 29,
-    "pct": 131
+    "pct": 138
    },
    {
     "st": "CVRT Mag Carrier",
-    "done": 24,
+    "done": 28,
     "target": 24,
-    "pct": 100
-   },
-   {
-    "st": "CVRT Holster",
-    "done": 53,
-    "target": 63,
-    "pct": 84
+    "pct": 117
    },
    {
     "st": "CVRT Complete Set",
-    "done": 36,
+    "done": 39,
     "target": 43,
-    "pct": 84
+    "pct": 91
+   },
+   {
+    "st": "CVRT Holster",
+    "done": 54,
+    "target": 63,
+    "pct": 86
    },
    {
     "st": "OVRT Holster",
-    "done": 9,
+    "done": 10,
     "target": 27,
-    "pct": 33
+    "pct": 37
    },
    {
     "st": "OVRT Mag Carriers",
@@ -194,28 +194,28 @@
   "waiting": [
    {
     "st": "Delta",
-    "units": 216,
-    "days": 69.7
+    "units": 214,
+    "days": 69.0
    },
    {
     "st": "CVRT Holster",
-    "units": 173,
-    "days": 24.9
+    "units": 172,
+    "days": 24.7
    },
    {
     "st": "CVRT Complete Set",
-    "units": 107,
-    "days": 22.8
+    "units": 104,
+    "days": 22.1
    },
    {
     "st": "CVRT Mag Carrier",
-    "units": 70,
-    "days": 26.4
+    "units": 66,
+    "days": 24.9
    },
    {
     "st": "OVRT Holster",
-    "units": 28,
-    "days": 9.5
+    "units": 27,
+    "days": 9.2
    },
    {
     "st": "OVRT Mag Carriers",
@@ -268,7 +268,7 @@
    ],
    [
     "2026-11-19",
-    18
+    29
    ]
   ],
   "done_source": "shopify_shipped",
@@ -348,8 +348,8 @@
   }
  },
  "tv": {
-  "asof": "Nov 19, 2026 11:26 AM CT",
-  "gen": "2026-11-19T11:26:50.521909-06:00",
+  "asof": "Nov 19, 2026 11:36 AM CT",
+  "gen": "2026-11-19T11:36:06.138534-06:00",
   "today": "2026-11-19",
   "cfg": {
    "h": {
@@ -383,12 +383,12 @@
    "fresh": 60
   },
   "target": 52,
-  "done_today": 21,
+  "done_today": 32,
   "in_today": 9,
   "last_wd": "2026-11-18",
   "last_wd_name": "WEDNESDAY",
   "last_wd_done": 0,
-  "done_week": 177,
+  "done_week": 188,
   "in_week": 185,
   "week_goal": 260,
   "weekly_target": 260,
@@ -396,32 +396,32 @@
   "board": [
    {
     "n": "DELTA",
-    "p": 131,
-    "d": 38,
+    "p": 138,
+    "d": 40,
     "t": 29
    },
    {
     "n": "CVRT MAG",
-    "p": 100,
-    "d": 24,
+    "p": 117,
+    "d": 28,
     "t": 24
    },
    {
-    "n": "CVRT",
-    "p": 84,
-    "d": 53,
-    "t": 63
-   },
-   {
     "n": "CVRT SET",
-    "p": 84,
-    "d": 36,
+    "p": 91,
+    "d": 39,
     "t": 43
    },
    {
+    "n": "CVRT",
+    "p": 86,
+    "d": 54,
+    "t": 63
+   },
+   {
     "n": "OVRT",
-    "p": 33,
-    "d": 9,
+    "p": 37,
+    "d": 10,
     "t": 27
    },
    {
@@ -449,28 +449,28 @@
   "waiting": [
    {
     "n": "DELTA",
-    "u": 216,
-    "d": 69.7
+    "u": 214,
+    "d": 69.0
    },
    {
     "n": "CVRT",
-    "u": 173,
-    "d": 24.9
+    "u": 172,
+    "d": 24.7
    },
    {
     "n": "CVRT SET",
-    "u": 107,
-    "d": 22.8
+    "u": 104,
+    "d": 22.1
    },
    {
     "n": "CVRT MAG",
-    "u": 70,
-    "d": 26.4
+    "u": 66,
+    "d": 24.9
    },
    {
     "n": "OVRT",
-    "u": 28,
-    "d": 9.5
+    "u": 27,
+    "d": 9.2
    },
    {
     "n": "OVRT MAG",
@@ -496,7 +496,7 @@
     "OCT 18",
     "#FF5FA2",
     "PINK",
-    98
+    87
    ],
    [
     "OCT 25",
@@ -577,22 +577,22 @@
     "u": 1
    },
    {
-    "n": "80675",
+    "n": "80680",
     "age": 31,
     "u": 1
    },
    {
-    "n": "80680",
+    "n": "80682",
     "age": 31,
     "u": 1
    }
   ],
   "wd_finished": 3,
   "done_finished": 156,
-  "shipped_28d": 593,
+  "shipped_28d": 604,
   "days_at_goal": 5,
   "days_at_goal_of": 20,
-  "shipped_today": 18,
+  "shipped_today": 29,
   "qs_done": {
    "today": 3,
    "week": 3,
@@ -662,7 +662,7 @@
   "qc": {
    "today": 0,
    "week": 35,
-   "last_scan": "2026-11-19T11:12:16.091000-06:00",
+   "last_scan": "2026-11-19T11:35:45.059000-06:00",
    "used": false,
    "step_today": {
     "BUFF": 1
@@ -725,12 +725,12 @@
      "label": "WK OCT 18",
      "color": "#FF5FA2",
      "name": "PINK",
-     "tot": 98,
+     "tot": 87,
      "press": 0,
      "buff": 0,
      "assembly": 0,
      "qc": 0,
-     "none": 98
+     "none": 87
     }
    ],
    "rows": [
@@ -794,10 +794,10 @@
    "since": "SINCE NOV 16",
    "qs": {
     "press": 0,
-    "buff": 0,
+    "buff": 5,
     "assembly": 35,
     "ready_today": 3,
-    "batches": 4,
+    "batches": 5,
     "cards_waiting": 0
    }
   },
@@ -807,12 +807,12 @@
   ],
   "best_week": [
    "WK NOV 15",
-   174
+   185
   ],
   "records_window": "LAST 3 WEEKS",
   "prev_week": 20,
   "prev_week_same": 0,
-  "asof_short": "11:26 AM CT",
+  "asof_short": "11:36 AM CT",
   "attention": {
    "rush": [],
    "check": [
@@ -945,22 +945,22 @@
    {
     "k": "cvrt",
     "n": "CVRT",
-    "u": 234
+    "u": 233
    },
    {
     "k": "cvrt_sets",
     "n": "CVRT SETS",
-    "u": 107
+    "u": 104
    },
    {
     "k": "cvrt_mags",
     "n": "CVRT MAG CARRIERS",
-    "u": 70
+    "u": 66
    },
    {
     "k": "ovrt",
     "n": "OVRT HOLSTER",
-    "u": 29
+    "u": 28
    },
    {
     "k": "ovrt_sets",
@@ -975,7 +975,7 @@
    {
     "k": "delta",
     "n": "DELTA",
-    "u": 216
+    "u": 214
    },
    {
     "k": "heritage",
@@ -983,7 +983,7 @@
     "u": 35
    }
   ],
-  "queue_types_total": 745,
+  "queue_types_total": 734,
   "queue_types_unmapped": [
    {
     "n": "81201",
@@ -1130,216 +1130,216 @@
  "qc": {
   "ok": true,
   "stage_by_code": {
-   "TXC81445-1": "PRESS",
-   "TXC81504-1": "PRESS",
-   "TXC81502-4": "PRESS",
-   "TXC81594-1": "PRESS",
-   "TXC81432-1": "PRESS",
-   "TXC81525-1": "PRESS",
-   "TXC81414-1": "PRESS",
-   "TXC81495-1": "PRESS",
-   "TXC81394-1": "PRESS",
-   "TXC81462-2": "PRESS",
-   "TXC81513-1": "PRESS",
-   "TXC81527-1": "PRESS",
-   "TXC81554-1": "PRESS",
-   "TXC81455-1": "PRESS",
-   "TXC81438-1": "PRESS",
-   "TXC81462-3": "PRESS",
-   "TXC81429-1": "PRESS",
-   "TXC81523-1": "PRESS",
-   "TXC81393-1": "PRESS",
-   "TXC81475-1": "PRESS",
-   "TXC81485-1": "PRESS",
-   "TXC81539-3": "PRESS",
-   "TXC81517-1": "PRESS",
-   "TXC81526-2": "PRESS",
-   "TXC81409-1": "PRESS",
-   "TXC81493-1": "PRESS",
-   "TXC81463-2": "PRESS",
-   "TXC81519-3": "PRESS",
-   "TXC81431-1": "PRESS",
-   "TXC81531-1": "PRESS",
-   "TXC81444-2": "PRESS",
-   "TXC81550-2": "PRESS",
-   "TXC81507-1": "PRESS",
-   "TXC81500-1": "PRESS",
-   "TXC81558-1": "PRESS",
-   "TXC81560-1": "PRESS",
-   "TXC81416-1": "PRESS",
-   "TXC81453-2": "PRESS",
-   "TXC81456-1": "PRESS",
-   "TXC81465-2": "PRESS",
-   "TXC81595-2": "PRESS",
-   "TXC81491-1": "PRESS",
-   "TXC81428-1": "PRESS",
-   "TXC81486-1": "PRESS",
-   "TXC81534-1": "PRESS",
-   "TXC81586-2": "PRESS",
    "TXC81497-1": "PRESS",
-   "TXC81542-1": "PRESS",
-   "TXC81456-2": "PRESS",
-   "TXC81593-1": "PRESS",
-   "TXC81586-1": "PRESS",
-   "TXC81528-1": "PRESS",
-   "TXC81476-1": "PRESS",
-   "TXC81504-2": "PRESS",
-   "TXC81512-1": "PRESS",
-   "TXC81545-1": "PRESS",
-   "TXC81379-1": "PRESS",
-   "TXC81420-1": "PRESS",
-   "TXC81425-1": "PRESS",
-   "TXC81496-1": "PRESS",
-   "TXC81553-2": "PRESS",
-   "TXC81555-1": "PRESS",
-   "TXC81410-1": "PRESS",
-   "TXC81411-1": "PRESS",
-   "TXC81426-1": "PRESS",
-   "TXC81494-2": "PRESS",
-   "TXC81472-1": "PRESS",
-   "TXC81518-1": "PRESS",
-   "TXC81419-1": "PRESS",
-   "TXC81444-1": "PRESS",
-   "TXC81521-3": "PRESS",
-   "TXC81482-1": "PRESS",
-   "TXC81538-1": "PRESS",
-   "TXC81547-1": "PRESS",
-   "TXC81508-1": "PRESS",
-   "TXC81415-1": "PRESS",
-   "TXC81424-1": "PRESS",
-   "TXC81585-1": "PRESS",
-   "TXC81434-1": "PRESS",
-   "TXC81587-1": "PRESS",
-   "TXC81453-1": "PRESS",
-   "TXC81492-1": "PRESS",
-   "TXC81480-2": "PRESS",
-   "TXC81412-1": "PRESS",
-   "TXC81546-1": "PRESS",
-   "TXC81493-3": "PRESS",
-   "TXC81556-1": "PRESS",
-   "TXC81539-2": "PRESS",
-   "TXC81559-1": "PRESS",
-   "TXC81392-2": "PRESS",
-   "TXC81502-2": "PRESS",
-   "TXC81388-1": "PRESS",
-   "TXC81503-1": "PRESS",
-   "TXC81519-1": "PRESS",
-   "TXC81490-1": "PRESS",
-   "TXC81390-2": "PRESS",
-   "TXC81485-2": "PRESS",
-   "TXC81472-2": "PRESS",
-   "TXC81511-2": "PRESS",
-   "TXC81467-1": "PRESS",
-   "TXC81561-1": "PRESS",
    "TXC81557-1": "PRESS",
-   "TXC81509-1": "PRESS",
-   "TXC81473-1": "PRESS",
-   "TXC81479-1": "PRESS",
-   "TXC81502-1": "PRESS",
-   "TXC81477-1": "PRESS",
-   "TXC81539-1": "PRESS",
-   "TXC81450-2": "PRESS",
-   "TXC81397-1": "PRESS",
-   "TXC81512-4": "PRESS",
-   "TXC81552-1": "PRESS",
-   "TXC81464-1": "PRESS",
-   "TXC81506-1": "PRESS",
-   "TXC81584-1": "PRESS",
-   "TXC81541-1": "PRESS",
-   "TXC81530-1": "PRESS",
-   "TXC81396-1": "PRESS",
-   "TXC81510-2": "PRESS",
-   "TXC81527-2": "PRESS",
-   "TXC81382-1": "PRESS",
-   "TXC81592-1": "PRESS",
-   "TXC81388-2": "PRESS",
-   "TXC81449-1": "PRESS",
-   "TXC81484-4": "PRESS",
-   "TXC81521-2": "PRESS",
-   "TXC81458-1": "PRESS",
-   "TXC81582-1": "PRESS",
-   "TXC81427-1": "PRESS",
-   "TXC81399-1": "PRESS",
-   "TXC81459-2": "PRESS",
-   "TXC81446-1": "PRESS",
-   "TXC81480-1": "PRESS",
-   "TXC81591-1": "PRESS",
-   "TXC81478-1": "PRESS",
-   "TXC81413-1": "PRESS",
-   "TXC81402-1": "PRESS",
-   "TXC81408-1": "PRESS",
-   "TXC81397-2": "PRESS",
-   "TXC81521-1": "PRESS",
-   "TXC81562-1": "PRESS",
-   "TXC81570-1": "PRESS",
-   "TXC81481-1": "PRESS",
-   "TXC81484-3": "PRESS",
-   "TXC81519-2": "PRESS",
-   "TXC81510-1": "PRESS",
-   "TXC81588-1": "PRESS",
-   "TXC81529-1": "PRESS",
-   "TXC81377-1": "PRESS",
-   "TXC81435-1": "PRESS",
-   "TXC81470-1": "PRESS",
-   "TXC81448-1": "PRESS",
-   "TXC81450-1": "PRESS",
-   "TXC81383-1": "PRESS",
-   "TXC81437-1": "PRESS",
-   "TXC81392-3": "PRESS",
-   "TXC81524-1": "PRESS",
-   "TXC81540-1": "PRESS",
-   "TXC81512-3": "PRESS",
-   "TXC81454-1": "PRESS",
-   "TXC81568-1": "PRESS",
-   "TXC81494-1": "PRESS",
-   "TXC81465-1": "PRESS",
-   "TXC81501-1": "PRESS",
-   "TXC81469-1": "PRESS",
-   "TXC81488-1": "PRESS",
    "TXC81594-2": "PRESS",
-   "TXC81452-1": "PRESS",
-   "TXC81595-1": "PRESS",
-   "TXC81463-1": "PRESS",
-   "TXC81577-1": "PRESS",
+   "TXC81455-1": "PRESS",
+   "TXC81493-1": "PRESS",
+   "TXC81502-2": "PRESS",
+   "TXC81521-3": "PRESS",
+   "TXC81432-1": "PRESS",
    "TXC81378-1": "PRESS",
-   "TXC81534-2": "PRESS",
-   "TXC81548-1": "PRESS",
-   "TXC81553-1": "PRESS",
-   "TXC81421-1": "PRESS",
-   "TXC81589-1": "PRESS",
-   "TXC81400-1": "PRESS",
-   "TXC81551-1": "PRESS",
-   "TXC81543-1": "PRESS",
-   "TXC81596-1": "PRESS",
-   "TXC81498-1": "PRESS",
-   "TXC81505-1": "PRESS",
-   "TXC81558-2": "PRESS",
-   "TXC81430-1": "PRESS",
-   "TXC81407-1": "PRESS",
-   "TXC81447-1": "PRESS",
-   "TXC81436-1": "PRESS",
-   "TXC81502-3": "PRESS",
-   "TXC81459-1": "PRESS",
+   "TXC81445-1": "PRESS",
+   "TXC81540-1": "PRESS",
+   "TXC81586-2": "PRESS",
    "TXC81526-3": "PRESS",
-   "TXC81486-2": "PRESS",
-   "TXC81569-1": "PRESS",
-   "TXC81398-1": "PRESS",
-   "TXC81512-2": "PRESS",
-   "TXC81551-2": "PRESS",
-   "TXC81474-1": "PRESS",
-   "TXC81484-5": "PRESS",
+   "TXC81519-2": "PRESS",
+   "TXC81490-1": "PRESS",
+   "TXC81409-1": "PRESS",
    "TXC81384-1": "PRESS",
+   "TXC81543-1": "PRESS",
+   "TXC81419-1": "PRESS",
+   "TXC81400-1": "PRESS",
+   "TXC81484-4": "PRESS",
+   "TXC81562-1": "PRESS",
+   "TXC81470-1": "PRESS",
+   "TXC81430-1": "PRESS",
+   "TXC81377-1": "PRESS",
+   "TXC81521-1": "PRESS",
+   "TXC81568-1": "PRESS",
+   "TXC81388-2": "PRESS",
+   "TXC81397-1": "PRESS",
+   "TXC81410-1": "PRESS",
+   "TXC81415-1": "PRESS",
+   "TXC81511-2": "PRESS",
+   "TXC81596-1": "PRESS",
+   "TXC81534-2": "PRESS",
+   "TXC81523-1": "PRESS",
+   "TXC81486-2": "PRESS",
+   "TXC81456-1": "PRESS",
+   "TXC81519-3": "PRESS",
+   "TXC81551-1": "PRESS",
+   "TXC81594-1": "PRESS",
+   "TXC81502-4": "PRESS",
+   "TXC81556-1": "PRESS",
+   "TXC81474-1": "PRESS",
+   "TXC81420-1": "PRESS",
+   "TXC81379-1": "PRESS",
+   "TXC81399-1": "PRESS",
+   "TXC81453-1": "PRESS",
+   "TXC81552-1": "PRESS",
    "TXC81594-3": "PRESS",
+   "TXC81491-1": "PRESS",
+   "TXC81431-1": "PRESS",
+   "TXC81538-1": "PRESS",
+   "TXC81469-1": "PRESS",
+   "TXC81527-1": "PRESS",
+   "TXC81517-1": "PRESS",
+   "TXC81492-1": "PRESS",
+   "TXC81484-3": "PRESS",
+   "TXC81407-1": "PRESS",
+   "TXC81504-2": "PRESS",
+   "TXC81502-3": "PRESS",
+   "TXC81444-1": "PRESS",
    "TXC81493-2": "PRESS",
-   "TXC81433-1": "PRESS",
-   "TXC81510-3": "PRESS",
-   "TXC81392-1": "PRESS",
-   "TXC81536-1": "PRESS",
-   "TXC81553-3": "PRESS",
-   "TXC81520-1": "PRESS",
-   "TXC81489-1": "PRESS",
-   "TXC81533-1": "PRESS",
+   "TXC81465-1": "PRESS",
+   "TXC81392-2": "PRESS",
+   "TXC81412-1": "PRESS",
+   "TXC81453-2": "PRESS",
+   "TXC81558-1": "PRESS",
+   "TXC81421-1": "PRESS",
+   "TXC81472-1": "PRESS",
+   "TXC81542-1": "PRESS",
+   "TXC81496-1": "PRESS",
+   "TXC81393-1": "PRESS",
+   "TXC81509-1": "PRESS",
+   "TXC81464-1": "PRESS",
+   "TXC81482-1": "PRESS",
+   "TXC81500-1": "PRESS",
+   "TXC81481-1": "PRESS",
+   "TXC81502-1": "PRESS",
+   "TXC81437-1": "PRESS",
+   "TXC81587-1": "PRESS",
+   "TXC81428-1": "PRESS",
+   "TXC81508-1": "PRESS",
+   "TXC81555-1": "PRESS",
+   "TXC81531-1": "PRESS",
+   "TXC81519-1": "PRESS",
+   "TXC81397-2": "PRESS",
+   "TXC81513-1": "PRESS",
+   "TXC81503-1": "PRESS",
+   "TXC81486-1": "PRESS",
+   "TXC81529-1": "PRESS",
+   "TXC81501-1": "PRESS",
+   "TXC81494-1": "PRESS",
+   "TXC81495-1": "PRESS",
    "TXC81515-1": "PRESS",
+   "TXC81546-1": "PRESS",
+   "TXC81512-2": "PRESS",
+   "TXC81480-1": "PRESS",
+   "TXC81382-1": "PRESS",
+   "TXC81505-1": "PRESS",
+   "TXC81411-1": "PRESS",
+   "TXC81521-2": "PRESS",
+   "TXC81561-1": "PRESS",
+   "TXC81413-1": "PRESS",
+   "TXC81456-2": "PRESS",
+   "TXC81512-4": "PRESS",
+   "TXC81512-3": "PRESS",
+   "TXC81388-1": "PRESS",
+   "TXC81449-1": "PRESS",
+   "TXC81488-1": "PRESS",
+   "TXC81479-1": "PRESS",
+   "TXC81416-1": "PRESS",
+   "TXC81550-2": "PRESS",
+   "TXC81494-2": "PRESS",
+   "TXC81485-1": "PRESS",
+   "TXC81569-1": "PRESS",
+   "TXC81493-3": "PRESS",
+   "TXC81588-1": "PRESS",
+   "TXC81527-2": "PRESS",
+   "TXC81524-1": "PRESS",
+   "TXC81593-1": "PRESS",
+   "TXC81435-1": "PRESS",
+   "TXC81548-1": "PRESS",
+   "TXC81570-1": "PRESS",
+   "TXC81545-1": "PRESS",
+   "TXC81450-2": "PRESS",
+   "TXC81595-2": "PRESS",
+   "TXC81595-1": "PRESS",
+   "TXC81446-1": "PRESS",
+   "TXC81510-1": "PRESS",
+   "TXC81528-1": "PRESS",
+   "TXC81465-2": "PRESS",
+   "TXC81447-1": "PRESS",
+   "TXC81448-1": "PRESS",
+   "TXC81458-1": "PRESS",
+   "TXC81436-1": "PRESS",
+   "TXC81539-3": "PRESS",
+   "TXC81463-1": "PRESS",
+   "TXC81473-1": "PRESS",
+   "TXC81485-2": "PRESS",
+   "TXC81592-1": "PRESS",
+   "TXC81425-1": "PRESS",
+   "TXC81553-3": "PRESS",
+   "TXC81577-1": "PRESS",
+   "TXC81510-3": "PRESS",
+   "TXC81462-2": "PRESS",
+   "TXC81489-1": "PRESS",
+   "TXC81512-1": "PRESS",
+   "TXC81429-1": "PRESS",
+   "TXC81541-1": "PRESS",
+   "TXC81383-1": "PRESS",
+   "TXC81472-2": "PRESS",
+   "TXC81560-1": "PRESS",
+   "TXC81498-1": "PRESS",
+   "TXC81534-1": "PRESS",
+   "TXC81463-2": "PRESS",
+   "TXC81454-1": "PRESS",
+   "TXC81467-1": "PRESS",
+   "TXC81558-2": "PRESS",
+   "TXC81392-1": "PRESS",
+   "TXC81591-1": "PRESS",
+   "TXC81476-1": "PRESS",
+   "TXC81396-1": "PRESS",
+   "TXC81585-1": "PRESS",
+   "TXC81459-1": "PRESS",
+   "TXC81390-2": "PRESS",
+   "TXC81506-1": "PRESS",
+   "TXC81444-2": "PRESS",
+   "TXC81589-1": "PRESS",
+   "TXC81533-1": "PRESS",
+   "TXC81484-5": "PRESS",
+   "TXC81539-1": "PRESS",
+   "TXC81518-1": "PRESS",
+   "TXC81459-2": "PRESS",
+   "TXC81462-3": "PRESS",
+   "TXC81426-1": "PRESS",
+   "TXC81452-1": "PRESS",
+   "TXC81434-1": "PRESS",
+   "TXC81539-2": "PRESS",
+   "TXC81530-1": "PRESS",
+   "TXC81504-1": "PRESS",
+   "TXC81559-1": "PRESS",
+   "TXC81475-1": "PRESS",
+   "TXC81450-1": "PRESS",
+   "TXC81414-1": "PRESS",
+   "TXC81586-1": "PRESS",
+   "TXC81394-1": "PRESS",
+   "TXC81480-2": "PRESS",
+   "TXC81507-1": "PRESS",
+   "TXC81551-2": "PRESS",
+   "TXC81477-1": "PRESS",
+   "TXC81408-1": "PRESS",
+   "TXC81526-2": "PRESS",
+   "TXC81553-2": "PRESS",
+   "TXC81478-1": "PRESS",
+   "TXC81402-1": "PRESS",
+   "TXC81424-1": "PRESS",
+   "TXC81510-2": "PRESS",
+   "TXC81584-1": "PRESS",
+   "TXC81554-1": "PRESS",
+   "TXC81438-1": "PRESS",
+   "TXC81427-1": "PRESS",
+   "TXC81398-1": "PRESS",
+   "TXC81547-1": "PRESS",
+   "TXC81520-1": "PRESS",
+   "TXC81433-1": "PRESS",
+   "TXC81553-1": "PRESS",
+   "TXC81392-3": "PRESS",
+   "TXC81525-1": "PRESS",
+   "TXC81582-1": "PRESS",
+   "TXC81536-1": "PRESS",
    "TXC81302-1": "BUFF",
    "TXC81322-1": "ASSEMBLY",
    "TXC81422-1": "QC"
@@ -1352,8 +1352,8 @@
   ],
   "pull_ok": true,
   "pull_error": null,
-  "fetched_at": "2026-11-19T17:26:49.626290+00:00",
-  "rows": 260,
+  "fetched_at": "2026-11-19T17:36:05.193155+00:00",
+  "rows": 261,
   "files": 18,
   "today": 0,
   "week": 35,
@@ -1369,17 +1369,17 @@
   "unknown_batches": [],
   "qs": {
    "press": 0,
-   "buff": 0,
+   "buff": 5,
    "assembly": 35,
    "ready_today": 3,
-   "batches": 4,
+   "batches": 5,
    "cards_waiting": 0
   },
   "qs_assembled_daily": {
    "2026-11-19": 3
   },
   "dealer_progress": [],
-  "last_scan": "2026-11-19T11:12:16.091000-06:00",
+  "last_scan": "2026-11-19T11:35:45.059000-06:00",
   "step_today": {
    "BUFF": 1
   },
